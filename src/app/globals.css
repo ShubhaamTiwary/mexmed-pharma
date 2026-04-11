@@ -1,21 +1,29 @@
 @import "tailwindcss";
 
-/* Editorial corporate pharma — light foundation, navy reserved for hero / footer / key CTAs */
+/* Mexmed Pharma — editorial pharma system: light canvas, selective navy, restrained depth */
 :root {
-  --background: #f2f4f8;
-  --foreground: #0c1628;
+  --background: #edf0f5;
+  --foreground: #0a1220;
   --card: #ffffff;
-  --card-foreground: #0c1628;
-  --primary: #0c2847;
-  --primary-foreground: #fafbfc;
-  --muted: #e4e9f1;
+  --card-foreground: #0a1220;
+  --primary: #0b2744;
+  --primary-foreground: #f7f9fc;
+  --muted: #dfe6f0;
   --muted-foreground: #4a5568;
-  --border: #c9d4e3;
+  --border: #c2cedd;
   --ring: #1a4a7a;
-  --navy: #071a2e;
-  --navy-foreground: #f2f5f8;
-  --navy-muted: #9aa8bc;
-  --surface-subtle: #e9eef6;
+  --navy: #061525;
+  --navy-foreground: #eef2f7;
+  --navy-muted: #97a6b8;
+  --surface-subtle: #e4eaf3;
+  --hero-ink: #020814;
+  --hero-ink-elevated: #0a1628;
+  --hero-fog: rgba(148, 163, 184, 0.1);
+  /* Brand depth — use via arbitrary shadow or surface lib */
+  --shadow-brand-sm: 0 1px 2px rgba(10, 18, 32, 0.05),
+    0 6px 24px rgba(10, 18, 32, 0.04);
+  --shadow-brand-md: 0 12px 48px rgba(10, 18, 32, 0.07);
+  --shadow-inset-sheet: inset 0 1px 0 0 rgba(255, 255, 255, 0.92);
 }
 
 @theme inline {
@@ -33,6 +41,8 @@
   --color-navy-foreground: var(--navy-foreground);
   --color-navy-muted: var(--navy-muted);
   --color-surface-subtle: var(--surface-subtle);
+  --color-hero-ink: var(--hero-ink);
+  --color-hero-ink-elevated: var(--hero-ink-elevated);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
@@ -47,4 +57,12 @@ body {
 :focus-visible {
   outline: 2px solid var(--ring);
   outline-offset: 2px;
+}
+
+/* Hero grid — minimal depth, no decorative bitmaps */
+.hero-premium-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 64px 64px;
 }

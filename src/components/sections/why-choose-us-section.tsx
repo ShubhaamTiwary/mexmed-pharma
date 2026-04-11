@@ -1,5 +1,6 @@
 import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { pillarIcons } from "@/components/ui/pillar-icons";
 import { company } from "@/data/company";
 import {
   cardPadding,
@@ -15,7 +16,11 @@ export function WhyChooseUsSection() {
 
   return (
     <section
-      className={cn(sectionPadding, sectionBandMuted)}
+      className={cn(
+        sectionPadding,
+        sectionBandMuted,
+        "border-b border-border/45",
+      )}
       aria-labelledby="why-choose-heading"
     >
       <Container>
@@ -35,30 +40,34 @@ export function WhyChooseUsSection() {
           )}
           role="list"
         >
-          {whyChooseUs.pillars.map((pillar, index) => (
-            <li key={pillar.title}>
-              <article
-                className={cn(
-                  surfaceCard,
-                  cardPadding,
-                  "flex h-full flex-col",
-                )}
-              >
-                <span
-                  className="text-[0.625rem] font-semibold tabular-nums text-primary/70"
-                  aria-hidden
+          {whyChooseUs.pillars.map((pillar, index) => {
+            const Icon = pillarIcons[index];
+            return (
+              <li key={pillar.title}>
+                <article
+                  className={cn(
+                    surfaceCard,
+                    cardPadding,
+                    "flex h-full flex-col pt-7 transition-[box-shadow,border-color] duration-200 hover:border-primary/20 hover:shadow-[0_16px_48px_rgba(10,18,32,0.09)]",
+                  )}
                 >
-                  {String(index + 1).padStart(2, "0")}
-                </span>
-                <h3 className="mt-3 text-base font-medium leading-snug tracking-tight text-foreground">
-                  {pillar.title}
-                </h3>
-                <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted-foreground">
-                  {pillar.description}
-                </p>
-              </article>
-            </li>
-          ))}
+                  {Icon ? <Icon /> : null}
+                  <span
+                    className="mt-4 font-mono text-[0.6875rem] font-medium tabular-nums text-primary/80"
+                    aria-hidden
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </span>
+                  <h3 className="mt-3 text-base font-semibold leading-snug tracking-[-0.015em] text-foreground">
+                    {pillar.title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-sm leading-[1.65] text-muted-foreground">
+                    {pillar.description}
+                  </p>
+                </article>
+              </li>
+            );
+          })}
         </ul>
       </Container>
     </section>

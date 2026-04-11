@@ -18,10 +18,6 @@ Required routes:
 - /about
 - /products
 - /products/[slug]
-- /services
-- /quality
-- /clients
-- /career
 - /contact
 
 Homepage goals:
@@ -36,8 +32,6 @@ Recommended homepage structure:
 - About preview
 - Why choose us / trust indicators
 - Featured products or product categories
-- Services/capabilities preview
-- Quality/compliance preview
 - Contact CTA
 
 Page requirements:
@@ -47,7 +41,7 @@ Page requirements:
 - product list pages should be highly scannable
 - product detail pages should be structured and informative
 - contact page should include both company contact details and an enquiry form
-- services and quality pages should support credibility and business trust
+- key pages should support credibility and business trust
 
 Content rules:
 - keep marketing copy structured and readable

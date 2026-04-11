@@ -29,7 +29,9 @@ export function SectionHeading({
   return (
     <header
       className={cn(
-        density === "comfortable" ? "space-y-3" : "space-y-4 sm:space-y-5",
+        density === "comfortable"
+          ? "space-y-3.5"
+          : "space-y-4 sm:space-y-5 lg:space-y-6",
         align === "center" && "mx-auto max-w-3xl text-center",
         className,
       )}
@@ -37,7 +39,7 @@ export function SectionHeading({
       {eyebrow ? (
         <p
           className={cn(
-            "text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-muted-foreground",
+            "text-[0.625rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground",
             align === "center" && "mx-auto max-w-prose",
           )}
         >
@@ -47,11 +49,11 @@ export function SectionHeading({
       <HeadingTag
         id={id}
         className={cn(
-          "text-balance font-medium tracking-[-0.03em] text-foreground",
+          "text-balance font-semibold tracking-[-0.032em] text-foreground",
           align === "center" && "mx-auto max-w-[18ch] sm:max-w-[22ch]",
           heading === "h1"
             ? "text-[1.875rem] leading-[1.1] sm:text-[2.125rem] lg:text-[2.5rem] lg:leading-[1.08]"
-            : "max-w-[min(34ch,100%)] text-[1.5rem] leading-[1.15] sm:text-[1.875rem] lg:text-[2.125rem]",
+            : "max-w-[min(36ch,100%)] text-[1.5rem] leading-[1.14] sm:text-[1.875rem] lg:text-[2.125rem] lg:leading-[1.1]",
         )}
       >
         {title}
@@ -59,7 +61,7 @@ export function SectionHeading({
       {description ? (
         <p
           className={cn(
-            "max-w-[42rem] text-[0.9375rem] leading-[1.65] text-muted-foreground sm:text-base",
+            "max-w-[42rem] text-[0.9375rem] leading-[1.68] text-muted-foreground sm:text-base sm:leading-relaxed",
             align === "center" && "mx-auto text-balance",
             align === "left" && "text-pretty",
           )}

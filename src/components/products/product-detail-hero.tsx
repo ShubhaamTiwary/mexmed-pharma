@@ -14,7 +14,7 @@ export function ProductDetailHero({ product, className }: ProductDetailHeroProps
   return (
     <header
       className={cn(
-        "relative border-b border-border/60 bg-gradient-to-b from-card via-background to-surface-subtle/50",
+        "border-b border-border/50 bg-muted/35",
         className,
       )}
     >
@@ -46,35 +46,42 @@ export function ProductDetailHero({ product, className }: ProductDetailHeroProps
             <li aria-hidden className="text-border/80">
               /
             </li>
-            <li className="max-w-[min(100%,42rem)] font-medium text-foreground">
+            <li className="max-w-[min(100%,36rem)] font-medium text-foreground">
               {product.name}
             </li>
           </ol>
         </nav>
 
-        <div className="mt-8 border-t border-border/55 pt-8 sm:mt-10 sm:pt-10 lg:mt-10 lg:pt-11">
-          <div className="max-w-[min(100%,52rem)] border-l-[3px] border-primary/35 pl-5 sm:pl-7">
-            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1.5">
-              <p className="text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-muted-foreground">
-                {product.category}
-              </p>
-              {product.dosageForm ? (
-                <>
-                  <span
-                    aria-hidden
-                    className="hidden h-3 w-px bg-border/90 sm:inline sm:self-center"
-                  />
-                  <p className="text-[0.8125rem] font-medium text-foreground sm:text-[0.875rem]">
-                    <span className="text-muted-foreground">Dosage form </span>
-                    {product.dosageForm}
-                  </p>
-                </>
-              ) : null}
-            </div>
-            <h1 className="mt-5 max-w-[22rem] text-balance text-[2rem] font-medium tracking-[-0.035em] text-foreground sm:max-w-2xl sm:text-[2.375rem] sm:leading-[1.08] lg:mt-6 lg:max-w-[min(100%,40rem)] lg:text-[2.5rem] xl:text-[2.75rem] xl:leading-[1.06]">
-              {product.name}
-            </h1>
+        <div
+          className={cn(
+            "mt-8 rounded-lg border border-border/50 bg-card",
+            "p-7 shadow-[0_12px_48px_rgba(10,18,32,0.05),inset_0_1px_0_0_rgba(255,255,255,0.92)]",
+            "sm:p-9 lg:mt-10 lg:p-10 xl:p-11",
+          )}
+        >
+          <div className="flex flex-wrap items-center gap-2 gap-y-2">
+            <span className="text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-primary">
+              {product.category}
+            </span>
+            {product.dosageForm ? (
+              <span className="inline-flex rounded-full border border-border/55 bg-muted/50 px-2.5 py-1 text-[0.6875rem] font-medium text-muted-foreground">
+                {product.dosageForm}
+              </span>
+            ) : null}
           </div>
+
+          <h1
+            className={cn(
+              "mt-5 max-w-[40rem] text-balance text-[1.875rem] font-semibold leading-[1.1] tracking-[-0.035em] text-foreground",
+              "sm:text-[2.125rem] sm:leading-[1.08] lg:mt-6 lg:text-[2.375rem] xl:text-[2.5rem]",
+            )}
+          >
+            {product.name}
+          </h1>
+
+          <p className="mt-6 max-w-[42rem] text-pretty text-[1.0625rem] leading-[1.68] text-muted-foreground sm:text-[1.125rem] sm:leading-[1.66]">
+            {product.summary}
+          </p>
         </div>
       </Container>
     </header>

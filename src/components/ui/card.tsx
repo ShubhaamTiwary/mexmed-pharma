@@ -18,14 +18,23 @@ function Card({ className, ...props }: ComponentPropsWithoutRef<"div">) {
 
 function CardHeader({ className, ...props }: ComponentPropsWithoutRef<"div">) {
   return (
-    <div className={cn("flex flex-col gap-1.5 p-6 pb-0 sm:p-7 sm:pb-0", className)} {...props} />
+    <div
+      className={cn(
+        "flex flex-col gap-2 p-7 pb-0 sm:p-8 sm:pb-0",
+        className,
+      )}
+      {...props}
+    />
   );
 }
 
 function CardTitle({ className, ...props }: ComponentPropsWithoutRef<"h3">) {
   return (
     <h3
-      className={cn("text-lg font-medium leading-snug tracking-tight", className)}
+      className={cn(
+        "text-lg font-semibold leading-snug tracking-[-0.02em]",
+        className,
+      )}
       {...props}
     />
   );
@@ -37,21 +46,26 @@ function CardDescription({
 }: ComponentPropsWithoutRef<"p">) {
   return (
     <p
-      className={cn("text-sm leading-relaxed text-muted-foreground", className)}
+      className={cn(
+        "text-sm leading-relaxed text-muted-foreground",
+        className,
+      )}
       {...props}
     />
   );
 }
 
 function CardContent({ className, ...props }: ComponentPropsWithoutRef<"div">) {
-  return <div className={cn("p-6 pt-4 sm:p-7 sm:pt-5", className)} {...props} />;
+  return (
+    <div className={cn("p-7 pt-5 sm:p-8 sm:pt-6", className)} {...props} />
+  );
 }
 
 function CardFooter({ className, ...props }: ComponentPropsWithoutRef<"div">) {
   return (
     <div
       className={cn(
-        "flex items-center border-t border-border/50 p-6 pt-4 sm:p-7 sm:pt-5",
+        "flex items-center border-t border-border/50 p-7 pt-5 sm:p-8 sm:pt-6",
         className,
       )}
       {...props}

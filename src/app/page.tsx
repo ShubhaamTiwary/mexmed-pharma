@@ -5,8 +5,6 @@ import {
   ContactCtaSection,
   FeaturedProductsSection,
   HeroSection,
-  QualityPreviewSection,
-  ServicesPreviewSection,
   WhyChooseUsSection,
 } from "@/components/sections";
 import { company } from "@/data/company";
@@ -20,11 +18,9 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <AboutPreviewSection />
       <WhyChooseUsSection />
+      <AboutPreviewSection />
       <FeaturedProductsSection />
-      <ServicesPreviewSection />
-      <QualityPreviewSection />
       <ContactCtaSection />
     </>
   );

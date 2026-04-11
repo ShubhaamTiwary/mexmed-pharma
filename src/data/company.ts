@@ -30,45 +30,32 @@ export const company = {
   },
 
   whyChooseUs: {
-    eyebrow: "Why Mexmed",
-    title: "Mission, vision, quality, and safety—in practice",
+    eyebrow: "What sets us apart",
+    title: "Partnership built on clarity, range, and accountable follow-up",
     description:
-      "These four anchors have long framed how Mexmed presents itself publicly. They still describe how we prioritise decisions and communicate with partners.",
+      "Quality and safety anchor our operations; our catalogue breadth and enquiry discipline are how partners experience that commitment day to day.",
     pillars: [
-      {
-        title: "Mission",
-        description:
-          "Make dependable formulations available to professionals and patients who count on consistent supply and honest specifications.",
-      },
-      {
-        title: "Vision",
-        description:
-          "Strengthen Mexmed’s role as a trusted Indian pharmaceutical and nutraceutical supplier for distributors and clinicians.",
-      },
       {
         title: "Quality",
         description:
-          "Hold every batch and every hand-off to documented standards—no shortcuts on verification or traceability.",
+          "Documented expectations for manufacturing, release, and traceability—so specifications and hand-offs stand up to professional scrutiny.",
       },
       {
         title: "Safety",
         description:
-          "Design processes so product integrity and patient safety stay ahead of speed or volume pressures.",
+          "Processes designed so product integrity and patient safety are not traded away for speed, volume, or convenience.",
+      },
+      {
+        title: "Product range",
+        description:
+          "Tablets, capsules, syrups, drops, and related forms across major therapeutic categories—review the catalog for strengths and presentations.",
+      },
+      {
+        title: "Responsive enquiry support",
+        description:
+          "Availability, packs, and distribution questions handled through the phone and email we publish—transparent channels and accountable responses.",
       },
     ],
-  },
-
-  qualityPreview: {
-    eyebrow: "Quality & safety",
-    title: "Operational discipline, not slogans",
-    description:
-      "Quality and safety sit alongside mission and vision in how we communicate. We focus on controlled procedures, clear ownership, and continuous improvement—stated plainly, without marketing claims we cannot support.",
-    points: [
-      "Structured manufacturing and release documentation appropriate to our product categories",
-      "Safety-conscious handling from warehouse through to dispatch",
-      "Governance and certificate materials can be discussed through commercial and quality channels as your diligence requires",
-    ],
-    cta: { label: "Quality approach", href: "/quality" },
   },
 
   seo: {

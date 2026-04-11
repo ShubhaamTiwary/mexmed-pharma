@@ -1,14 +1,31 @@
 import { cn } from "@/lib/utils";
 
-/** Clinical listing / content cards — hairline border, minimal radius. */
+/** Shared elevation — clinical cards, feature tiles */
+const shadowBrandSm =
+  "shadow-[0_1px_2px_rgba(10,18,32,0.05),0_8px_32px_rgba(10,18,32,0.045)]";
+const shadowBrandMd =
+  "shadow-[0_12px_48px_rgba(10,18,32,0.07)]";
+const insetSheet =
+  "shadow-[inset_0_1px_0_0_rgba(255,255,255,0.92)]";
+
+/** Listing / pillar cards — soft radius, layered shadow */
 export const surfaceCard = cn(
-  "rounded-sm border border-border/80 bg-card",
-  "shadow-[0_1px_2px_rgba(15,23,42,0.04)]",
-  "transition-[border-color,box-shadow] duration-200 hover:border-border",
+  "rounded-[10px] border border-border/50 bg-card",
+  shadowBrandSm,
+  insetSheet,
+  "transition-[border-color,box-shadow] duration-200",
 );
 
-/** Editorial emphasis (quality block) — soft field, not a floating SaaS card. */
+/** Editorial panels — inset paper feel */
 export const surfaceEditorial = cn(
-  "rounded-sm border border-border/70 bg-surface-subtle/90",
-  "shadow-[inset_0_1px_0_0_rgba(255,255,255,0.6)]",
+  "rounded-[10px] border border-border/55 bg-surface-subtle/95",
+  insetSheet,
+  shadowBrandSm,
+);
+
+/** Info / CTA framing — stronger lift */
+export const surfacePanel = cn(
+  "rounded-[12px] border border-border/45 bg-card",
+  shadowBrandMd,
+  insetSheet,
 );

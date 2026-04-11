@@ -1,18 +1,19 @@
 /** Vertical rhythm — shared across homepage and product flows. */
-export const sectionPadding = "py-16 sm:py-20 lg:py-24 xl:py-28";
+export const sectionPadding =
+  "py-[4.25rem] sm:py-24 lg:py-28 xl:py-32";
 
 export const sectionPaddingHero =
   "py-20 sm:py-24 lg:py-32 xl:py-[8.5rem]";
 
 /** Detail page hero (product) — clinical strip with editorial weight. */
 export const sectionPaddingProductHero =
-  "py-16 sm:py-20 lg:py-24 xl:py-[6.5rem]";
+  "py-14 sm:py-16 lg:py-20 xl:py-24";
 
 /** Mid-page bands (product enquiry, related) — between hero strip and full section height. */
 export const sectionPaddingMid = "py-14 sm:py-16 lg:py-20";
 
 /** After heading → primary content (grids, lists). */
-export const sectionContentGap = "mt-10 sm:mt-12 lg:mt-14";
+export const sectionContentGap = "mt-12 sm:mt-14 lg:mt-16";
 
 /** Listing page — intro to grid (tighter than homepage bands). */
 export const sectionListingIntroGap = "mt-9 sm:mt-11 lg:mt-12";
@@ -25,10 +26,10 @@ export const sectionPaddingFooterAdjacent =
   "pb-14 sm:pb-16 lg:pb-20";
 
 /** Standard padding inside grid cards (pillars, services, catalog cards). */
-export const cardPadding = "p-6 sm:p-7";
+export const cardPadding = "p-7 sm:p-8";
 
 /** Trust panels, framed CTAs on light backgrounds. */
-export const cardPaddingLg = "p-7 sm:p-8";
+export const cardPaddingLg = "p-8 sm:p-9 lg:p-10";
 
 /** Two-column narrative blocks (about, quality). */
 export const sectionSplitGrid =
@@ -66,3 +67,7 @@ export const sectionBandNavy =
 
 /** Product grids — consistent gutters across featured + catalog. */
 export const productGridGap = "gap-6 sm:gap-6 lg:gap-7";
+
+/** Catalog listing — wider rhythm for curated scan. */
+export const productCatalogGridGap =
+  "gap-7 sm:gap-8 lg:gap-9 xl:gap-10";

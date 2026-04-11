@@ -30,24 +30,24 @@ export function Navbar() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/60 bg-card/90 shadow-[0_1px_0_0_rgba(15,23,42,0.04)] backdrop-blur-md supports-[backdrop-filter]:bg-card/80">
-      <Container className="flex h-16 items-center justify-between gap-4 lg:h-[4.25rem]">
+    <header className="sticky top-0 z-50 border-b border-border/40 bg-card/90 shadow-[0_1px_0_0_rgba(10,18,32,0.05)] backdrop-blur-xl supports-[backdrop-filter]:bg-card/80">
+      <Container className="flex h-[4rem] items-center justify-between gap-4 lg:h-[4.25rem]">
         <Link
           href="/"
           className="group flex items-center gap-3 outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           onClick={() => setOpen(false)}
         >
           <span
-            className="hidden h-8 w-0.5 shrink-0 bg-primary sm:block"
+            className="hidden h-9 w-[3px] shrink-0 rounded-full bg-primary sm:block"
             aria-hidden
           />
-          <span className="text-[0.9375rem] font-medium tracking-tight text-foreground transition-colors group-hover:text-primary">
+          <span className="text-[0.9375rem] font-semibold tracking-[-0.025em] text-foreground transition-colors group-hover:text-primary">
             Mexmed Pharma
           </span>
         </Link>
 
         <nav
-          className="hidden items-stretch gap-1 lg:flex"
+          className="hidden items-center gap-1 lg:flex"
           aria-label="Main navigation"
         >
           {mainNavigation.map((item) => {
@@ -57,10 +57,10 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "flex items-center border-b-2 border-transparent px-3.5 py-1 text-[0.8125rem] font-medium tracking-wide text-muted-foreground transition-colors duration-200",
+                  "rounded-[10px] px-3.5 py-2 text-[0.8125rem] font-medium tracking-[0.02em] text-muted-foreground transition-colors duration-200",
                   active
-                    ? "border-primary text-foreground"
-                    : "hover:border-border hover:text-foreground",
+                    ? "bg-primary/[0.09] font-semibold text-foreground"
+                    : "hover:bg-muted/50 hover:text-foreground",
                 )}
               >
                 {item.label}
@@ -71,7 +71,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-border bg-card text-foreground transition-colors hover:bg-muted/60 lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-[10px] border border-border/70 bg-card text-foreground shadow-[inset_0_1px_0_0_rgba(255,255,255,0.85)] transition-colors hover:bg-muted/50 lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
@@ -103,12 +103,12 @@ export function Navbar() {
       <div
         id="mobile-nav"
         className={cn(
-          "border-t border-border/60 bg-card lg:hidden",
+          "border-t border-border/45 bg-card/98 backdrop-blur-md lg:hidden",
           open ? "block" : "hidden",
         )}
         aria-hidden={!open}
       >
-        <Container className="flex flex-col gap-0.5 py-4">
+        <Container className="flex flex-col gap-1 py-4">
           {mainNavigation.map((item) => {
             const active = isActivePath(pathname, item.href);
             return (
@@ -116,10 +116,10 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "rounded-sm px-3 py-3 text-[0.8125rem] font-medium transition-colors duration-200",
+                  "rounded-[10px] px-3 py-3 text-[0.8125rem] font-medium transition-colors duration-200",
                   active
-                    ? "border-l-2 border-primary bg-primary/[0.06] pl-[10px] text-foreground"
-                    : "border-l-2 border-transparent pl-[10px] text-muted-foreground hover:bg-muted/50 hover:text-foreground",
+                    ? "bg-primary/[0.09] font-semibold text-foreground"
+                    : "text-muted-foreground hover:bg-muted/50 hover:text-foreground",
                 )}
                 onClick={() => setOpen(false)}
               >
