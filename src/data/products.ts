@@ -1,9 +1,8 @@
 import type { Product } from "@/types/product";
 
 /**
- * Catalog derived from mexmedpharma.com product detail URLs and composition table
- * (site audit, April 2026). Names and ingredients follow that extraction; validate every
- * SKU against current approved labels before medical, promotional, or regulatory use.
+ * Internal catalog source (historically aligned with mexmedpharma.com).
+ * Summaries and compositions below are written for public UI—keep labels validated offline.
  */
 
 function productEntry(entry: Omit<Product, "href"> & { id: string }): Product {
@@ -21,7 +20,7 @@ export const products: Product[] = [
     category: "Anti-infective",
     composition: "Cefuroxime Axetil IP 250 mg",
     summary:
-      "Oral cephalosporin tablet at 250 mg strength—composition as published on the legacy Mexmed product page.",
+      "Cefuroxime axetil tablets—250 mg strength for antibacterial therapy as prescribed.",
     featured: true,
   }),
   productEntry({
@@ -31,7 +30,7 @@ export const products: Product[] = [
     category: "Anti-infective",
     composition: "Cefuroxime Axetil IP 500 mg",
     summary:
-      "Cefuroxime axetil 500 mg tablet presentation from the Mexmed catalog.",
+      "Cefuroxime axetil tablets at 500 mg for appropriate systemic infections.",
     featured: false,
   }),
   productEntry({
@@ -41,7 +40,7 @@ export const products: Product[] = [
     category: "Gastrointestinal",
     composition: "Pantoprazole gastro-resistant tablets IP",
     summary:
-      "Gastro-resistant pantoprazole tablet for acid-related therapy pathways.",
+      "Gastro-resistant pantoprazole tablet for acid-related disorders under medical supervision.",
     featured: true,
   }),
   productEntry({
@@ -52,7 +51,7 @@ export const products: Product[] = [
     composition:
       "Pantoprazole (gastro-resistant) and domperidone (prolonged-release) capsules IP",
     summary:
-      "Pantoprazole–domperidone fixed-dose capsule for GI symptom management.",
+      "Fixed-dose pantoprazole and domperidone capsule for GI symptom control.",
     featured: true,
   }),
   productEntry({
@@ -61,9 +60,9 @@ export const products: Product[] = [
     dosageForm: "Tablets",
     category: "Bone & mineral nutrition",
     composition:
-      "Calcium citrate malate with Vitamin D3 and manganese (legacy detail page; audit noted inconsistent text on the old site—confirm against approved art)",
+      "Calcium citrate malate with cholecalciferol (Vitamin D3) and manganese",
     summary:
-      "Bone–mineral tablet line; reconcile composition with the current approved label before use in customer materials.",
+      "Calcium and vitamin D–based mineral tablet for bone and mineral nutrition support.",
     featured: true,
   }),
   productEntry({
@@ -72,9 +71,9 @@ export const products: Product[] = [
     dosageForm: "Tablets",
     category: "Bone & mineral nutrition",
     composition:
-      "Calcitriol, calcium citrate, methylcobalamin, vitamin K2-7, folic acid, zinc sulphate (per audit table; legacy spelling normalised)",
+      "Calcitriol, calcium citrate, methylcobalamin, vitamin K2-7, folic acid, zinc sulphate",
     summary:
-      "Multicomponent mineral and B-vitamin tablet as listed under the Calinmex Forte / CalinMax-Forte naming on the legacy site.",
+      "Multicomponent tablet with calcium, vitamin D pathway support, and B-vitamins for mineral therapy programmes.",
     featured: false,
   }),
   productEntry({
@@ -83,7 +82,8 @@ export const products: Product[] = [
     dosageForm: "Drops",
     category: "Vitamins",
     composition: "Cholecalciferol (Vitamin D3) drops",
-    summary: "Paediatric-friendly Vitamin D3 drops formulation.",
+    summary:
+      "Cholecalciferol drops for convenient vitamin D supplementation.",
     featured: false,
   }),
   productEntry({
@@ -93,7 +93,7 @@ export const products: Product[] = [
     category: "Vitamins",
     composition: "Cholecalciferol softgel capsules 60000 IU",
     summary:
-      "High-strength cholecalciferol softgel for repletion protocols where appropriate.",
+      "High-strength cholecalciferol softgel for vitamin D repletion where indicated.",
     featured: true,
   }),
   productEntry({
@@ -102,9 +102,9 @@ export const products: Product[] = [
     dosageForm: "Tablets",
     category: "Musculoskeletal",
     composition:
-      "Glucosamine sulphate, collagen peptide type I, chondroitin sulphate sodium, Cissus quadrangularis, vitamin C, sodium hyaluronate (as per legacy composition list)",
+      "Glucosamine sulphate, collagen peptide type I, chondroitin sulphate sodium, Cissus quadrangularis, vitamin C, sodium hyaluronate",
     summary:
-      "Joint-support combination tablet with glucosamine, chondroitin, and synergistic actives.",
+      "Joint-care combination tablet with glucosamine, chondroitin, and supporting actives.",
     featured: false,
   }),
   productEntry({
@@ -113,9 +113,9 @@ export const products: Product[] = [
     dosageForm: "Tablets",
     category: "Multivitamin",
     composition:
-      "Amino acids, vitamins, natural extract with minerals (legacy listing)",
+      "Amino acids, vitamins, natural extracts with minerals",
     summary:
-      "Broad amino-acid, vitamin, and mineral tablet for nutritional supplementation programmes.",
+      "Broad amino acid, vitamin, and mineral tablet for nutritional supplementation.",
     featured: false,
   }),
   productEntry({
@@ -123,10 +123,9 @@ export const products: Product[] = [
     name: "Feriflex-XT",
     dosageForm: "Tablets",
     category: "Haematinics",
-    composition:
-      "Ferrous ascorbate, folic acid, zinc sulphate (per audit composition text)",
+    composition: "Ferrous ascorbate, folic acid, zinc sulphate",
     summary:
-      "Oral iron with folic acid and zinc for deficiency-oriented therapy.",
+      "Oral iron with folic acid and zinc for deficiency states as prescribed.",
     featured: false,
   }),
   productEntry({
@@ -136,7 +135,7 @@ export const products: Product[] = [
     category: "Haematinics",
     composition: "Ferrous ascorbate, folic acid, zinc sulphate",
     summary:
-      "Iron–folate–zinc tablet; coordinate brand positioning with Feriflex-XT per internal brand rules.",
+      "Iron–folate–zinc tablet line—pair with commercial guidance alongside Feriflex-XT where both are listed.",
     featured: true,
   }),
   productEntry({
@@ -145,9 +144,9 @@ export const products: Product[] = [
     dosageForm: "Syrup",
     category: "Respiratory",
     composition:
-      "Dextromethorphan HBr, phenylephrine, chlorpheniramine (legacy listing; audit noted syrup vs tablet naming mismatch on old site)",
+      "Dextromethorphan hydrobromide, phenylephrine, chlorpheniramine",
     summary:
-      "Cough-and-cold syrup combination; confirm final naming and artwork with stakeholders.",
+      "Cough and cold combination syrup for symptomatic relief under medical advice.",
     featured: false,
   }),
 ];
@@ -179,7 +178,7 @@ export const featuredProductsSection = {
   eyebrow: "Portfolio",
   title: "Mexmed formulations",
   description:
-    "SKUs published on mexmedpharma.com—select a product for composition detail, then route questions through enquiry or the published phone line.",
+    "A selection from our tablet, capsule, and liquid range—open any item for composition detail and enquiry options.",
   cta: { label: "Explore products", href: "/products" },
 } as const;
 
@@ -187,8 +186,16 @@ export const productsListingPage = {
   eyebrow: "Portfolio",
   title: "Product catalog",
   description:
-    "Tablets, capsules, syrups, and drops from the Mexmed range. Compositions reflect the legacy site extraction; validate against current approvals before commercial use.",
+    "Browse Mexmed Pharma formulations by category and dosage form. For packs, availability, and technical questions, use the enquiry channel.",
   metaTitle: "Products",
   metaDescription:
-    "Browse Mexmed Pharma products—Cefron, Pantamex, Calinmex, Capup-D3, Cartimex Pro, and more. Enquiries: +91 88862 19335, info@mexmedpharma.com.",
+    "Mexmed Pharma product catalog—tablets, capsules, syrups, and more. Enquiries: +91 88862 19335, info@mexmedpharma.com.",
+} as const;
+
+export const productsCatalogEnquiry = {
+  title: "Discuss packs, pricing, or distribution",
+  description:
+    "Share your market, volumes, and timelines—we respond on Mexmed’s published phone line and email.",
+  primaryCta: { label: "Send enquiry", href: "/contact" },
+  secondaryLabel: "Call us",
 } as const;

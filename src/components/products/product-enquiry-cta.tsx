@@ -31,7 +31,8 @@ export function ProductEnquiryCta({ product, className }: ProductEnquiryCtaProps
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground sm:text-base">
               Ask about availability, packs, or distribution for{" "}
               <span className="font-medium text-foreground">{product.name}</span>
-              . Our team responds on the published phone and email channels.
+              . We reply using the phone number and email listed on our contact
+              page.
             </p>
             <div className="mt-8 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center">
               <Link

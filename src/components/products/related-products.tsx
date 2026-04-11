@@ -16,7 +16,10 @@ export function RelatedProducts({ products, className }: RelatedProductsProps) {
 
   return (
     <section
-      className={cn("border-t border-border/70 bg-background py-14 sm:py-16 lg:py-20", className)}
+      className={cn(
+        "border-t border-border/70 bg-background py-14 sm:py-16 lg:py-20",
+        className,
+      )}
       aria-labelledby="related-products-heading"
     >
       <Container>
@@ -25,7 +28,7 @@ export function RelatedProducts({ products, className }: RelatedProductsProps) {
           heading="h2"
           eyebrow="Catalog"
           title="Related products"
-          description="Other formulations you may want to review alongside this SKU."
+          description="Other formulations in a similar therapeutic area, or continue exploring the full range."
           className="max-w-2xl"
         />
         <div className={sectionContentGap}>

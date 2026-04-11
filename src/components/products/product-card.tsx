@@ -8,7 +8,6 @@ import { cn } from "@/lib/utils";
 type ProductCardProps = {
   product: Product;
   className?: string;
-  /** Use `h3` when the card sits under a section `h2` (e.g. related products). */
   titleAs?: "h2" | "h3";
 };
 
@@ -23,30 +22,34 @@ export function ProductCard({
     <article
       className={cn(
         surfaceCard,
-        "flex h-full min-h-[200px] flex-col p-6 sm:min-h-0 sm:p-7",
+        "group flex h-full min-h-[220px] flex-col border-border/80 p-6 transition-colors hover:border-primary/25 sm:min-h-0 sm:p-7",
         className,
       )}
     >
-      <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-primary">
-        {product.category}
+      <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-border/60 pb-3">
+        <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-primary">
+          {product.category}
+        </span>
         {product.dosageForm ? (
-          <span className="font-normal text-muted-foreground">
-            {" "}
-            · {product.dosageForm}
+          <span className="text-xs font-medium text-muted-foreground">
+            {product.dosageForm}
           </span>
         ) : null}
-      </p>
-      <TitleTag className="mt-3 text-base font-semibold leading-snug tracking-tight text-foreground sm:text-lg">
+      </div>
+
+      <TitleTag className="mt-4 text-base font-semibold leading-snug tracking-tight text-foreground sm:text-lg">
         <Link
           href={product.href}
-          className="text-foreground transition-colors hover:text-primary"
+          className="text-foreground transition-colors group-hover:text-primary"
         >
           {product.name}
         </Link>
       </TitleTag>
-      <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted-foreground">
+
+      <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground line-clamp-4">
         {product.summary}
       </p>
+
       <Link
         href={product.href}
         className={cn(
