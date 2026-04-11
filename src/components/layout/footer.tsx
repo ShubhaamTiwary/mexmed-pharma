@@ -9,9 +9,9 @@ const currentYear = new Date().getFullYear();
 
 export function Footer() {
   return (
-    <footer className="mt-auto border-t border-border bg-card/60">
-      <Container className="py-14 lg:py-20">
-        <div className="grid gap-12 sm:grid-cols-2 lg:grid-cols-3 lg:gap-16">
+    <footer className="mt-auto border-t border-border/80 bg-card">
+      <Container className="py-12 sm:py-14 lg:py-16">
+        <div className="grid gap-10 sm:grid-cols-2 sm:gap-12 lg:grid-cols-3 lg:gap-14">
           <div className="space-y-4">
             <p className="text-base font-semibold tracking-tight text-foreground">
               {site.name}
@@ -22,10 +22,13 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+            <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
               Quick links
             </p>
-            <ul className="mt-4 grid gap-2 sm:grid-cols-2 sm:gap-x-8" role="list">
+            <ul
+              className="mt-4 grid gap-y-2.5 gap-x-8 sm:grid-cols-2"
+              role="list"
+            >
               {mainNavigation.map((item) => (
                 <li key={item.href}>
                   <Link
@@ -40,11 +43,11 @@ export function Footer() {
           </div>
 
           <div className="space-y-4 sm:col-span-2 lg:col-span-1">
-            <p className="text-xs font-semibold uppercase tracking-[0.12em] text-muted-foreground">
+            <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
               Contact
             </p>
             <address className="not-italic">
-              <ul className="space-y-1.5 text-sm text-muted-foreground" role="list">
+              <ul className="space-y-1.5 text-sm leading-relaxed text-muted-foreground" role="list">
                 {site.contact.addressLines.map((line) => (
                   <li key={line}>{line}</li>
                 ))}
@@ -69,8 +72,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-14 flex flex-col gap-3 border-t border-border pt-8 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-between">
-          <p>© {currentYear} {site.name}. All rights reserved.</p>
+        <div className="mt-12 flex flex-col gap-3 border-t border-border/70 pt-8 text-sm text-muted-foreground sm:mt-14 sm:flex-row sm:items-center sm:justify-between">
+          <p>
+            © {currentYear} {site.name}. All rights reserved.
+          </p>
           <p className="text-xs sm:text-sm">
             Privacy and legal links can be added here for production.
           </p>
