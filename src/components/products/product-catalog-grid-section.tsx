@@ -18,12 +18,12 @@ export function ProductCatalogGridSection({
 
   return (
     <div className={cn("space-y-10 lg:space-y-12", className)}>
-      <div className="flex flex-col gap-4 border-b border-border/40 pb-8 sm:flex-row sm:items-end sm:justify-between sm:gap-10">
+      <div className="flex flex-col gap-4 border-b border-border/50 pb-8 sm:flex-row sm:items-end sm:justify-between sm:gap-10">
         <div className="max-w-2xl">
-          <p className="text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-primary">
+          <p className="text-[0.6875rem] font-medium uppercase tracking-[0.18em] text-muted-foreground">
             {copy.gridEyebrow}
           </p>
-          <h2 className="mt-3 text-balance text-xl font-semibold tracking-[-0.02em] text-foreground sm:text-2xl">
+          <h2 className="mt-3 text-balance text-xl font-medium tracking-[-0.02em] text-foreground sm:text-2xl">
             {copy.gridTitle}
           </h2>
           <p className="mt-3 text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base sm:leading-relaxed">
@@ -31,7 +31,7 @@ export function ProductCatalogGridSection({
           </p>
         </div>
         <p
-          className="shrink-0 text-sm font-medium tabular-nums text-muted-foreground"
+          className="shrink-0 text-[0.8125rem] font-medium tabular-nums text-muted-foreground"
           aria-live="polite"
         >
           {count} {count === 1 ? "product" : "products"}

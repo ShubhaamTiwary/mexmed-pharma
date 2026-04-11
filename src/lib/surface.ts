@@ -1,16 +1,14 @@
 import { cn } from "@/lib/utils";
 
-/** Shared marketing card shell: refined border, restrained depth. */
+/** Clinical listing / content cards — hairline border, minimal radius. */
 export const surfaceCard = cn(
-  "rounded-xl border border-border/60 bg-card",
+  "rounded-sm border border-border/80 bg-card",
   "shadow-[0_1px_2px_rgba(15,23,42,0.04)]",
-  "dark:border-border/80 dark:shadow-[0_2px_8px_rgba(0,0,0,0.35)]",
+  "transition-[border-color,box-shadow] duration-200 hover:border-border",
 );
 
-/** Emphasis panel for quality / trust blocks. */
-export const surfaceTrustPanel = cn(
-  "rounded-2xl border border-border/60 bg-card",
-  "shadow-[0_1px_3px_rgba(15,23,42,0.05)]",
-  "dark:border-primary/20 dark:bg-card dark:shadow-[0_2px_12px_rgba(0,0,0,0.4)]",
-  "dark:ring-1 dark:ring-primary/10",
+/** Editorial emphasis (quality block) — soft field, not a floating SaaS card. */
+export const surfaceEditorial = cn(
+  "rounded-sm border border-border/70 bg-surface-subtle/90",
+  "shadow-[inset_0_1px_0_0_rgba(255,255,255,0.6)]",
 );

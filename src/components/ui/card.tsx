@@ -25,7 +25,7 @@ function CardHeader({ className, ...props }: ComponentPropsWithoutRef<"div">) {
 function CardTitle({ className, ...props }: ComponentPropsWithoutRef<"h3">) {
   return (
     <h3
-      className={cn("text-lg font-semibold leading-snug tracking-tight", className)}
+      className={cn("text-lg font-medium leading-snug tracking-tight", className)}
       {...props}
     />
   );

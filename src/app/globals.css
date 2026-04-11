@@ -1,33 +1,21 @@
 @import "tailwindcss";
 
-/* Premium pharma minimal — calm blues, layered dark surfaces, high legibility */
+/* Editorial corporate pharma — light foundation, navy reserved for hero / footer / key CTAs */
 :root {
-  --background: #f0f4f9;
-  --foreground: #0a1220;
+  --background: #f2f4f8;
+  --foreground: #0c1628;
   --card: #ffffff;
-  --card-foreground: #0a1220;
-  --primary: #0b3d73;
-  --primary-foreground: #f8fafc;
-  --muted: #e4eaf4;
-  --muted-foreground: #4a5a70;
-  --border: #cfd9e8;
-  --ring: #1a6cb8;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    /* Deepest canvas → mid bands → elevated cards (clearer hierarchy than one flat slab) */
-    --background: #06080f;
-    --foreground: #eef1f7;
-    --card: #121a2b;
-    --card-foreground: #eef1f7;
-    --primary: #5aa8e8;
-    --primary-foreground: #05080e;
-    --muted: #0c101c;
-    --muted-foreground: #9aa8bc;
-    --border: #273246;
-    --ring: #6eb0ea;
-  }
+  --card-foreground: #0c1628;
+  --primary: #0c2847;
+  --primary-foreground: #fafbfc;
+  --muted: #e4e9f1;
+  --muted-foreground: #4a5568;
+  --border: #c9d4e3;
+  --ring: #1a4a7a;
+  --navy: #071a2e;
+  --navy-foreground: #f2f5f8;
+  --navy-muted: #9aa8bc;
+  --surface-subtle: #e9eef6;
 }
 
 @theme inline {
@@ -41,6 +29,10 @@
   --color-muted-foreground: var(--muted-foreground);
   --color-border: var(--border);
   --color-ring: var(--ring);
+  --color-navy: var(--navy);
+  --color-navy-foreground: var(--navy-foreground);
+  --color-navy-muted: var(--navy-muted);
+  --color-surface-subtle: var(--surface-subtle);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }

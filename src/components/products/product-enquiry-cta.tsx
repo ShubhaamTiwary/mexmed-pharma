@@ -23,17 +23,17 @@ export function ProductEnquiryCta({ product, className }: ProductEnquiryCtaProps
     <aside
       className={cn(
         sectionPaddingMid,
-        "border-t border-border/40 bg-muted/35 dark:bg-muted/65",
+        "border-t border-border/50 bg-muted/50",
         className,
       )}
       aria-labelledby="product-enquiry-heading"
     >
       <Container>
-        <div className={cn(surfaceCard, cardPaddingLg, "sm:p-10 lg:p-12")}>
+        <div className={cn(surfaceCard, cardPaddingLg, "sm:p-10 lg:p-11")}>
           <div className="mx-auto max-w-2xl text-center">
             <h2
               id="product-enquiry-heading"
-              className="text-balance text-xl font-semibold tracking-tight text-foreground sm:text-2xl"
+              className="text-balance text-xl font-medium tracking-tight text-foreground sm:text-2xl"
             >
               Request information
             </h2>

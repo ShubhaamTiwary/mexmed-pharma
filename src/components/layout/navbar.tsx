@@ -30,7 +30,7 @@ export function Navbar() {
   }, [open]);
 
   return (
-    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/85 shadow-[0_1px_0_0_rgba(15,23,42,0.04)] backdrop-blur-md supports-[backdrop-filter]:bg-background/70 dark:shadow-[0_1px_0_0_rgba(0,0,0,0.35)]">
+    <header className="sticky top-0 z-50 border-b border-border/60 bg-card/90 shadow-[0_1px_0_0_rgba(15,23,42,0.04)] backdrop-blur-md supports-[backdrop-filter]:bg-card/80">
       <Container className="flex h-16 items-center justify-between gap-4 lg:h-[4.25rem]">
         <Link
           href="/"
@@ -38,16 +38,16 @@ export function Navbar() {
           onClick={() => setOpen(false)}
         >
           <span
-            className="hidden h-9 w-1 shrink-0 rounded-full bg-primary sm:block"
+            className="hidden h-8 w-0.5 shrink-0 bg-primary sm:block"
             aria-hidden
           />
-          <span className="text-lg font-semibold tracking-tight text-foreground transition-colors group-hover:text-primary">
+          <span className="text-[0.9375rem] font-medium tracking-tight text-foreground transition-colors group-hover:text-primary">
             Mexmed Pharma
           </span>
         </Link>
 
         <nav
-          className="hidden items-stretch gap-0 lg:flex"
+          className="hidden items-stretch gap-1 lg:flex"
           aria-label="Main navigation"
         >
           {mainNavigation.map((item) => {
@@ -57,10 +57,10 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "flex items-center border-b-2 px-3.5 text-sm font-medium transition-colors duration-200",
+                  "flex items-center border-b-2 border-transparent px-3.5 py-1 text-[0.8125rem] font-medium tracking-wide text-muted-foreground transition-colors duration-200",
                   active
                     ? "border-primary text-foreground"
-                    : "border-transparent text-muted-foreground hover:border-border/80 hover:text-foreground",
+                    : "hover:border-border hover:text-foreground",
                 )}
               >
                 {item.label}
@@ -71,7 +71,7 @@ export function Navbar() {
 
         <button
           type="button"
-          className="inline-flex h-10 w-10 items-center justify-center rounded-md border border-border/80 bg-card text-foreground shadow-sm transition-colors hover:bg-muted/50 dark:hover:bg-muted/40 lg:hidden"
+          className="inline-flex h-10 w-10 items-center justify-center rounded-sm border border-border bg-card text-foreground transition-colors hover:bg-muted/60 lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
           onClick={() => setOpen((v) => !v)}
@@ -103,7 +103,7 @@ export function Navbar() {
       <div
         id="mobile-nav"
         className={cn(
-          "border-t border-border/50 bg-background lg:hidden",
+          "border-t border-border/60 bg-card lg:hidden",
           open ? "block" : "hidden",
         )}
         aria-hidden={!open}
@@ -116,10 +116,10 @@ export function Navbar() {
                 key={item.href}
                 href={item.href}
                 className={cn(
-                  "rounded-lg px-3 py-3 text-sm font-medium transition-colors duration-200",
+                  "rounded-sm px-3 py-3 text-[0.8125rem] font-medium transition-colors duration-200",
                   active
-                    ? "border-l-2 border-primary bg-primary/[0.06] pl-[10px] text-foreground dark:bg-primary/10"
-                    : "border-l-2 border-transparent pl-[10px] text-muted-foreground hover:bg-muted/40 hover:text-foreground dark:hover:bg-muted/30",
+                    ? "border-l-2 border-primary bg-primary/[0.06] pl-[10px] text-foreground"
+                    : "border-l-2 border-transparent pl-[10px] text-muted-foreground hover:bg-muted/50 hover:text-foreground",
                 )}
                 onClick={() => setOpen(false)}
               >

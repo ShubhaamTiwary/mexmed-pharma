@@ -50,7 +50,7 @@ export function WhyChooseUsSection() {
                 >
                   {String(index + 1).padStart(2, "0")}
                 </span>
-                <h3 className="mt-3 text-base font-semibold leading-snug tracking-tight text-foreground">
+                <h3 className="mt-3 text-base font-medium leading-snug tracking-tight text-foreground">
                   {pillar.title}
                 </h3>
                 <p className="mt-2.5 flex-1 text-sm leading-relaxed text-muted-foreground">

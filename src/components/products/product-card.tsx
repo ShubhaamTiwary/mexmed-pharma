@@ -24,22 +24,23 @@ export function ProductCard({
       className={cn(
         surfaceCard,
         cardPadding,
-        "group flex h-full min-h-[220px] flex-col transition-colors duration-200 hover:border-primary/25 sm:min-h-0 dark:hover:border-primary/30 dark:hover:bg-card",
+        "group flex h-full min-h-[200px] flex-col sm:min-h-0",
+        "hover:border-primary/30 hover:shadow-[0_2px_8px_rgba(15,23,42,0.06)]",
         className,
       )}
     >
-      <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-border/50 pb-3.5">
-        <span className="text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-primary">
+      <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-border/60 pb-3">
+        <span className="text-[0.6875rem] font-medium uppercase tracking-[0.14em] text-primary">
           {product.category}
         </span>
         {product.dosageForm ? (
-          <span className="text-xs font-medium text-muted-foreground">
+          <span className="text-[0.8125rem] font-medium text-muted-foreground">
             {product.dosageForm}
           </span>
         ) : null}
       </div>
 
-      <TitleTag className="mt-4 text-base font-semibold leading-snug tracking-tight text-foreground sm:text-lg">
+      <TitleTag className="mt-4 text-base font-medium leading-snug tracking-tight text-foreground sm:text-[1.0625rem]">
         <Link
           href={product.href}
           className="text-foreground transition-colors duration-200 group-hover:text-primary"
@@ -56,7 +57,7 @@ export function ProductCard({
         href={product.href}
         className={cn(
           buttonVariants({ variant: "ghost", size: "sm" }),
-          "mt-6 -ml-2 self-start px-2 text-primary hover:bg-primary/8 hover:text-primary dark:hover:bg-primary/10",
+          "mt-6 -ml-2 self-start px-2 text-primary hover:bg-primary/[0.06]",
         )}
       >
         View details

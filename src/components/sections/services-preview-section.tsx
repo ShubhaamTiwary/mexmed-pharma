@@ -46,7 +46,7 @@ export function ServicesPreviewSection() {
                   "flex h-full min-h-full flex-col",
                 )}
               >
-                <h3 className="text-base font-semibold leading-snug tracking-tight text-foreground sm:text-lg">
+                <h3 className="text-base font-medium leading-snug tracking-tight text-foreground sm:text-lg">
                   {service.name}
                 </h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">

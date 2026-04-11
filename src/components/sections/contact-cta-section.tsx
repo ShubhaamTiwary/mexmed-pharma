@@ -5,13 +5,11 @@ import { buttonVariants } from "@/components/ui/button";
 import { company } from "@/data/company";
 import { site } from "@/data/site";
 import {
-  cardPaddingLg,
   ctaRowCentered,
-  sectionBandMuted,
+  sectionBandNavy,
   sectionPadding,
   sectionPaddingFooterAdjacent,
 } from "@/lib/section-styles";
-import { surfaceCard } from "@/lib/surface";
 import { cn } from "@/lib/utils";
 
 export function ContactCtaSection() {
@@ -21,67 +19,59 @@ export function ContactCtaSection() {
     <section
       className={cn(
         sectionPadding,
-        sectionBandMuted,
+        sectionBandNavy,
         sectionPaddingFooterAdjacent,
       )}
       aria-labelledby="contact-cta-heading"
     >
       <Container>
-        <div
-          className={cn(
-            surfaceCard,
-            cardPaddingLg,
-            "px-6 sm:px-10 lg:px-14",
-          )}
-        >
-          <div className="mx-auto max-w-2xl text-center">
-            <h2
-              id="contact-cta-heading"
-              className="text-balance text-[1.5rem] font-semibold tracking-[-0.02em] text-foreground sm:text-[1.75rem] lg:text-[2rem]"
+        <div className="mx-auto max-w-2xl text-center">
+          <h2
+            id="contact-cta-heading"
+            className="text-balance text-[1.625rem] font-medium tracking-[-0.02em] text-navy-foreground sm:text-[1.875rem] lg:text-[2.125rem]"
+          >
+            {copy.title}
+          </h2>
+          <p className="mt-5 text-balance text-[0.9375rem] leading-[1.65] text-navy-muted sm:text-lg">
+            {copy.description}
+          </p>
+          <div className={ctaRowCentered}>
+            <Link
+              href={copy.primaryCta.href}
+              className={cn(
+                buttonVariants({ variant: "onInverse", size: "lg" }),
+                "w-full min-w-[180px] sm:w-auto",
+              )}
             >
-              {copy.title}
-            </h2>
-            <p className="mt-4 text-balance text-[0.9375rem] leading-relaxed text-muted-foreground sm:text-lg sm:leading-relaxed">
-              {copy.description}
+              {copy.primaryCta.label}
+            </Link>
+            <Link
+              href={copy.secondaryCta.href}
+              className={cn(
+                buttonVariants({ variant: "outlineOnInverse", size: "lg" }),
+                "w-full sm:w-auto",
+              )}
+            >
+              {copy.secondaryCta.label}
+            </Link>
+          </div>
+          <div className="mt-12 border-t border-white/15 pt-10">
+            <p className="text-[0.6875rem] font-medium uppercase tracking-[0.18em] text-navy-muted">
+              Direct lines
             </p>
-            <div className={ctaRowCentered}>
-              <Link
-                href={copy.primaryCta.href}
-                className={cn(
-                  buttonVariants({ variant: "default", size: "lg" }),
-                  "w-full min-w-[180px] sm:w-auto",
-                )}
+            <div className="mt-4 flex flex-col gap-2 text-sm sm:flex-row sm:items-center sm:justify-center sm:gap-12">
+              <a
+                href={site.contact.phoneHref}
+                className="font-medium text-navy-foreground transition-colors hover:text-white"
               >
-                {copy.primaryCta.label}
-              </Link>
-              <Link
-                href={copy.secondaryCta.href}
-                className={cn(
-                  buttonVariants({ variant: "outline", size: "lg" }),
-                  "w-full sm:w-auto",
-                )}
+                {site.contact.phoneDisplay}
+              </a>
+              <a
+                href={site.contact.emailHref}
+                className="font-medium text-white/95 underline-offset-4 transition-colors hover:text-white hover:underline"
               >
-                {copy.secondaryCta.label}
-              </Link>
-            </div>
-            <div className="mt-10 border-t border-border/40 pt-8">
-              <p className="text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
-                Direct lines
-              </p>
-              <div className="mt-3 flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-center sm:gap-10">
-                <a
-                  href={site.contact.phoneHref}
-                  className="font-medium text-foreground transition-colors hover:text-primary"
-                >
-                  {site.contact.phoneDisplay}
-                </a>
-                <a
-                  href={site.contact.emailHref}
-                  className="font-medium text-primary underline-offset-4 transition-colors hover:underline"
-                >
-                  {site.contact.emailDisplay}
-                </a>
-              </div>
+                {site.contact.emailDisplay}
+              </a>
             </div>
           </div>
         </div>

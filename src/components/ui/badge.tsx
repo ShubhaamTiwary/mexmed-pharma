@@ -4,15 +4,18 @@ import type { ComponentPropsWithoutRef } from "react";
 import { cn } from "@/lib/utils";
 
 export const badgeVariants = cva(
-  "inline-flex items-center rounded-full border px-3 py-1 text-[0.625rem] font-semibold uppercase tracking-[0.12em] transition-colors",
+  "inline-flex items-center rounded-sm border px-2.5 py-1 text-[0.625rem] font-medium uppercase tracking-[0.14em] transition-colors",
   {
     variants: {
       variant: {
         default:
-          "border-primary/25 bg-primary/[0.07] text-primary dark:border-primary/30 dark:bg-primary/12",
+          "border-border/90 bg-card text-primary",
         secondary:
-          "border-border/80 bg-muted text-muted-foreground",
+          "border-transparent bg-muted text-muted-foreground",
         outline: "border-border text-foreground",
+        /** On navy hero — minimal chrome */
+        onInverse:
+          "border-white/25 bg-white/[0.08] text-white/95",
       },
     },
     defaultVariants: {

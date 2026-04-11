@@ -2,9 +2,9 @@
 export const sectionPadding = "py-16 sm:py-20 lg:py-24 xl:py-28";
 
 export const sectionPaddingHero =
-  "py-20 sm:py-24 lg:py-28 xl:py-[7.5rem]";
+  "py-20 sm:py-24 lg:py-32 xl:py-[8.5rem]";
 
-/** Detail page hero (product) — aligned scale, slightly tighter than marketing hero. */
+/** Detail page hero (product) — clinical strip. */
 export const sectionPaddingProductHero =
   "py-14 sm:py-16 lg:py-20";
 
@@ -17,14 +17,14 @@ export const sectionContentGap = "mt-11 sm:mt-14 lg:mt-16";
 /** Before secondary / closing CTAs (Explore catalog, etc.). */
 export const sectionCtaGap = "mt-10 sm:mt-12 lg:mt-14";
 
-/** Last homepage band before footer — keeps air without matching full section py. */
+/** Last homepage band before footer — keeps air before navy footer. */
 export const sectionPaddingFooterAdjacent =
   "pb-14 sm:pb-16 lg:pb-20";
 
 /** Standard padding inside grid cards (pillars, services, catalog cards). */
 export const cardPadding = "p-6 sm:p-7";
 
-/** Trust panels, framed CTAs, emphasis blocks. */
+/** Trust panels, framed CTAs on light backgrounds. */
 export const cardPaddingLg = "p-7 sm:p-8";
 
 /** Two-column narrative blocks (about, quality). */
@@ -43,22 +43,23 @@ export const ctaRowCentered =
 export const ctaRowFlex =
   "flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center sm:gap-4";
 
-/** Page canvas — deepest base. */
-export const sectionBandBase = "border-b border-border/40 bg-background";
+/** Page canvas — warm light field. */
+export const sectionBandBase = "border-b border-border/50 bg-background";
 
-/**
- * Alternating band — distinct strip in dark mode.
- * Light mode stays soft via opacity.
- */
+/** Alternating soft blue-gray band (whitespace / contrast). */
 export const sectionBandMuted =
-  "border-b border-border/40 bg-muted/45 dark:bg-muted";
+  "border-b border-border/50 bg-surface-subtle/80";
 
-/** Enquiry / footer-adjacent strips. */
+/** Enquiry strips on light pages. */
 export const sectionBandMutedSoft =
-  "border-t border-border/40 bg-muted/40 dark:bg-muted/90";
+  "border-t border-border/50 bg-muted/70";
 
-/** Hero / listing intro — elevated card surface. */
-export const sectionBandIntro = "border-b border-border/40 bg-card";
+/** Listing intro — white sheet on gray field. */
+export const sectionBandIntro = "border-b border-border/50 bg-card";
+
+/** Deep navy — hero, footer, select CTAs (text: navy-foreground). */
+export const sectionBandNavy =
+  "border-b border-white/10 bg-navy text-navy-foreground";
 
 /** Product grids — consistent gutters across featured + catalog. */
 export const productGridGap = "gap-6 sm:gap-6 lg:gap-7";

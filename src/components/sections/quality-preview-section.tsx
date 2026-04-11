@@ -9,7 +9,7 @@ import {
   sectionPadding,
   sectionSplitGrid,
 } from "@/lib/section-styles";
-import { surfaceTrustPanel } from "@/lib/surface";
+import { surfaceEditorial } from "@/lib/surface";
 import { cn } from "@/lib/utils";
 
 export function QualityPreviewSection() {
@@ -32,21 +32,21 @@ export function QualityPreviewSection() {
           />
           <div
             className={cn(
-              surfaceTrustPanel,
-              "border-l-[3px] border-l-primary p-7 sm:p-8",
+              surfaceEditorial,
+              "border-l-[3px] border-l-primary p-8 sm:p-9 lg:p-10",
             )}
           >
-            <p className="text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-primary">
+            <p className="text-[0.6875rem] font-medium uppercase tracking-[0.18em] text-muted-foreground">
               Assurance focus
             </p>
-            <ul className="mt-6 space-y-5" role="list">
+            <ul className="mt-7 space-y-5" role="list">
               {qualityPreview.points.map((point) => (
                 <li
                   key={point}
-                  className="flex gap-3 text-[0.9375rem] leading-relaxed text-foreground sm:text-base"
+                  className="flex gap-3.5 text-[0.9375rem] leading-relaxed text-foreground sm:text-base"
                 >
                   <span
-                    className="mt-2 size-2 shrink-0 rounded-sm border border-primary/40 bg-primary/15"
+                    className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
                     aria-hidden
                   />
                   <span className="text-muted-foreground">{point}</span>
@@ -57,7 +57,7 @@ export function QualityPreviewSection() {
               href={qualityPreview.cta.href}
               className={cn(
                 buttonVariants({ variant: "default", size: "md" }),
-                "mt-8 w-full sm:w-auto",
+                "mt-10 w-full sm:w-auto",
               )}
             >
               {qualityPreview.cta.label}

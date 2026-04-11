@@ -4,7 +4,7 @@ import type { Product } from "@/types/product";
 import {
   sectionBandBase,
   sectionContentGap,
-  sectionPaddingMid,
+  sectionPadding,
 } from "@/lib/section-styles";
 import { cn } from "@/lib/utils";
 
@@ -21,9 +21,9 @@ export function RelatedProducts({ products, className }: RelatedProductsProps) {
   return (
     <section
       className={cn(
-        sectionPaddingMid,
+        sectionPadding,
         sectionBandBase,
-        "border-t border-border/40",
+        "border-t border-border/50",
         className,
       )}
       aria-labelledby="related-products-heading"
