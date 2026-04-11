@@ -1,7 +1,6 @@
 /**
- * Service model from legacy our-service.php (audit, April 2026):
- * two pillars—Pharmaceutical and Nutraceutical—with supporting expertise narrative;
- * commercial follow-up via the published enquiry channels.
+ * Mexmed service model: pharmaceutical and nutraceutical pillars,
+ * plus enquiry-led commercial support.
  */
 
 export type Service = {
@@ -16,7 +15,7 @@ export const services: Service[] = [
     id: "pharmaceutical",
     name: "Pharmaceutical formulations",
     summary:
-      "Prescription-oriented medicines across dosage forms the Mexmed catalog lists—including tablets, capsules, and syrups—supported by structured quality and safety practices.",
+      "Prescription-oriented medicines across dosage forms in the Mexmed catalog—including tablets, capsules, and syrups—with structured quality and safety practices.",
     href: "/services",
   },
   {
@@ -30,7 +29,7 @@ export const services: Service[] = [
     id: "enquiry-partner-support",
     name: "Enquiry & commercial support",
     summary:
-      "Direct lines for availability, packs, and distribution questions: reach Mexmed on +91 88862 19335 or info@mexmedpharma.com, consistent with the contact block on the legacy site.",
+      "Availability, packs, and distribution questions: contact Mexmed on +91 88862 19335 or info@mexmedpharma.com.",
     href: "/contact",
   },
 ];
@@ -39,7 +38,7 @@ export const servicesPreview = {
   eyebrow: "What we offer",
   title: "Pharmaceuticals and nutraceuticals",
   description:
-    "The prior Mexmed service page presented two formulation pillars—pharmaceutical and nutraceutical—followed by expertise narrative. Enquiries remain the practical entry point for partners.",
+    "Two formulation pillars—pharmaceutical and nutraceutical—supported by responsive enquiry handling for partners and distributors.",
   cta: { label: "View services", href: "/services" },
   featured: services,
 } as const;

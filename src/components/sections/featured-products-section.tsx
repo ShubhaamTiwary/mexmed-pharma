@@ -5,7 +5,12 @@ import { ProductGrid } from "@/components/products/product-grid";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { buttonVariants } from "@/components/ui/button";
 import { featuredProductsSection, getFeaturedProducts } from "@/data/products";
-import { sectionContentGap, sectionCtaGap, sectionPadding } from "@/lib/section-styles";
+import {
+  sectionBandBase,
+  sectionContentGap,
+  sectionCtaGap,
+  sectionPadding,
+} from "@/lib/section-styles";
 import { cn } from "@/lib/utils";
 
 export function FeaturedProductsSection() {
@@ -14,7 +19,7 @@ export function FeaturedProductsSection() {
 
   return (
     <section
-      className={cn(sectionPadding, "border-b border-border/70 bg-background")}
+      className={cn(sectionPadding, sectionBandBase)}
       aria-labelledby="featured-products-heading"
     >
       <Container>

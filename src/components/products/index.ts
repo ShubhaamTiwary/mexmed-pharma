@@ -1,5 +1,6 @@
 export { CatalogEnquirySection } from "./catalog-enquiry-section";
 export { ProductCard } from "./product-card";
+export { ProductCatalogGridSection } from "./product-catalog-grid-section";
 export { ProductDetailContent } from "./product-detail-content";
 export { ProductDetailHero } from "./product-detail-hero";
 export { ProductEnquiryCta } from "./product-enquiry-cta";

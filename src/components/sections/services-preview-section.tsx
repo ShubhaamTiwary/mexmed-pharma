@@ -4,14 +4,20 @@ import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { buttonVariants } from "@/components/ui/button";
 import { servicesPreview } from "@/data/services";
-import { sectionContentGap, sectionCtaGap, sectionPadding } from "@/lib/section-styles";
+import {
+  cardPadding,
+  sectionBandMuted,
+  sectionContentGap,
+  sectionCtaGap,
+  sectionPadding,
+} from "@/lib/section-styles";
 import { surfaceCard } from "@/lib/surface";
 import { cn } from "@/lib/utils";
 
 export function ServicesPreviewSection() {
   return (
     <section
-      className={cn(sectionPadding, "border-b border-border/70 bg-muted/50")}
+      className={cn(sectionPadding, sectionBandMuted)}
       aria-labelledby="services-preview-heading"
     >
       <Container>
@@ -27,7 +33,7 @@ export function ServicesPreviewSection() {
         <ul
           className={cn(
             sectionContentGap,
-            "grid gap-5 lg:grid-cols-3 lg:gap-6",
+            "grid gap-6 lg:grid-cols-3 lg:gap-7",
           )}
           role="list"
         >
@@ -36,7 +42,8 @@ export function ServicesPreviewSection() {
               <article
                 className={cn(
                   surfaceCard,
-                  "flex h-full min-h-full flex-col p-6 sm:p-7",
+                  cardPadding,
+                  "flex h-full min-h-full flex-col",
                 )}
               >
                 <h3 className="text-base font-semibold leading-snug tracking-tight text-foreground sm:text-lg">
@@ -49,7 +56,7 @@ export function ServicesPreviewSection() {
                   href={service.href}
                   className={cn(
                     buttonVariants({ variant: "link", size: "sm" }),
-                    "mt-5 h-auto justify-start p-0 text-primary",
+                    "mt-6 h-auto justify-start p-0 text-primary",
                   )}
                 >
                   Learn more
@@ -61,10 +68,7 @@ export function ServicesPreviewSection() {
         <div className={cn(sectionCtaGap, "flex justify-center")}>
           <Link
             href={servicesPreview.cta.href}
-            className={cn(
-              buttonVariants({ variant: "outline", size: "lg" }),
-              "border-border/90 bg-background/80",
-            )}
+            className={cn(buttonVariants({ variant: "outline", size: "lg" }))}
           >
             {servicesPreview.cta.label}
           </Link>

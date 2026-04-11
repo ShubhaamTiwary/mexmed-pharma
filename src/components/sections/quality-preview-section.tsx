@@ -4,7 +4,11 @@ import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { buttonVariants } from "@/components/ui/button";
 import { company } from "@/data/company";
-import { sectionPadding } from "@/lib/section-styles";
+import {
+  sectionBandBase,
+  sectionPadding,
+  sectionSplitGrid,
+} from "@/lib/section-styles";
 import { surfaceTrustPanel } from "@/lib/surface";
 import { cn } from "@/lib/utils";
 
@@ -13,11 +17,11 @@ export function QualityPreviewSection() {
 
   return (
     <section
-      className={cn(sectionPadding, "border-b border-border/70 bg-background")}
+      className={cn(sectionPadding, sectionBandBase)}
       aria-labelledby="quality-preview-heading"
     >
       <Container>
-        <div className="grid gap-10 sm:gap-12 lg:grid-cols-2 lg:items-center lg:gap-14 xl:gap-16">
+        <div className={cn(sectionSplitGrid, "lg:items-center xl:gap-16")}>
           <SectionHeading
             id="quality-preview-heading"
             heading="h2"
@@ -29,13 +33,13 @@ export function QualityPreviewSection() {
           <div
             className={cn(
               surfaceTrustPanel,
-              "border-l-4 border-l-primary p-6 sm:p-8",
+              "border-l-[3px] border-l-primary p-7 sm:p-8",
             )}
           >
-            <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-primary">
+            <p className="text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-primary">
               Assurance focus
             </p>
-            <ul className="mt-5 space-y-4" role="list">
+            <ul className="mt-6 space-y-5" role="list">
               {qualityPreview.points.map((point) => (
                 <li
                   key={point}

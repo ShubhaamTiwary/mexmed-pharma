@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
 import type { Product } from "@/types/product";
+import { sectionPaddingProductHero } from "@/lib/section-styles";
 import { cn } from "@/lib/utils";
 
 type ProductDetailHeroProps = {
@@ -13,18 +14,21 @@ export function ProductDetailHero({ product, className }: ProductDetailHeroProps
   return (
     <header
       className={cn(
-        "border-b border-border/80 bg-muted/40",
+        "border-b border-border/40 bg-muted/30 dark:bg-muted/90",
         className,
       )}
     >
-      <Container className="py-10 sm:py-12 lg:py-14">
+      <Container className={sectionPaddingProductHero}>
         <nav
           className="text-sm text-muted-foreground"
           aria-label="Breadcrumb"
         >
           <ol className="flex flex-wrap items-center gap-1.5" role="list">
             <li>
-              <Link href="/" className="transition-colors hover:text-foreground">
+              <Link
+                href="/"
+                className="transition-colors duration-200 hover:text-foreground"
+              >
                 Home
               </Link>
             </li>
@@ -34,7 +38,7 @@ export function ProductDetailHero({ product, className }: ProductDetailHeroProps
             <li>
               <Link
                 href="/products"
-                className="transition-colors hover:text-foreground"
+                className="transition-colors duration-200 hover:text-foreground"
               >
                 Products
               </Link>
@@ -46,17 +50,20 @@ export function ProductDetailHero({ product, className }: ProductDetailHeroProps
           </ol>
         </nav>
 
-        <p className="mt-8 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-primary">
-          {product.category}
-        </p>
-        <h1 className="mt-3 max-w-3xl text-balance text-3xl font-semibold tracking-[-0.02em] text-foreground sm:text-4xl lg:text-[2.5rem] lg:leading-tight">
-          {product.name}
-        </h1>
-        {product.dosageForm ? (
-          <p className="mt-3 text-sm font-medium text-muted-foreground">
-            Dosage form: {product.dosageForm}
+        <div className="mt-10 max-w-4xl border-t border-border/40 pt-10 sm:mt-12 sm:pt-12">
+          <p className="text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-primary">
+            {product.category}
           </p>
-        ) : null}
+          <h1 className="mt-4 max-w-4xl text-balance text-3xl font-semibold tracking-[-0.03em] text-foreground sm:text-4xl lg:mt-5 lg:text-[2.75rem] lg:leading-[1.1] xl:text-[3rem]">
+            {product.name}
+          </h1>
+          {product.dosageForm ? (
+            <p className="mt-4 text-sm font-medium text-muted-foreground sm:text-base">
+              Dosage form:{" "}
+              <span className="text-foreground">{product.dosageForm}</span>
+            </p>
+          ) : null}
+        </div>
       </Container>
     </header>
   );

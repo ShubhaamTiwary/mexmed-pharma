@@ -1,6 +1,7 @@
 import type { ReactNode } from "react";
 
 import type { Product } from "@/types/product";
+import { productGridGap } from "@/lib/section-styles";
 import { cn } from "@/lib/utils";
 
 import { ProductCard } from "./product-card";
@@ -22,7 +23,8 @@ export function ProductGrid({
   return (
     <ul
       className={cn(
-        "grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-3 lg:gap-6",
+        "grid sm:grid-cols-2 lg:grid-cols-3",
+        productGridGap,
         className,
       )}
       role="list"

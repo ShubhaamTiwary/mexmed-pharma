@@ -1,13 +1,12 @@
 /**
- * Global site identity and contact data.
- * Factual source: mexmedpharma.com extraction (site audit inventory, April 2026).
+ * Global site identity and contact data for Mexmed Pharma.
  */
 
 export const site = {
   name: "Mexmed Pharma",
 
   summary:
-    "Mexmed Pharma is an India-based company offering pharmaceutical and nutraceutical formulations. We operate from Serampore (West Bengal) with a branch in Forbesganj (Bihar), and we handle commercial and product enquiries on the phone number and email published below.",
+    "Mexmed Pharma is an India-based company offering pharmaceutical and nutraceutical formulations. We operate from Serampore (West Bengal) with a branch in Forbesganj (Bihar). Enquiries are handled on the phone number and email below.",
 
   publicUrl: "https://mexmedpharma.com",
 

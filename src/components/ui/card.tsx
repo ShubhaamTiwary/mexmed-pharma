@@ -51,7 +51,7 @@ function CardFooter({ className, ...props }: ComponentPropsWithoutRef<"div">) {
   return (
     <div
       className={cn(
-        "flex items-center border-t border-border/70 p-6 pt-4 sm:p-7 sm:pt-5",
+        "flex items-center border-t border-border/50 p-6 pt-4 sm:p-7 sm:pt-5",
         className,
       )}
       {...props}

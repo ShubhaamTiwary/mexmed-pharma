@@ -4,7 +4,12 @@ import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { buttonVariants } from "@/components/ui/button";
 import { company } from "@/data/company";
-import { sectionPadding } from "@/lib/section-styles";
+import {
+  ctaRowFlex,
+  sectionBandBase,
+  sectionPadding,
+  sectionSplitGrid,
+} from "@/lib/section-styles";
 import { cn } from "@/lib/utils";
 
 export function AboutPreviewSection() {
@@ -12,11 +17,11 @@ export function AboutPreviewSection() {
 
   return (
     <section
-      className={cn(sectionPadding, "border-b border-border/70 bg-background")}
+      className={cn(sectionPadding, sectionBandBase)}
       aria-labelledby="about-preview-heading"
     >
       <Container>
-        <div className="grid gap-10 sm:gap-12 lg:grid-cols-2 lg:items-start lg:gap-16 xl:gap-20">
+        <div className={sectionSplitGrid}>
           <SectionHeading
             id="about-preview-heading"
             heading="h2"
@@ -25,18 +30,18 @@ export function AboutPreviewSection() {
             className="lg:max-w-xl"
           />
           <div className="flex flex-col gap-5 sm:gap-6">
-            <p className="text-lg font-medium leading-relaxed text-foreground sm:text-[1.0625rem]">
+            <p className="text-pretty text-lg font-medium leading-relaxed text-foreground sm:text-[1.0625rem]">
               {aboutPreview.lead}
             </p>
-            <p className="text-[0.9375rem] leading-relaxed text-muted-foreground sm:text-base">
+            <p className="text-pretty text-[0.9375rem] leading-relaxed text-muted-foreground sm:text-base">
               {aboutPreview.body}
             </p>
-            <div className="pt-1">
+            <div className={cn("pt-1", ctaRowFlex)}>
               <Link
                 href={aboutPreview.cta.href}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "md" }),
-                  "w-full border-border/90 sm:w-auto",
+                  "w-full sm:w-auto",
                 )}
               >
                 {aboutPreview.cta.label}

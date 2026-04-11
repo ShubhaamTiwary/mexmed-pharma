@@ -1,7 +1,12 @@
 import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { company } from "@/data/company";
-import { sectionContentGap, sectionPadding } from "@/lib/section-styles";
+import {
+  cardPadding,
+  sectionBandMuted,
+  sectionContentGap,
+  sectionPadding,
+} from "@/lib/section-styles";
 import { surfaceCard } from "@/lib/surface";
 import { cn } from "@/lib/utils";
 
@@ -10,7 +15,7 @@ export function WhyChooseUsSection() {
 
   return (
     <section
-      className={cn(sectionPadding, "border-b border-border/70 bg-muted/50")}
+      className={cn(sectionPadding, sectionBandMuted)}
       aria-labelledby="why-choose-heading"
     >
       <Container>
@@ -26,7 +31,7 @@ export function WhyChooseUsSection() {
         <ul
           className={cn(
             sectionContentGap,
-            "grid gap-5 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-6",
+            "grid gap-6 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4 lg:gap-7",
           )}
           role="list"
         >
@@ -35,7 +40,8 @@ export function WhyChooseUsSection() {
               <article
                 className={cn(
                   surfaceCard,
-                  "flex h-full flex-col p-6 sm:p-7",
+                  cardPadding,
+                  "flex h-full flex-col",
                 )}
               >
                 <span

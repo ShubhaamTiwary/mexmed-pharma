@@ -4,7 +4,13 @@ import { Container } from "@/components/layout/container";
 import { buttonVariants } from "@/components/ui/button";
 import { company } from "@/data/company";
 import { site } from "@/data/site";
-import { sectionPadding } from "@/lib/section-styles";
+import {
+  cardPaddingLg,
+  ctaRowCentered,
+  sectionBandMuted,
+  sectionPadding,
+  sectionPaddingFooterAdjacent,
+} from "@/lib/section-styles";
 import { surfaceCard } from "@/lib/surface";
 import { cn } from "@/lib/utils";
 
@@ -13,14 +19,19 @@ export function ContactCtaSection() {
 
   return (
     <section
-      className={cn(sectionPadding, "bg-muted/45 pb-12 sm:pb-14 lg:pb-16")}
+      className={cn(
+        sectionPadding,
+        sectionBandMuted,
+        sectionPaddingFooterAdjacent,
+      )}
       aria-labelledby="contact-cta-heading"
     >
       <Container>
         <div
           className={cn(
             surfaceCard,
-            "border-border/80 px-6 py-10 sm:px-10 sm:py-12 lg:px-14 lg:py-14",
+            cardPaddingLg,
+            "px-6 sm:px-10 lg:px-14",
           )}
         >
           <div className="mx-auto max-w-2xl text-center">
@@ -30,10 +41,10 @@ export function ContactCtaSection() {
             >
               {copy.title}
             </h2>
-            <p className="mt-4 text-[0.9375rem] leading-relaxed text-muted-foreground sm:text-lg sm:leading-relaxed">
+            <p className="mt-4 text-balance text-[0.9375rem] leading-relaxed text-muted-foreground sm:text-lg sm:leading-relaxed">
               {copy.description}
             </p>
-            <div className="mt-9 flex flex-col items-stretch gap-3 sm:mt-10 sm:flex-row sm:items-center sm:justify-center sm:gap-4">
+            <div className={ctaRowCentered}>
               <Link
                 href={copy.primaryCta.href}
                 className={cn(
@@ -47,14 +58,14 @@ export function ContactCtaSection() {
                 href={copy.secondaryCta.href}
                 className={cn(
                   buttonVariants({ variant: "outline", size: "lg" }),
-                  "w-full border-border/90 bg-background sm:w-auto",
+                  "w-full sm:w-auto",
                 )}
               >
                 {copy.secondaryCta.label}
               </Link>
             </div>
-            <div className="mt-10 border-t border-border/70 pt-8">
-              <p className="text-xs font-medium uppercase tracking-[0.1em] text-muted-foreground">
+            <div className="mt-10 border-t border-border/40 pt-8">
+              <p className="text-[0.625rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
                 Direct lines
               </p>
               <div className="mt-3 flex flex-col gap-2 text-sm text-muted-foreground sm:flex-row sm:items-center sm:justify-center sm:gap-10">

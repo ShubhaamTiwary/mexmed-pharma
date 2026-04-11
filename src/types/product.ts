@@ -6,8 +6,8 @@ export type Product = {
   href: string;
   /** Prefer for homepage featured grid (3–6 items). */
   featured?: boolean;
-  /** Dosage form as listed on the legacy site (e.g. Tablet, Syrup). */
+  /** e.g. Tablet, Capsules, Syrup */
   dosageForm?: string;
-  /** Composition line from legacy product pages—verify against current approved labels before marketing use. */
+  /** Active composition text for detail pages. */
   composition?: string;
 };

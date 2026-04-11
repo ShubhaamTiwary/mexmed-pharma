@@ -1,31 +1,32 @@
 @import "tailwindcss";
 
-/* Deep medical blue + soft cool neutrals — calm, credible, production marketing */
+/* Premium pharma minimal — calm blues, layered dark surfaces, high legibility */
 :root {
-  --background: #f2f5fa;
-  --foreground: #0c1629;
+  --background: #f0f4f9;
+  --foreground: #0a1220;
   --card: #ffffff;
-  --card-foreground: #0c1629;
-  --primary: #0c4a8c;
+  --card-foreground: #0a1220;
+  --primary: #0b3d73;
   --primary-foreground: #f8fafc;
-  --muted: #e8edf5;
-  --muted-foreground: #5c6b82;
-  --border: #d9e2ef;
+  --muted: #e4eaf4;
+  --muted-foreground: #4a5a70;
+  --border: #cfd9e8;
   --ring: #1a6cb8;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a101f;
-    --foreground: #e8edf4;
-    --card: #111a2e;
-    --card-foreground: #e8edf4;
-    --primary: #3d8fd4;
-    --primary-foreground: #0a101f;
-    --muted: #1a2438;
-    --muted-foreground: #94a3b8;
-    --border: #2a3a56;
-    --ring: #5ba3e0;
+    /* Deepest canvas → mid bands → elevated cards (clearer hierarchy than one flat slab) */
+    --background: #06080f;
+    --foreground: #eef1f7;
+    --card: #121a2b;
+    --card-foreground: #eef1f7;
+    --primary: #5aa8e8;
+    --primary-foreground: #05080e;
+    --muted: #0c101c;
+    --muted-foreground: #9aa8bc;
+    --border: #273246;
+    --ring: #6eb0ea;
   }
 }
 
@@ -48,6 +49,7 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
 }
 
 :focus-visible {

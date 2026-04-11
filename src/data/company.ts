@@ -1,8 +1,5 @@
 /**
- * Company narrative and homepage sections.
- * Grounded in the legacy mexmedpharma.com structure (audit, April 2026):
- * company introduction; mission, vision, quality, safety; 7+ years’ experience;
- * pharmaceutical & nutraceutical services; enquiry touchpoints; Serampore + Forbesganj offices.
+ * Company narrative and homepage sections for Mexmed Pharma.
  */
 
 export const company = {
@@ -12,12 +9,12 @@ export const company = {
     eyebrow: "Pharmaceutical & nutraceutical formulations",
     title: "Quality-led formulations for prescribers and partners",
     description:
-      "Mexmed Pharma develops and supplies pharmaceutical and nutraceutical products from India—with mission, vision, quality, and safety at the centre of how we work. Share your requirement by enquiry; we respond on our published phone and email.",
+      "Mexmed Pharma develops and supplies pharmaceutical and nutraceutical products from India—with mission, vision, quality, and safety at the centre of how we work. Share your requirement by enquiry; we respond on the phone number and email listed on our contact page.",
     primaryCta: { label: "Send enquiry", href: "/contact" },
     secondaryCta: { label: "Explore products", href: "/products" },
     trustPoints: [
-      "Mission, vision, quality, and safety—themes that have framed Mexmed’s public story",
-      "More than seven years’ experience in the field (as positioned on the prior site)",
+      "Mission, vision, quality, and safety guide how we prioritise work",
+      "More than seven years of experience serving healthcare markets",
       "Head office in Serampore, Hoogly, West Bengal; branch in Forbesganj, Bihar",
     ],
   },
@@ -28,7 +25,7 @@ export const company = {
     lead:
       "We serve healthcare markets with a portfolio spanning tablets, capsules, syrups, and drops—rooted in West Bengal with a Bihar branch and a straightforward route to product and distribution questions.",
     body:
-      "Mexmed’s prior website combined company narrative with mission, vision, quality, and safety messaging, product showcases, and enquiry forms. This site carries that intent forward in clearer language: disciplined execution, transparent communication, and accountable follow-up.",
+      "Mexmed combines company narrative with mission, vision, quality, and safety messaging, product showcases, and enquiry forms. This site expresses that intent in clear language: disciplined execution, transparent communication, and accountable follow-up.",
     cta: { label: "About Mexmed", href: "/about" },
   },
 
@@ -36,7 +33,7 @@ export const company = {
     eyebrow: "Why Mexmed",
     title: "Mission, vision, quality, and safety—in practice",
     description:
-      "These four anchors appeared consistently on the legacy Mexmed homepage. They still describe how we prioritise decisions and communicate with partners.",
+      "These four anchors have long framed how Mexmed presents itself publicly. They still describe how we prioritise decisions and communicate with partners.",
     pillars: [
       {
         title: "Mission",
@@ -65,7 +62,7 @@ export const company = {
     eyebrow: "Quality & safety",
     title: "Operational discipline, not slogans",
     description:
-      "Quality and safety sat alongside mission and vision on the legacy site. Here we state plainly: controlled procedures, clear ownership, and continuous improvement—not marketing claims we cannot stand behind.",
+      "Quality and safety sit alongside mission and vision in how we communicate. We focus on controlled procedures, clear ownership, and continuous improvement—stated plainly, without marketing claims we cannot support.",
     points: [
       "Structured manufacturing and release documentation appropriate to our product categories",
       "Safety-conscious handling from warehouse through to dispatch",
@@ -83,7 +80,7 @@ export const company = {
   contactCta: {
     title: "Start with an enquiry",
     description:
-      "Tell us your name, mobile number, email, location, city, and message—the same practical fields the legacy site used for lead capture. We reply via the contact details in the footer.",
+      "Tell us your name, mobile number, email, location, city, and message. We reply using the contact details in the footer.",
     primaryCta: { label: "Send enquiry", href: "/contact" },
     secondaryCta: { label: "Explore products", href: "/products" },
   },

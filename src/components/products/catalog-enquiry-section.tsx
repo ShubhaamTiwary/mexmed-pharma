@@ -4,7 +4,7 @@ import { Container } from "@/components/layout/container";
 import { buttonVariants } from "@/components/ui/button";
 import { productsCatalogEnquiry } from "@/data/products";
 import { site } from "@/data/site";
-import { sectionPadding } from "@/lib/section-styles";
+import { sectionBandMutedSoft, sectionPadding } from "@/lib/section-styles";
 import { surfaceCard } from "@/lib/surface";
 import { cn } from "@/lib/utils";
 
@@ -13,10 +13,7 @@ export function CatalogEnquirySection() {
 
   return (
     <section
-      className={cn(
-        sectionPadding,
-        "border-t border-border/70 bg-muted/35",
-      )}
+      className={cn(sectionPadding, sectionBandMutedSoft)}
       aria-labelledby="catalog-enquiry-heading"
     >
       <Container>
@@ -37,7 +34,7 @@ export function CatalogEnquirySection() {
               {copy.description}
             </p>
           </div>
-          <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center">
+          <div className="flex shrink-0 flex-col gap-3 sm:flex-row sm:items-center sm:gap-4">
             <Link
               href={copy.primaryCta.href}
               className={cn(
@@ -51,7 +48,7 @@ export function CatalogEnquirySection() {
               href={site.contact.phoneHref}
               className={cn(
                 buttonVariants({ variant: "outline", size: "lg" }),
-                "w-full border-border/90 bg-background text-center sm:w-auto",
+                "w-full text-center sm:w-auto",
               )}
             >
               {copy.secondaryLabel}{" "}

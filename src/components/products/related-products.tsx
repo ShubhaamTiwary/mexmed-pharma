@@ -1,7 +1,11 @@
 import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import type { Product } from "@/types/product";
-import { sectionContentGap } from "@/lib/section-styles";
+import {
+  sectionBandBase,
+  sectionContentGap,
+  sectionPaddingMid,
+} from "@/lib/section-styles";
 import { cn } from "@/lib/utils";
 
 import { ProductGrid } from "./product-grid";
@@ -17,7 +21,9 @@ export function RelatedProducts({ products, className }: RelatedProductsProps) {
   return (
     <section
       className={cn(
-        "border-t border-border/70 bg-background py-14 sm:py-16 lg:py-20",
+        sectionPaddingMid,
+        sectionBandBase,
+        "border-t border-border/40",
         className,
       )}
       aria-labelledby="related-products-heading"

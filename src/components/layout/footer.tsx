@@ -9,7 +9,7 @@ const currentYear = new Date().getFullYear();
 
 export function Footer() {
   return (
-    <footer className="mt-auto border-t border-border/80 bg-card">
+    <footer className="mt-auto border-t border-border/50 bg-card shadow-[0_-1px_0_0_rgba(15,23,42,0.04)] dark:shadow-[0_-1px_0_0_rgba(0,0,0,0.35)]">
       <Container className="py-12 sm:py-14 lg:py-16">
         <div className="grid gap-10 sm:grid-cols-2 sm:gap-12 lg:grid-cols-3 lg:gap-14">
           <div className="space-y-4">
@@ -22,7 +22,7 @@ export function Footer() {
           </div>
 
           <div>
-            <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            <p className="text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
               Quick links
             </p>
             <ul
@@ -33,7 +33,7 @@ export function Footer() {
                 <li key={item.href}>
                   <Link
                     href={item.href}
-                    className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-sm text-muted-foreground transition-colors duration-200 hover:text-foreground"
                   >
                     {item.label}
                   </Link>
@@ -43,7 +43,7 @@ export function Footer() {
           </div>
 
           <div className="space-y-6 sm:col-span-2 lg:col-span-1">
-            <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
+            <p className="text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-muted-foreground">
               Contact
             </p>
             <div className="space-y-6">
@@ -66,7 +66,7 @@ export function Footer() {
             <p className="text-sm">
               <a
                 href={site.contact.phoneHref}
-                className="font-medium text-foreground transition-colors hover:text-primary"
+                className="font-medium text-foreground transition-colors duration-200 hover:text-primary"
               >
                 {site.contact.phoneDisplay}
               </a>
@@ -82,7 +82,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col gap-3 border-t border-border/70 pt-8 text-sm text-muted-foreground sm:mt-14 sm:flex-row sm:items-center sm:justify-between">
+        <div className="mt-12 flex flex-col gap-3 border-t border-border/50 pt-8 text-sm text-muted-foreground sm:mt-14 sm:flex-row sm:items-center sm:justify-between">
           <p>
             © {currentYear} {site.name}. All rights reserved.
           </p>

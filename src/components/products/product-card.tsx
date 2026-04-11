@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { buttonVariants } from "@/components/ui/button";
 import type { Product } from "@/types/product";
+import { cardPadding } from "@/lib/section-styles";
 import { surfaceCard } from "@/lib/surface";
 import { cn } from "@/lib/utils";
 
@@ -22,12 +23,13 @@ export function ProductCard({
     <article
       className={cn(
         surfaceCard,
-        "group flex h-full min-h-[220px] flex-col border-border/80 p-6 transition-colors hover:border-primary/25 sm:min-h-0 sm:p-7",
+        cardPadding,
+        "group flex h-full min-h-[220px] flex-col transition-colors duration-200 hover:border-primary/25 sm:min-h-0 dark:hover:border-primary/30 dark:hover:bg-card",
         className,
       )}
     >
-      <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-border/60 pb-3">
-        <span className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-primary">
+      <div className="flex flex-wrap items-baseline justify-between gap-2 border-b border-border/50 pb-3.5">
+        <span className="text-[0.625rem] font-semibold uppercase tracking-[0.16em] text-primary">
           {product.category}
         </span>
         {product.dosageForm ? (
@@ -40,7 +42,7 @@ export function ProductCard({
       <TitleTag className="mt-4 text-base font-semibold leading-snug tracking-tight text-foreground sm:text-lg">
         <Link
           href={product.href}
-          className="text-foreground transition-colors group-hover:text-primary"
+          className="text-foreground transition-colors duration-200 group-hover:text-primary"
         >
           {product.name}
         </Link>
@@ -54,7 +56,7 @@ export function ProductCard({
         href={product.href}
         className={cn(
           buttonVariants({ variant: "ghost", size: "sm" }),
-          "mt-5 -ml-2 self-start px-2 text-primary hover:bg-primary/5 hover:text-primary",
+          "mt-6 -ml-2 self-start px-2 text-primary hover:bg-primary/8 hover:text-primary dark:hover:bg-primary/10",
         )}
       >
         View details

@@ -1,9 +1,6 @@
 import type { Product } from "@/types/product";
 
-/**
- * Internal catalog source (historically aligned with mexmedpharma.com).
- * Summaries and compositions below are written for public UI—keep labels validated offline.
- */
+/** Canonical product catalog for Mexmed Pharma—IDs map to `/products/[slug]`. */
 
 function productEntry(entry: Omit<Product, "href"> & { id: string }): Product {
   return {
@@ -135,7 +132,7 @@ export const products: Product[] = [
     category: "Haematinics",
     composition: "Ferrous ascorbate, folic acid, zinc sulphate",
     summary:
-      "Iron–folate–zinc tablet line—pair with commercial guidance alongside Feriflex-XT where both are listed.",
+      "Iron, folate, and zinc tablet for iron-deficiency and nutritional support.",
     featured: true,
   }),
   productEntry({
@@ -186,16 +183,20 @@ export const productsListingPage = {
   eyebrow: "Portfolio",
   title: "Product catalog",
   description:
-    "Browse Mexmed Pharma formulations by category and dosage form. For packs, availability, and technical questions, use the enquiry channel.",
+    "Browse Mexmed Pharma formulations by therapeutic category and dosage form. For availability, packs, and distribution, contact our team.",
   metaTitle: "Products",
   metaDescription:
     "Mexmed Pharma product catalog—tablets, capsules, syrups, and more. Enquiries: +91 88862 19335, info@mexmedpharma.com.",
+  gridEyebrow: "Formulations",
+  gridTitle: "Browse the full range",
+  gridDescription:
+    "Each entry shows category, dosage form, and a short description. Select a product for composition detail and enquiry options.",
 } as const;
 
 export const productsCatalogEnquiry = {
   title: "Discuss packs, pricing, or distribution",
   description:
-    "Share your market, volumes, and timelines—we respond on Mexmed’s published phone line and email.",
+    "Share your market, volumes, and timelines—we respond on the phone number and email shown on our contact page.",
   primaryCta: { label: "Send enquiry", href: "/contact" },
   secondaryLabel: "Call us",
 } as const;
