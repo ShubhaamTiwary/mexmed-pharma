@@ -23,7 +23,7 @@ export function RelatedProducts({ products, className }: RelatedProductsProps) {
       className={cn(
         sectionPadding,
         sectionBandBase,
-        "border-t border-border/50",
+        "border-t border-border/45",
         className,
       )}
       aria-labelledby="related-products-heading"
@@ -35,7 +35,8 @@ export function RelatedProducts({ products, className }: RelatedProductsProps) {
           eyebrow="Catalog"
           title="Related products"
           description="Other formulations in a similar therapeutic area, or continue exploring the full range."
-          className="max-w-2xl"
+          density="comfortable"
+          className="max-w-[34rem] border-l-[3px] border-primary/25 pl-5 sm:pl-6"
         />
         <div className={sectionContentGap}>
           <ProductGrid products={products} cardTitleAs="h3" />

@@ -4,15 +4,18 @@ export const sectionPadding = "py-16 sm:py-20 lg:py-24 xl:py-28";
 export const sectionPaddingHero =
   "py-20 sm:py-24 lg:py-32 xl:py-[8.5rem]";
 
-/** Detail page hero (product) — clinical strip. */
+/** Detail page hero (product) — clinical strip with editorial weight. */
 export const sectionPaddingProductHero =
-  "py-14 sm:py-16 lg:py-20";
+  "py-16 sm:py-20 lg:py-24 xl:py-[6.5rem]";
 
 /** Mid-page bands (product enquiry, related) — between hero strip and full section height. */
 export const sectionPaddingMid = "py-14 sm:py-16 lg:py-20";
 
 /** After heading → primary content (grids, lists). */
-export const sectionContentGap = "mt-11 sm:mt-14 lg:mt-16";
+export const sectionContentGap = "mt-10 sm:mt-12 lg:mt-14";
+
+/** Listing page — intro to grid (tighter than homepage bands). */
+export const sectionListingIntroGap = "mt-9 sm:mt-11 lg:mt-12";
 
 /** Before secondary / closing CTAs (Explore catalog, etc.). */
 export const sectionCtaGap = "mt-10 sm:mt-12 lg:mt-14";

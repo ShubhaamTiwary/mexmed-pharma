@@ -17,25 +17,27 @@ export function ProductCatalogGridSection({
   const count = products.length;
 
   return (
-    <div className={cn("space-y-10 lg:space-y-12", className)}>
-      <div className="flex flex-col gap-4 border-b border-border/50 pb-8 sm:flex-row sm:items-end sm:justify-between sm:gap-10">
+    <div className={cn("space-y-9 sm:space-y-10 lg:space-y-11", className)}>
+      <div className="flex flex-col gap-6 border-b border-border/45 pb-7 sm:flex-row sm:items-end sm:justify-between sm:gap-8 sm:pb-8">
         <div className="max-w-2xl">
-          <p className="text-[0.6875rem] font-medium uppercase tracking-[0.18em] text-muted-foreground">
+          <p className="text-[0.625rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
             {copy.gridEyebrow}
           </p>
-          <h2 className="mt-3 text-balance text-xl font-medium tracking-[-0.02em] text-foreground sm:text-2xl">
+          <h2 className="mt-2.5 text-balance text-xl font-medium tracking-[-0.025em] text-foreground sm:mt-3 sm:text-2xl sm:leading-[1.2]">
             {copy.gridTitle}
           </h2>
-          <p className="mt-3 text-pretty text-sm leading-relaxed text-muted-foreground sm:text-base sm:leading-relaxed">
+          <p className="mt-3 max-w-xl text-pretty text-sm leading-[1.62] text-muted-foreground sm:text-[0.9375rem] sm:leading-relaxed">
             {copy.gridDescription}
           </p>
         </div>
-        <p
-          className="shrink-0 text-[0.8125rem] font-medium tabular-nums text-muted-foreground"
-          aria-live="polite"
-        >
-          {count} {count === 1 ? "product" : "products"}
-        </p>
+        <div className="flex shrink-0 sm:items-center sm:pb-0.5">
+          <p
+            className="rounded-sm border border-border/65 bg-card px-3 py-1.5 text-[0.75rem] font-semibold tabular-nums tracking-tight text-foreground/85 shadow-[0_1px_2px_rgba(15,23,42,0.04)]"
+            aria-live="polite"
+          >
+            {count} {count === 1 ? "product" : "products"}
+          </p>
+        </div>
       </div>
       <ProductGrid products={products} cardTitleAs="h3" />
     </div>

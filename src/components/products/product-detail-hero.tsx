@@ -14,16 +14,16 @@ export function ProductDetailHero({ product, className }: ProductDetailHeroProps
   return (
     <header
       className={cn(
-        "border-b border-border/60 bg-surface-subtle/70",
+        "relative border-b border-border/60 bg-gradient-to-b from-card via-background to-surface-subtle/50",
         className,
       )}
     >
       <Container className={sectionPaddingProductHero}>
         <nav
-          className="text-[0.8125rem] text-muted-foreground"
+          className="text-[0.75rem] leading-relaxed tracking-[0.02em] text-muted-foreground"
           aria-label="Breadcrumb"
         >
-          <ol className="flex flex-wrap items-center gap-2" role="list">
+          <ol className="flex flex-wrap items-center gap-x-2 gap-y-1" role="list">
             <li>
               <Link
                 href="/"
@@ -32,7 +32,7 @@ export function ProductDetailHero({ product, className }: ProductDetailHeroProps
                 Home
               </Link>
             </li>
-            <li aria-hidden className="text-border">
+            <li aria-hidden className="text-border/80">
               /
             </li>
             <li>
@@ -43,26 +43,38 @@ export function ProductDetailHero({ product, className }: ProductDetailHeroProps
                 Products
               </Link>
             </li>
-            <li aria-hidden className="text-border">
+            <li aria-hidden className="text-border/80">
               /
             </li>
-            <li className="font-medium text-foreground">{product.name}</li>
+            <li className="max-w-[min(100%,42rem)] font-medium text-foreground">
+              {product.name}
+            </li>
           </ol>
         </nav>
 
-        <div className="mt-10 max-w-4xl border-t border-border/50 pt-10 sm:mt-12 sm:pt-11">
-          <p className="text-[0.6875rem] font-medium uppercase tracking-[0.18em] text-muted-foreground">
-            {product.category}
-          </p>
-          <h1 className="mt-4 max-w-4xl text-balance text-3xl font-medium tracking-[-0.03em] text-foreground sm:text-4xl lg:mt-5 lg:text-[2.625rem] lg:leading-[1.1] xl:text-[2.875rem]">
-            {product.name}
-          </h1>
-          {product.dosageForm ? (
-            <dl className="mt-5 flex flex-wrap gap-x-3 gap-y-1 text-sm sm:text-[0.9375rem]">
-              <dt className="text-muted-foreground">Dosage form</dt>
-              <dd className="font-medium text-foreground">{product.dosageForm}</dd>
-            </dl>
-          ) : null}
+        <div className="mt-8 border-t border-border/55 pt-8 sm:mt-10 sm:pt-10 lg:mt-10 lg:pt-11">
+          <div className="max-w-[min(100%,52rem)] border-l-[3px] border-primary/35 pl-5 sm:pl-7">
+            <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1.5">
+              <p className="text-[0.6875rem] font-medium uppercase tracking-[0.2em] text-muted-foreground">
+                {product.category}
+              </p>
+              {product.dosageForm ? (
+                <>
+                  <span
+                    aria-hidden
+                    className="hidden h-3 w-px bg-border/90 sm:inline sm:self-center"
+                  />
+                  <p className="text-[0.8125rem] font-medium text-foreground sm:text-[0.875rem]">
+                    <span className="text-muted-foreground">Dosage form </span>
+                    {product.dosageForm}
+                  </p>
+                </>
+              ) : null}
+            </div>
+            <h1 className="mt-5 max-w-[22rem] text-balance text-[2rem] font-medium tracking-[-0.035em] text-foreground sm:max-w-2xl sm:text-[2.375rem] sm:leading-[1.08] lg:mt-6 lg:max-w-[min(100%,40rem)] lg:text-[2.5rem] xl:text-[2.75rem] xl:leading-[1.06]">
+              {product.name}
+            </h1>
+          </div>
         </div>
       </Container>
     </header>

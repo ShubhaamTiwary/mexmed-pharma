@@ -7,7 +7,7 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { products, productsListingPage } from "@/data/products";
 import {
   sectionBandIntro,
-  sectionContentGap,
+  sectionListingIntroGap,
   sectionPadding,
 } from "@/lib/section-styles";
 import { cn } from "@/lib/utils";
@@ -20,9 +20,7 @@ export const metadata: Metadata = {
 export default function ProductsListingPage() {
   return (
     <>
-      <section
-        className={cn(sectionPadding, sectionBandIntro)}
-      >
+      <section className={cn(sectionPadding, sectionBandIntro)}>
         <Container>
           <SectionHeading
             id="products-list-heading"
@@ -30,9 +28,10 @@ export default function ProductsListingPage() {
             eyebrow={productsListingPage.eyebrow}
             title={productsListingPage.title}
             description={productsListingPage.description}
-            className="max-w-3xl"
+            density="comfortable"
+            className="max-w-3xl border-l-[3px] border-primary/22 pl-4 sm:pl-5"
           />
-          <div className={sectionContentGap}>
+          <div className={sectionListingIntroGap}>
             <ProductCatalogGridSection products={products} />
           </div>
         </Container>
