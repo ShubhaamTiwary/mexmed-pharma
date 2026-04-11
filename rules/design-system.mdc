@@ -1,0 +1,56 @@
+---
+description: Design system rules for the Mexmed Pharma website
+globs: ["src/**/*"]
+alwaysApply: true
+---
+
+You are designing a modern pharma/healthcare marketing website.
+
+Design intent:
+- trustworthy
+- clean
+- modern
+- premium
+- minimal
+- professional
+- conversion-focused
+
+Visual direction:
+- healthcare/pharma brand aesthetic
+- use a restrained corporate/medical blue as the primary brand color
+- use soft neutral backgrounds
+- use subtle borders and restrained shadows
+- avoid flashy gradients, neon colors, glassmorphism, or overly playful styles
+- the website should feel credible and polished, not trendy for the sake of being trendy
+
+Layout rules:
+- use a centered container with max width around 1200px to 1280px
+- use generous vertical spacing between sections
+- maintain a consistent spacing rhythm across all pages
+- always design mobile-first
+- ensure layouts are clean at tablet and desktop sizes
+
+Typography rules:
+- establish a strong heading hierarchy
+- headlines should feel confident and professional
+- body text should be readable, calm, and not overly dense
+- use concise CTA labels
+- avoid overly decorative or oversized text treatments
+
+Component styling rules:
+- buttons must have consistent primary and secondary variants
+- cards must use consistent radius, border, padding, and hover behavior
+- section headings must follow one reusable style
+- forms must feel simple, clean, and trustworthy
+- links and interactive elements should have clear hover and focus states
+- use consistent icon sizing and spacing
+- keep rounded corners subtle to medium, not overly soft or playful
+
+UX rules:
+- prioritize clarity over ornamentation
+- keep navigation obvious
+- keep content scannable
+- highlight trust and enquiry actions clearly
+- use whitespace intentionally
+- avoid cluttered section layouts
+- use accessible contrast and semantic structure

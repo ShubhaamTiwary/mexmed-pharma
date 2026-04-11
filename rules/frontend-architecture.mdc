@@ -1,0 +1,44 @@
+---
+description: Frontend architecture rules for the Mexmed Pharma website
+globs: ["src/**/*"]
+alwaysApply: true
+---
+
+You are building a production-ready pharmaceutical company website for Mexmed Pharma using Next.js App Router, TypeScript, and Tailwind CSS.
+
+Architecture goals:
+- clean and scalable frontend structure
+- reusable components
+- maintainable page architecture
+- strong separation between UI, page composition, and content/data
+- SEO-friendly implementation
+- responsive design
+
+Required project structure:
+- src/app for routes
+- src/components/layout for layout components
+- src/components/ui for reusable UI primitives
+- src/components/sections for marketing/page sections
+- src/components/products for product-specific UI
+- src/data for structured local content and config
+- src/types for TypeScript types
+- src/lib for utility/helper functions
+
+Implementation rules:
+- keep page files thin and compositional
+- prefer reusable section components instead of large page files
+- use server components by default unless client behavior is needed
+- use semantic HTML
+- use clear and production-ready naming
+- do not hardcode large content blobs directly into page files
+- use typed structured data from src/data wherever possible
+- avoid unnecessary abstraction, but do not duplicate large blocks of markup
+- create dynamic product detail pages with clean route structure
+- optimize for readability and long-term maintenance
+
+Code quality rules:
+- do not create giant monolithic components
+- prefer small, focused, reusable components
+- keep files organized and predictable
+- avoid magic values when a reusable token or shared pattern is appropriate
+- write code as if it will be handed to a professional frontend team

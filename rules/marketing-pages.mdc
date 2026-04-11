@@ -1,0 +1,63 @@
+---
+description: Marketing page rules for the Mexmed Pharma website
+globs: ["src/app/**/*", "src/components/sections/**/*"]
+alwaysApply: true
+---
+
+This project is a marketing and product website for Mexmed Pharma.
+
+Core business goals of the website:
+- present the company professionally
+- build trust
+- showcase product portfolio
+- communicate service and quality capabilities
+- drive enquiries from prospects and partners
+
+Required routes:
+- /
+- /about
+- /products
+- /products/[slug]
+- /services
+- /quality
+- /clients
+- /career
+- /contact
+
+Homepage goals:
+- establish trust quickly
+- communicate who the company is
+- highlight product offerings
+- reinforce quality/compliance positioning
+- encourage users to make an enquiry
+
+Recommended homepage structure:
+- Hero section
+- About preview
+- Why choose us / trust indicators
+- Featured products or product categories
+- Services/capabilities preview
+- Quality/compliance preview
+- Contact CTA
+
+Page requirements:
+- every page should have a clear intro or page hero
+- every page should have clear content hierarchy
+- important pages should have relevant CTA placement
+- product list pages should be highly scannable
+- product detail pages should be structured and informative
+- contact page should include both company contact details and an enquiry form
+- services and quality pages should support credibility and business trust
+
+Content rules:
+- keep marketing copy structured and readable
+- do not generate bloated filler content
+- prioritize concise and credible copy
+- use headings, subheadings, cards, and lists where helpful
+- make content feel professional and business-ready
+
+SEO rules:
+- use meaningful page titles and metadata
+- maintain proper heading hierarchy
+- structure pages semantically
+- create clean internal linking between key pages
