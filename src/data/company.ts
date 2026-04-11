@@ -1,85 +1,89 @@
-/** Company narrative, credibility blocks, and homepage copy. */
+/**
+ * Company narrative and homepage sections.
+ * Grounded in the legacy mexmedpharma.com structure (audit, April 2026):
+ * company introduction; mission, vision, quality, safety; 7+ years’ experience;
+ * pharmaceutical & nutraceutical services; enquiry touchpoints; Serampore + Forbesganj offices.
+ */
 
 export const company = {
   name: "Mexmed Pharma",
 
   hero: {
-    eyebrow: "Global healthcare commitment",
-    title: "Science-led medicines for better outcomes",
+    eyebrow: "Pharmaceutical & nutraceutical formulations",
+    title: "Quality-led formulations for prescribers and partners",
     description:
-      "We develop and supply pharmaceutical solutions with rigorous quality systems, regulatory discipline, and a patient-first mindset—partnering with healthcare systems worldwide.",
+      "Mexmed Pharma develops and supplies pharmaceutical and nutraceutical products from India—with mission, vision, quality, and safety at the centre of how we work. Share your requirement by enquiry; we respond on our published phone and email.",
     primaryCta: { label: "Send enquiry", href: "/contact" },
     secondaryCta: { label: "Explore products", href: "/products" },
-    /** Credibility strip — desktop aside; stacks below copy on small screens. */
     trustPoints: [
-      "GMP-aligned operations",
-      "Documented controls & traceability",
-      "Audit-ready quality systems",
+      "Mission, vision, quality, and safety—themes that have framed Mexmed’s public story",
+      "More than seven years’ experience in the field (as positioned on the prior site)",
+      "Head office in Serampore, Hoogly, West Bengal; branch in Forbesganj, Bihar",
     ],
   },
 
   aboutPreview: {
     eyebrow: "Who we are",
-    title: "A partner built on compliance and clarity",
+    title: "India-based, enquiry-ready, partner-focused",
     lead:
-      "Mexmed Pharma combines manufacturing excellence with transparent collaboration—from development support to dependable supply.",
+      "We serve healthcare markets with a portfolio spanning tablets, capsules, syrups, and drops—rooted in West Bengal with a Bihar branch and a straightforward route to product and distribution questions.",
     body:
-      "Our teams align around GMP-aligned processes, documented controls, and continuous improvement so partners can plan with confidence.",
+      "Mexmed’s prior website combined company narrative with mission, vision, quality, and safety messaging, product showcases, and enquiry forms. This site carries that intent forward in clearer language: disciplined execution, transparent communication, and accountable follow-up.",
     cta: { label: "About Mexmed", href: "/about" },
   },
 
   whyChooseUs: {
     eyebrow: "Why Mexmed",
-    title: "What partners expect from us",
+    title: "Mission, vision, quality, and safety—in practice",
     description:
-      "Structured governance, responsive teams, and a long-term view of quality—not short-term shortcuts.",
+      "These four anchors appeared consistently on the legacy Mexmed homepage. They still describe how we prioritise decisions and communicate with partners.",
     pillars: [
       {
-        title: "Regulatory rigor",
+        title: "Mission",
         description:
-          "Documentation, validation, and audit readiness woven into everyday operations.",
+          "Make dependable formulations available to professionals and patients who count on consistent supply and honest specifications.",
       },
       {
-        title: "Quality systems",
+        title: "Vision",
         description:
-          "Consistent batch release, traceability, and CAPA discipline across the value chain.",
+          "Strengthen Mexmed’s role as a trusted Indian pharmaceutical and nutraceutical supplier for distributors and clinicians.",
       },
       {
-        title: "Reliable supply",
+        title: "Quality",
         description:
-          "Forecasting and capacity planning designed to reduce disruption for critical therapies.",
+          "Hold every batch and every hand-off to documented standards—no shortcuts on verification or traceability.",
       },
       {
-        title: "Partnership mindset",
+        title: "Safety",
         description:
-          "Clear communication, technical transparency, and aligned milestones with stakeholders.",
+          "Design processes so product integrity and patient safety stay ahead of speed or volume pressures.",
       },
     ],
   },
 
   qualityPreview: {
-    eyebrow: "Quality & compliance",
-    title: "Quality is the baseline, not a milestone",
+    eyebrow: "Quality & safety",
+    title: "Operational discipline, not slogans",
     description:
-      "Independent checks, controlled environments, and a culture where deviations are addressed with speed and precision.",
+      "Quality and safety sat alongside mission and vision on the legacy site. Here we state plainly: controlled procedures, clear ownership, and continuous improvement—not marketing claims we cannot stand behind.",
     points: [
-      "GMP-aligned manufacturing and release protocols",
-      "Environmental monitoring and data integrity practices",
-      "Supplier qualification and ongoing oversight",
+      "Structured manufacturing and release documentation appropriate to our product categories",
+      "Safety-conscious handling from warehouse through to dispatch",
+      "Governance and certificate materials can be discussed through commercial and quality channels as your diligence requires",
     ],
-    cta: { label: "Our quality approach", href: "/quality" },
+    cta: { label: "Quality approach", href: "/quality" },
   },
 
   seo: {
     homeTitle: "Home",
     homeDescription:
-      "Mexmed Pharma—pharmaceutical development and supply with quality, compliance, and trusted partnerships.",
+      "Mexmed Pharma—pharmaceutical and nutraceutical formulations from Serampore and Forbesganj, India. Browse the catalog and reach us on +91 88862 19335 or info@mexmedpharma.com.",
   },
 
   contactCta: {
-    title: "Start a confidential conversation",
+    title: "Start with an enquiry",
     description:
-      "Share your requirements, timelines, and regulatory context. Our team will respond with clear next steps.",
+      "Tell us your name, mobile number, email, location, city, and message—the same practical fields the legacy site used for lead capture. We reply via the contact details in the footer.",
     primaryCta: { label: "Send enquiry", href: "/contact" },
     secondaryCta: { label: "Explore products", href: "/products" },
   },

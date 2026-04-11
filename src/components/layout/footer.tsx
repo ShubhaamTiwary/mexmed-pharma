@@ -42,17 +42,27 @@ export function Footer() {
             </ul>
           </div>
 
-          <div className="space-y-4 sm:col-span-2 lg:col-span-1">
+          <div className="space-y-6 sm:col-span-2 lg:col-span-1">
             <p className="text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-muted-foreground">
               Contact
             </p>
-            <address className="not-italic">
-              <ul className="space-y-1.5 text-sm leading-relaxed text-muted-foreground" role="list">
-                {site.contact.addressLines.map((line) => (
-                  <li key={line}>{line}</li>
-                ))}
-              </ul>
-            </address>
+            <div className="space-y-6">
+              {site.contact.locations.map((loc) => (
+                <address key={loc.label} className="not-italic">
+                  <p className="text-xs font-semibold text-foreground">
+                    {loc.label}
+                  </p>
+                  <ul
+                    className="mt-2 space-y-1 text-sm leading-relaxed text-muted-foreground"
+                    role="list"
+                  >
+                    {loc.lines.map((line) => (
+                      <li key={line}>{line}</li>
+                    ))}
+                  </ul>
+                </address>
+              ))}
+            </div>
             <p className="text-sm">
               <a
                 href={site.contact.phoneHref}

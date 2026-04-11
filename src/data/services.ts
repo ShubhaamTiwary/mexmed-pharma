@@ -1,3 +1,9 @@
+/**
+ * Service model from legacy our-service.php (audit, April 2026):
+ * two pillars—Pharmaceutical and Nutraceutical—with supporting expertise narrative;
+ * commercial follow-up via the published enquiry channels.
+ */
+
 export type Service = {
   id: string;
   name: string;
@@ -7,41 +13,33 @@ export type Service = {
 
 export const services: Service[] = [
   {
-    id: "contract-development",
-    name: "Contract development & manufacturing",
+    id: "pharmaceutical",
+    name: "Pharmaceutical formulations",
     summary:
-      "End-to-end support from process design through tech transfer, scaled to your milestones.",
+      "Prescription-oriented medicines across dosage forms the Mexmed catalog lists—including tablets, capsules, and syrups—supported by structured quality and safety practices.",
     href: "/services",
   },
   {
-    id: "analytical",
-    name: "Analytical & stability",
+    id: "nutraceutical",
+    name: "Nutraceutical formulations",
     summary:
-      "Method development, validation, and stability programs aligned to regulatory expectations.",
+      "Nutrition-led products such as mineral, vitamin, and combination supplements that complement the pharmaceutical line for wellness-oriented prescribing.",
     href: "/services",
   },
   {
-    id: "supply-chain",
-    name: "Supply & logistics",
+    id: "enquiry-partner-support",
+    name: "Enquiry & commercial support",
     summary:
-      "Cold-chain aware planning, serialization readiness, and distribution coordination.",
-    href: "/services",
-  },
-  {
-    id: "regulatory",
-    name: "Regulatory affairs",
-    summary:
-      "Dossier strategy, variations, and agency correspondence with clear ownership.",
-    href: "/services",
+      "Direct lines for availability, packs, and distribution questions: reach Mexmed on +91 88862 19335 or info@mexmedpharma.com, consistent with the contact block on the legacy site.",
+    href: "/contact",
   },
 ];
 
 export const servicesPreview = {
-  eyebrow: "Capabilities",
-  title: "Services that scale with your program",
+  eyebrow: "What we offer",
+  title: "Pharmaceuticals and nutraceuticals",
   description:
-    "From early clinical supply to commercial readiness—modular engagement with clear deliverables.",
-  cta: { label: "View all services", href: "/services" },
-  /** Homepage cards (subset). */
-  featured: services.slice(0, 3),
+    "The prior Mexmed service page presented two formulation pillars—pharmaceutical and nutraceutical—followed by expertise narrative. Enquiries remain the practical entry point for partners.",
+  cta: { label: "View services", href: "/services" },
+  featured: services,
 } as const;
