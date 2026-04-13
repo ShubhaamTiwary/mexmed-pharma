@@ -7,9 +7,15 @@ export const company = {
 
   hero: {
     eyebrow: "Pharmaceutical & nutraceutical formulations",
-    title: "Quality-led formulations for prescribers and partners",
+    headline: {
+      lead: "Quality-led formulations",
+      accent: "for prescribers and partners",
+    },
     description:
       "Mexmed Pharma develops and supplies pharmaceutical and nutraceutical products from India—with mission, vision, quality, and safety at the centre of how we work. Share your requirement by enquiry; we respond on the phone number and email listed on our contact page.",
+    /** Editorial hero image (Unsplash — pharma / laboratory). */
+    backgroundImage:
+      "https://images.unsplash.com/photo-1587854692152-cbe660dbde88?auto=format&fit=crop&w=1600&q=80",
     primaryCta: { label: "Send enquiry", href: "/contact" },
     secondaryCta: { label: "Explore products", href: "/products" },
     trustPoints: [

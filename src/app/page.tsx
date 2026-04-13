@@ -18,9 +18,9 @@ export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <WhyChooseUsSection />
       <AboutPreviewSection />
       <FeaturedProductsSection />
+      <WhyChooseUsSection />
       <ContactCtaSection />
     </>
   );

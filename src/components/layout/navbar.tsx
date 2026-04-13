@@ -31,7 +31,7 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/40 bg-card/90 shadow-[0_1px_0_0_rgba(10,18,32,0.05)] backdrop-blur-xl supports-[backdrop-filter]:bg-card/80">
-      <Container className="flex h-[4rem] items-center justify-between gap-4 lg:h-[4.25rem]">
+      <Container className="flex min-h-[4.25rem] items-center justify-between gap-4 py-3.5 sm:min-h-[4.5rem] sm:py-4">
         <Link
           href="/"
           className="group flex items-center gap-3 outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
