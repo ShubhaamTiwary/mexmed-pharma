@@ -6,10 +6,22 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { qualityPage } from "@/data/pages";
 import { editorialImages } from "@/lib/product-visuals";
 
+const qualityDescription =
+  "How Mexmed Pharma approaches quality, safety, traceability, and product communication across its pharmaceutical and nutraceutical catalog.";
+
 export const metadata: Metadata = {
   title: "Quality",
-  description:
-    "Read how Mexmed Pharma approaches quality, safety, traceability, and product communication.",
+  description: qualityDescription,
+  alternates: { canonical: "/quality" },
+  openGraph: {
+    url: "/quality",
+    title: "Quality | Mexmed Pharma",
+    description: qualityDescription,
+  },
+  twitter: {
+    title: "Quality | Mexmed Pharma",
+    description: qualityDescription,
+  },
 };
 
 export default function QualityPage() {

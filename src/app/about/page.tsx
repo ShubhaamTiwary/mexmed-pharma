@@ -8,10 +8,22 @@ import { site } from "@/data/site";
 import { editorialImages } from "@/lib/product-visuals";
 import { cn } from "@/lib/utils";
 
+const aboutDescription =
+  "Learn about Mexmed Pharma — our mission-led operating approach, and the quality, safety, and compliance principles behind our pharmaceutical and nutraceutical catalog.";
+
 export const metadata: Metadata = {
   title: "About",
-  description:
-    "Learn about Mexmed Pharma, our mission-led operating approach, and the quality-and-safety principles behind the catalog.",
+  description: aboutDescription,
+  alternates: { canonical: "/about" },
+  openGraph: {
+    url: "/about",
+    title: "About | Mexmed Pharma",
+    description: aboutDescription,
+  },
+  twitter: {
+    title: "About | Mexmed Pharma",
+    description: aboutDescription,
+  },
 };
 
 export default function AboutPage() {

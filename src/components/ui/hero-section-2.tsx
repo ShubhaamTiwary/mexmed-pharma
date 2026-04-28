@@ -208,8 +208,14 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
           y: 0,
           clipPath: isMdUp ? CLIP_END : CLIP_FULL,
           transition: {
-            opacity: { duration: playMotion ? 0.48 : 0, ease: [0.22, 1, 0.36, 1] as const },
-            y: { duration: playMotion ? 0.48 : 0, ease: [0.22, 1, 0.36, 1] as const },
+            opacity: {
+              duration: playMotion ? 0.48 : 0,
+              ease: [0.22, 1, 0.36, 1] as const,
+            },
+            y: {
+              duration: playMotion ? 0.48 : 0,
+              ease: [0.22, 1, 0.36, 1] as const,
+            },
             clipPath: {
               duration: playMotion && isMdUp ? 1 : 0,
               delay: playMotion && isMdUp ? 0.36 : 0,
@@ -221,7 +227,10 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
       [playMotion, isMdUp],
     );
 
-    const renderCta = (cta: { text: string; href: string }, prominent: boolean) => {
+    const renderCta = (
+      cta: { text: string; href: string },
+      prominent: boolean,
+    ) => {
       const classNameLink = prominent
         ? "text-lg font-bold tracking-[0.2em] text-primary transition-colors hover:text-primary/80"
         : "text-sm font-semibold tracking-wide text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline";
@@ -261,13 +270,11 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
           initial={playMotion ? "hidden" : false}
           animate="visible"
         >
-          <div className="mx-auto w-full max-w-xl md:mx-0">
+          <div className="mx-auto w-full max-w-xl md:mx-0 md:max-w-[46rem]">
             {showHeader && (
               <motion.header className="mb-6 sm:mb-7" variants={fadeUp}>
                 <div
-                  className={cn(
-                    logo?.url ? "flex items-start gap-3" : "block",
-                  )}
+                  className={cn(logo?.url ? "flex items-start gap-3" : "block")}
                 >
                   {logo?.url ? (
                     // eslint-disable-next-line @next/next/no-img-element -- remote or arbitrary brand assets

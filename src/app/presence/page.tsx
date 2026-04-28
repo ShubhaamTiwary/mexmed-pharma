@@ -5,10 +5,22 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { presencePage } from "@/data/pages";
 import { site } from "@/data/site";
 
+const presenceDescription =
+  "Mexmed Pharma operating footprint — Serampore (West Bengal) head office and Forbesganj (Bihar) branch with partner-facing reach beyond.";
+
 export const metadata: Metadata = {
   title: "Presence",
-  description:
-    "Review the Mexmed Pharma operating footprint and geographic presence narrative.",
+  description: presenceDescription,
+  alternates: { canonical: "/presence" },
+  openGraph: {
+    url: "/presence",
+    title: "Presence | Mexmed Pharma",
+    description: presenceDescription,
+  },
+  twitter: {
+    title: "Presence | Mexmed Pharma",
+    description: presenceDescription,
+  },
 };
 
 export default function PresencePage() {

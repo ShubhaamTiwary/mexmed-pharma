@@ -3,13 +3,30 @@ import type { Metadata } from "next";
 import { Container } from "@/components/layout/container";
 import { CatalogEnquirySection } from "@/components/products/catalog-enquiry-section";
 import { ProductCatalogGridSection } from "@/components/products/product-catalog-grid-section";
+import { JsonLd } from "@/components/seo/json-ld";
 import { products, productsListingPage } from "@/data/products";
 import { sectionPadding } from "@/lib/section-styles";
+import { absoluteUrl } from "@/lib/seo";
+import {
+  breadcrumbJsonLd,
+  itemListJsonLd,
+} from "@/lib/structured-data";
 import { cn } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: productsListingPage.metaTitle,
   description: productsListingPage.metaDescription,
+  alternates: { canonical: "/products" },
+  openGraph: {
+    url: "/products",
+    title: `${productsListingPage.metaTitle} | Mexmed Pharma`,
+    description: productsListingPage.metaDescription,
+    type: "website",
+  },
+  twitter: {
+    title: `${productsListingPage.metaTitle} | Mexmed Pharma`,
+    description: productsListingPage.metaDescription,
+  },
 };
 
 export default function ProductsListingPage() {
@@ -72,6 +89,24 @@ export default function ProductsListingPage() {
       </section>
 
       <CatalogEnquirySection />
+
+      <JsonLd
+        id="ld-products-breadcrumb"
+        data={breadcrumbJsonLd([
+          { name: "Home", url: absoluteUrl("/") },
+          { name: "Products", url: absoluteUrl("/products") },
+        ])}
+      />
+      <JsonLd
+        id="ld-products-itemlist"
+        data={itemListJsonLd(
+          products.map((p) => ({
+            name: p.name,
+            url: absoluteUrl(p.href),
+            image: p.image.src,
+          })),
+        )}
+      />
     </>
   );
 }

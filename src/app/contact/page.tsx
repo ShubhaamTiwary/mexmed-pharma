@@ -7,10 +7,22 @@ import { contactPage } from "@/data/pages";
 import { site } from "@/data/site";
 import { editorialImages } from "@/lib/product-visuals";
 
+const contactDescription =
+  "Contact Mexmed Pharma for product enquiries, distribution, and partnership conversations. Phone +91 88862 19335 · info@mexmedpharma.com · Serampore (West Bengal) and Forbesganj (Bihar) offices.";
+
 export const metadata: Metadata = {
   title: "Contact",
-  description:
-    "Contact Mexmed Pharma for product enquiries, distribution discussions, and partnership conversations.",
+  description: contactDescription,
+  alternates: { canonical: "/contact" },
+  openGraph: {
+    url: "/contact",
+    title: "Contact | Mexmed Pharma",
+    description: contactDescription,
+  },
+  twitter: {
+    title: "Contact | Mexmed Pharma",
+    description: contactDescription,
+  },
 };
 
 const inputClass =

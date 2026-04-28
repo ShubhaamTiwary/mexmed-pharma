@@ -6,10 +6,22 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { clientsPage } from "@/data/pages";
 import { editorialImages } from "@/lib/product-visuals";
 
+const clientsDescription =
+  "Partner groups and market-facing audiences Mexmed Pharma is positioned to support — distributors, healthcare-market partners, and prescription-linked channels.";
+
 export const metadata: Metadata = {
   title: "Clients",
-  description:
-    "See the partner groups and market-facing audiences Mexmed Pharma is positioned to support.",
+  description: clientsDescription,
+  alternates: { canonical: "/clients" },
+  openGraph: {
+    url: "/clients",
+    title: "Clients | Mexmed Pharma",
+    description: clientsDescription,
+  },
+  twitter: {
+    title: "Clients | Mexmed Pharma",
+    description: clientsDescription,
+  },
 };
 
 export default function ClientsPage() {

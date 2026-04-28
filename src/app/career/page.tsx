@@ -4,10 +4,22 @@ import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { careerPage } from "@/data/pages";
 
+const careerDescription =
+  "Careers at Mexmed Pharma — areas where you can contribute across sales, distribution, and product communication, and how to start a conversation with us.";
+
 export const metadata: Metadata = {
   title: "Career",
-  description:
-    "Explore the Mexmed Pharma career page and how candidates can start a conversation with the company.",
+  description: careerDescription,
+  alternates: { canonical: "/career" },
+  openGraph: {
+    url: "/career",
+    title: "Career | Mexmed Pharma",
+    description: careerDescription,
+  },
+  twitter: {
+    title: "Career | Mexmed Pharma",
+    description: careerDescription,
+  },
 };
 
 export default function CareerPage() {

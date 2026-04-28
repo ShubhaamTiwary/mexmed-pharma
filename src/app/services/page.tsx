@@ -4,10 +4,22 @@ import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { servicesPage } from "@/data/pages";
 
+const servicesDescription =
+  "Explore Mexmed Pharma service pillars across pharmaceutical and nutraceutical product support — catalog presentation, distribution coordination, and enquiry-led partner conversations.";
+
 export const metadata: Metadata = {
   title: "Services",
-  description:
-    "Explore Mexmed Pharma service areas across pharmaceutical and nutraceutical product support.",
+  description: servicesDescription,
+  alternates: { canonical: "/services" },
+  openGraph: {
+    url: "/services",
+    title: "Services | Mexmed Pharma",
+    description: servicesDescription,
+  },
+  twitter: {
+    title: "Services | Mexmed Pharma",
+    description: servicesDescription,
+  },
 };
 
 export default function ServicesPage() {
