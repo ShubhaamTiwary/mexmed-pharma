@@ -23,6 +23,11 @@ export const company = {
       "More than seven years of experience serving healthcare markets",
       "Head office in Serampore, Hoogly, West Bengal; branch in Forbesganj, Bihar",
     ],
+    metrics: [
+      { label: "Years experience", value: "7+" },
+      { label: "Office locations", value: "2" },
+      { label: "Audited products", value: "13" },
+    ],
   },
 
   aboutPreview: {

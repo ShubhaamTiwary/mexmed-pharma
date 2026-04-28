@@ -5,6 +5,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 import { mainNavigation } from "@/data/navigation";
+import { site } from "@/data/site";
 import { cn } from "@/lib/utils";
 
 import { Container } from "./container";
@@ -31,18 +32,19 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-border/40 bg-card/90 shadow-[0_1px_0_0_rgba(10,18,32,0.05)] backdrop-blur-xl supports-[backdrop-filter]:bg-card/80">
-      <Container className="flex min-h-[4.25rem] items-center justify-between gap-4 py-3.5 sm:min-h-[4.5rem] sm:py-4">
+      <Container className="flex min-h-[4.75rem] items-center justify-between gap-4 py-2 sm:min-h-[5.25rem] sm:py-2.5">
         <Link
           href="/"
-          className="group flex items-center gap-3 outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+          className="group flex items-center outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
           onClick={() => setOpen(false)}
         >
-          <span
-            className="hidden h-9 w-[3px] shrink-0 rounded-full bg-primary sm:block"
-            aria-hidden
-          />
-          <span className="text-[0.9375rem] font-semibold tracking-[-0.025em] text-foreground transition-colors group-hover:text-primary">
-            Mexmed Pharma
+          <span className="block w-[148px] shrink-0 sm:w-[176px] lg:w-[192px]">
+            {/* eslint-disable-next-line @next/next/no-img-element -- local SVG logo asset */}
+            <img
+              src={site.brand.logoSrc}
+              alt={site.brand.logoAlt}
+              className="block h-32 w-full scale-70"
+            />
           </span>
         </Link>
 

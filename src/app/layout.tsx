@@ -3,6 +3,7 @@ import { Geist, Geist_Mono } from "next/font/google";
 
 import { Footer } from "@/components/layout/footer";
 import { Navbar } from "@/components/layout/navbar";
+import { site } from "@/data/site";
 
 import "./globals.css";
 
@@ -16,8 +17,7 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -41,6 +41,11 @@ export const metadata: Metadata = {
     title: "Mexmed Pharma",
     description:
       "Pharmaceutical company committed to quality healthcare solutions.",
+  },
+  icons: {
+    icon: site.brand.logoSrc,
+    shortcut: site.brand.logoSrc,
+    apple: site.brand.logoSrc,
   },
   robots: {
     index: true,

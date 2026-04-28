@@ -4,6 +4,10 @@
 
 export const site = {
   name: "Mexmed Pharma",
+  brand: {
+    logoSrc: "/images/brand/mexmed-pharma-logo-clean.png",
+    logoAlt: "Mexmed Pharma logo",
+  },
 
   summary:
     "Mexmed Pharma is an India-based company offering pharmaceutical and nutraceutical formulations. We operate from Serampore (West Bengal) with a branch in Forbesganj (Bihar). Enquiries are handled on the phone number and email below.",

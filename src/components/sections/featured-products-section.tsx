@@ -52,10 +52,10 @@ export function FeaturedProductsSection() {
         <div
           className={cn(
             sectionContentGap,
-            "rounded-sm border border-border/55 bg-background/90 p-6 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.7)] sm:p-8",
+            "rounded-sm border border-border/55 bg-background/90 p-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.7)] sm:p-8",
           )}
         >
-          <div className="flex flex-col gap-4 border-b border-border/45 pb-6 sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:pb-7">
+          <div className="hidden flex-col gap-4 border-b border-border/45 pb-6 sm:flex sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:pb-7">
             <p className="text-[0.625rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
               Therapeutic areas
             </p>
@@ -75,7 +75,7 @@ export function FeaturedProductsSection() {
             </nav>
           </div>
 
-          <div className="mt-8 sm:mt-9">
+          <div className="sm:mt-9">
             <ProductGrid
               products={items}
               cardTitleAs="h3"

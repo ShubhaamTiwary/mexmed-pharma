@@ -11,7 +11,10 @@ type ProductDetailHeroProps = {
   className?: string;
 };
 
-export function ProductDetailHero({ product, className }: ProductDetailHeroProps) {
+export function ProductDetailHero({
+  product,
+  className,
+}: ProductDetailHeroProps) {
   return (
     <header
       className={cn(
@@ -55,12 +58,36 @@ export function ProductDetailHero({ product, className }: ProductDetailHeroProps
 
         <div
           className={cn(
-            "mt-8 rounded-lg border border-border/50 bg-card",
-            "p-7 shadow-[0_12px_48px_rgba(10,18,32,0.05),inset_0_1px_0_0_rgba(255,255,255,0.92)]",
-            "sm:p-9 lg:mt-10 lg:p-10 xl:p-11",
+            "relative mt-8 overflow-hidden rounded-[20px] border border-border/50 bg-card",
+            "p-7 shadow-[0_18px_64px_rgba(10,18,32,0.06),inset_0_1px_0_0_rgba(255,255,255,0.92)]",
+            "sm:p-9 lg:mt-10 lg:p-10 xl:p-12",
           )}
         >
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,24rem)] lg:items-center lg:gap-12">
+          <div
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(11,39,68,0.08),transparent_28%),linear-gradient(180deg,rgba(255,255,255,0.55),rgba(255,255,255,0))]"
+            aria-hidden
+          />
+
+          <div className="relative grid gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(22rem,31rem)] lg:items-center lg:gap-14 xl:gap-16">
+            <figure className="order-first lg:order-last">
+              <div className="rounded-[20px] border border-border/45 bg-muted/22 p-2.5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.88)] sm:p-3 lg:p-3.5">
+                <div className="relative min-h-[20rem] overflow-hidden rounded-[16px] border border-border/25 bg-[linear-gradient(180deg,rgba(255,255,255,0.97),rgba(246,249,253,0.95))] sm:min-h-[24rem] lg:min-h-[31rem]">
+                  <div
+                    className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(11,39,68,0.07),transparent_60%)]"
+                    aria-hidden
+                  />
+                  <Image
+                    src={product.image.src}
+                    alt={product.image.alt}
+                    fill
+                    className="object-contain p-3 sm:p-4 lg:p-5"
+                    sizes="(max-width: 1024px) 100vw, 32rem"
+                    priority
+                  />
+                </div>
+              </div>
+            </figure>
+
             <div className="min-w-0">
               <div className="flex flex-wrap items-center gap-2 gap-y-2">
                 <span className="text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-primary">
@@ -75,36 +102,38 @@ export function ProductDetailHero({ product, className }: ProductDetailHeroProps
 
               <h1
                 className={cn(
-                  "mt-5 max-w-[40rem] text-balance text-[1.875rem] font-semibold leading-[1.1] tracking-[-0.035em] text-foreground",
-                  "sm:text-[2.125rem] sm:leading-[1.08] lg:mt-6 lg:text-[2.375rem] xl:text-[2.5rem]",
+                  "mt-5 max-w-[36rem] text-balance text-[2rem] font-semibold leading-[1.04] tracking-[-0.045em] text-foreground",
+                  "sm:text-[2.4rem] sm:leading-[1.02] lg:mt-6 lg:text-[3rem] xl:text-[3.25rem]",
                 )}
               >
                 {product.name}
               </h1>
 
-              <p className="mt-6 max-w-[42rem] text-pretty text-[1.0625rem] leading-[1.68] text-muted-foreground sm:text-[1.125rem] sm:leading-[1.66]">
+              <p className="mt-5 max-w-[44rem] text-pretty text-[1rem] leading-[1.72] text-foreground/88 sm:text-[1.1rem] sm:leading-[1.72]">
+                {product.detailIntro ?? product.summary}
+              </p>
+
+              <p className="mt-4 max-w-[40rem] text-pretty text-sm leading-[1.75] text-muted-foreground sm:text-[0.9375rem]">
                 {product.summary}
               </p>
 
-              {product.packaging ? (
-                <p className="mt-5 text-[0.8125rem] font-medium uppercase tracking-[0.14em] text-muted-foreground">
-                  Pack: <span className="text-foreground">{product.packaging}</span>
+              <div className="mt-7 flex flex-wrap gap-2.5 sm:gap-3">
+                {product.packaging ? (
+                  <span className="inline-flex items-center rounded-full border border-border/60 bg-background/92 px-3.5 py-2 text-[0.75rem] font-medium text-foreground shadow-[inset_0_1px_0_0_rgba(255,255,255,0.88)]">
+                    Pack: {product.packaging}
+                  </span>
+                ) : null}
+                <span className="inline-flex items-center rounded-full border border-border/60 bg-background/92 px-3.5 py-2 text-[0.75rem] font-medium text-foreground shadow-[inset_0_1px_0_0_rgba(255,255,255,0.88)]">
+                  Ref. {product.id}
+                </span>
+              </div>
+
+              {product.labelNotes?.[0] ? (
+                <p className="mt-6 max-w-[40rem] text-[0.8125rem] leading-[1.7] text-muted-foreground">
+                  Pack reference: {product.labelNotes[0]}
                 </p>
               ) : null}
             </div>
-
-            <figure className="overflow-hidden rounded-[16px] border border-border/50 bg-muted/30 p-5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.88)] sm:p-6">
-              <div className="relative aspect-[4/3] overflow-hidden rounded-[12px] bg-card">
-                <Image
-                  src={product.image.src}
-                  alt={product.image.alt}
-                  fill
-                  className="object-contain p-4"
-                  sizes="(max-width: 1024px) 100vw, 24rem"
-                  priority
-                />
-              </div>
-            </figure>
           </div>
         </div>
       </Container>

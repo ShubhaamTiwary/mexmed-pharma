@@ -43,4 +43,10 @@ export const editorialImages = {
     "https://images.unsplash.com/photo-1582719471384-894fbb16e074?w=1200&q=80&auto=format&fit=crop",
   qualityLab:
     "https://images.unsplash.com/photo-1532187863486-abf9dbad1b69?w=1200&q=80&auto=format&fit=crop",
+  partnerBriefing:
+    "https://images.unsplash.com/photo-1579154204601-01588f351e67?w=1200&q=80&auto=format&fit=crop",
+  distributionReview:
+    "https://images.unsplash.com/photo-1516542076529-1ea3854896f2?w=1200&q=80&auto=format&fit=crop",
+  contactDesk:
+    "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&q=80&auto=format&fit=crop",
 } as const;

@@ -1,0 +1,55 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="classicLeafLeft" x1="225" y1="205" x2="505" y2="500" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#95A100"/>
+      <stop offset="0.55" stop-color="#4C5600"/>
+      <stop offset="1" stop-color="#020300"/>
+    </linearGradient>
+    <linearGradient id="classicLeafRight" x1="980" y1="194" x2="708" y2="498" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#95A100"/>
+      <stop offset="0.55" stop-color="#4C5600"/>
+      <stop offset="1" stop-color="#020300"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="720" fill="white"/>
+
+  <circle cx="602" cy="86" r="66" fill="#373771"/>
+
+  <path
+    d="M535 130L492 286L528 324C564 362 586 432 586 518H614C614 432 636 362 672 324L708 286L665 130C650 165 628 189 600 196C572 189 550 165 535 130Z"
+    fill="#373771"
+  />
+
+  <path
+    d="M581 184C581 181.239 583.239 179 586 179H616C618.761 179 621 181.239 621 184V214H651C653.761 214 656 216.239 656 219V249C656 251.761 653.761 254 651 254H621V284C621 286.761 618.761 289 616 289H586C583.239 289 581 286.761 581 284V254H551C548.239 254 546 251.761 546 249V219C546 216.239 548.239 214 551 214H581V184Z"
+    fill="#E7E5E2"
+  />
+
+  <path
+    d="M188 210C277 214 365 245 466 315V486C392 454 329 402 282 333C247 281 215 239 188 210Z"
+    fill="url(#classicLeafLeft)"
+  />
+  <path
+    d="M1012 196C922 202 838 238 734 318V476C807 444 872 392 918 327C953 277 985 235 1012 196Z"
+    fill="url(#classicLeafRight)"
+  />
+
+  <path d="M466 472L408 382L466 446V472Z" fill="white"/>
+  <path d="M734 472L792 382L734 446V472Z" fill="white"/>
+
+  <rect x="589" y="518" width="22" height="40" fill="#373771"/>
+
+  <text
+    x="600"
+    y="668"
+    text-anchor="middle"
+    fill="#95A100"
+    font-family="Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif"
+    font-size="108"
+    font-weight="800"
+    letter-spacing="2"
+  >
+    MEXMED PHARMA
+  </text>
+</svg>

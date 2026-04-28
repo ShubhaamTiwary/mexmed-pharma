@@ -1,0 +1,60 @@
+<svg width="1200" height="720" viewBox="0 0 1200 720" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="refinedLeafLeft" x1="188" y1="206" x2="452" y2="452" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C0DE00"/>
+      <stop offset="1" stop-color="#5A8D1F"/>
+    </linearGradient>
+    <linearGradient id="refinedLeafRight" x1="1012" y1="206" x2="748" y2="452" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#C0DE00"/>
+      <stop offset="1" stop-color="#5A8D1F"/>
+    </linearGradient>
+    <linearGradient id="refinedBody" x1="600" y1="88" x2="600" y2="522" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#2A58AC"/>
+      <stop offset="1" stop-color="#14386F"/>
+    </linearGradient>
+    <linearGradient id="refinedWordmark" x1="210" y1="608" x2="991" y2="608" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#A9C800"/>
+      <stop offset="0.5" stop-color="#B7D300"/>
+      <stop offset="1" stop-color="#A6C500"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="720" rx="24" fill="white"/>
+
+  <circle cx="600" cy="90" r="58" fill="#2750A1"/>
+
+  <path
+    d="M525 140L491 282C550 339 583 417 587 522H613C617 417 650 339 709 282L675 140C649 189 623 217 600 217C577 217 551 189 525 140Z"
+    fill="url(#refinedBody)"
+  />
+
+  <path
+    d="M474 210C370 228 290 263 204 332C212 362 227 392 248 420C307 395 374 345 434 282L474 242V210Z"
+    fill="url(#refinedLeafLeft)"
+  />
+  <path
+    d="M726 210C830 228 910 263 996 332C988 362 973 392 952 420C893 395 826 345 766 282L726 242V210Z"
+    fill="url(#refinedLeafRight)"
+  />
+
+  <path d="M474 415L422 353L474 438V415Z" fill="white" fill-opacity="0.95"/>
+  <path d="M726 415L778 353L726 438V415Z" fill="white" fill-opacity="0.95"/>
+
+  <rect x="552" y="194" width="96" height="42" rx="5" fill="white"/>
+  <rect x="579" y="167" width="42" height="96" rx="5" fill="white"/>
+
+  <path d="M590 520H610V552H590V520Z" fill="#14386F"/>
+
+  <text
+    x="600"
+    y="650"
+    text-anchor="middle"
+    fill="url(#refinedWordmark)"
+    font-family="Arial, Helvetica, sans-serif"
+    font-size="88"
+    font-weight="700"
+    letter-spacing="2.6"
+  >
+    MEXMED PHARMA
+  </text>
+</svg>

@@ -27,6 +27,8 @@ export function HeroSection() {
         text: hero.secondaryCta.label.toUpperCase(),
         href: hero.secondaryCta.href,
       }}
+      trustPoints={hero.trustPoints}
+      metrics={hero.metrics}
       backgroundImage={hero.backgroundImage}
       contactInfo={{
         website: websiteLabel,

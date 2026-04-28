@@ -39,7 +39,7 @@ export function SectionHeading({
       {eyebrow ? (
         <p
           className={cn(
-            "text-[0.625rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground",
+            "text-[0.72rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground sm:text-[0.78rem]",
             align === "center" && "mx-auto max-w-prose",
           )}
         >
@@ -61,7 +61,7 @@ export function SectionHeading({
       {description ? (
         <p
           className={cn(
-            "max-w-[42rem] text-[0.9375rem] leading-[1.68] text-muted-foreground sm:text-base sm:leading-relaxed",
+            "max-w-[42rem] text-base leading-[1.72] text-muted-foreground sm:text-[1.0625rem] sm:leading-relaxed",
             align === "center" && "mx-auto text-balance",
             align === "left" && "text-pretty",
           )}

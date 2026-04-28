@@ -91,6 +91,11 @@ export interface HeroSection2Props {
     text: string;
     href: string;
   };
+  trustPoints?: readonly string[];
+  metrics?: readonly {
+    label: string;
+    value: string;
+  }[];
   backgroundImage: string;
   contactInfo: {
     website: string;
@@ -111,6 +116,8 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
       subtitle,
       callToAction,
       secondaryCallToAction,
+      trustPoints = [],
+      metrics = [],
       backgroundImage,
       contactInfo,
     },
@@ -133,6 +140,15 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
     }, []);
 
     const playMotion = mounted && !reduceMotion;
+    const [activeTrustIndex, setActiveTrustIndex] = React.useState(0);
+
+    React.useEffect(() => {
+      if (trustPoints.length <= 1) return;
+      const timer = window.setInterval(() => {
+        setActiveTrustIndex((index) => (index + 1) % trustPoints.length);
+      }, 3800);
+      return () => window.clearInterval(timer);
+    }, [trustPoints]);
 
     const staggerOuter = React.useMemo(
       () => ({
@@ -270,7 +286,7 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
                     {slogan ? (
                       <p
                         className={cn(
-                          "text-[0.65rem] font-semibold uppercase tracking-[0.28em] text-muted-foreground",
+                          "text-[0.72rem] font-semibold uppercase tracking-[0.24em] text-muted-foreground sm:text-[0.78rem]",
                           logo?.text && "mt-1",
                         )}
                       >
@@ -295,7 +311,7 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
               aria-hidden
             />
             <motion.p
-              className="mb-8 max-w-md text-base leading-relaxed text-muted-foreground md:max-w-[28rem]"
+              className="mb-8 max-w-md text-[1.05rem] leading-[1.8] text-muted-foreground md:max-w-[29rem] md:text-[1.125rem]"
               variants={fadeUp}
             >
               {subtitle}
@@ -309,13 +325,68 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
                 ? renderCta(secondaryCallToAction, false)
                 : null}
             </motion.div>
+
+            {(trustPoints.length > 0 || metrics.length > 0) && (
+              <motion.div
+                className="mt-8 rounded-[18px] border border-border/60 bg-card/88 p-4 shadow-[0_14px_40px_rgba(10,18,32,0.06),inset_0_1px_0_0_rgba(255,255,255,0.9)] backdrop-blur-sm sm:mt-10 sm:p-5"
+                variants={fadeUp}
+              >
+                {trustPoints.length > 0 ? (
+                  <div>
+                    <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-muted-foreground sm:text-[0.78rem]">
+                      Why partners notice Mexmed
+                    </p>
+                    <p className="mt-3 text-[0.95rem] leading-[1.72] text-foreground sm:text-base">
+                      {trustPoints[activeTrustIndex]}
+                    </p>
+                    {trustPoints.length > 1 ? (
+                      <div className="mt-4 flex items-center gap-2">
+                        {trustPoints.map((point, index) => (
+                          <button
+                            key={point}
+                            type="button"
+                            aria-label={`Show trust point ${index + 1}`}
+                            aria-pressed={activeTrustIndex === index}
+                            onClick={() => setActiveTrustIndex(index)}
+                            className={cn(
+                              "h-2.5 rounded-full transition-all duration-200",
+                              activeTrustIndex === index
+                                ? "w-7 bg-primary"
+                                : "w-2.5 bg-border hover:bg-muted-foreground/40",
+                            )}
+                          />
+                        ))}
+                      </div>
+                    ) : null}
+                  </div>
+                ) : null}
+
+                {metrics.length > 0 ? (
+                  <div className="mt-5 grid grid-cols-3 gap-2.5 sm:gap-3">
+                    {metrics.map((metric) => (
+                      <div
+                        key={metric.label}
+                        className="rounded-[14px] border border-border/55 bg-background/88 px-3 py-3 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.88)]"
+                      >
+                        <p className="text-[1.15rem] font-semibold tracking-tight text-foreground sm:text-[1.3rem]">
+                          {metric.value}
+                        </p>
+                        <p className="mt-1 text-[0.75rem] font-medium uppercase leading-snug tracking-[0.12em] text-muted-foreground">
+                          {metric.label}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
+              </motion.div>
+            )}
           </div>
 
           <motion.footer
             className="mt-10 w-full border-t border-border/80 pt-7 sm:mt-12 sm:pt-8 md:mt-14"
             variants={fadeUp}
           >
-            <div className="grid grid-cols-1 gap-5 text-xs leading-snug text-muted-foreground md:grid-cols-3 md:gap-x-6 md:gap-y-4 lg:gap-x-10">
+            <div className="grid grid-cols-1 gap-5 text-[0.95rem] leading-[1.6] text-muted-foreground md:grid-cols-3 md:gap-x-6 md:gap-y-4 lg:gap-x-10">
               <div className="flex min-w-0 items-start gap-0">
                 <InfoIcon type="website" />
                 <div className="min-w-0 flex-1 pt-0.5">
@@ -358,14 +429,25 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
 
         <motion.div
           className={cn(
-            "relative min-h-[240px] w-full bg-cover bg-center sm:min-h-[300px] md:min-h-full md:w-1/2 lg:w-2/5",
+            "relative mx-5 mb-5 min-h-[320px] w-auto overflow-hidden rounded-[26px] border border-white/45 bg-cover bg-center shadow-[0_20px_60px_rgba(10,18,32,0.12)] sm:mx-8 sm:min-h-[360px] md:mx-0 md:mb-0 md:min-h-full md:w-1/2 md:rounded-none md:border-0 md:shadow-none lg:w-2/5",
             "max-md:[clip-path:none]",
           )}
           style={{ backgroundImage: `url(${backgroundImage})` }}
           variants={imageVariants}
           initial={playMotion ? "hidden" : false}
           animate="visible"
-        />
+        >
+          <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,12,24,0.08),rgba(4,12,24,0.34))]" />
+          <div className="absolute inset-x-4 bottom-4 rounded-[18px] border border-white/30 bg-white/10 p-4 text-white shadow-[inset_0_1px_0_0_rgba(255,255,255,0.18)] backdrop-blur-md sm:inset-x-5 sm:bottom-5 md:hidden">
+            <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-white/80">
+              Mexmed focus
+            </p>
+            <p className="mt-2 text-[0.95rem] leading-[1.65] text-white">
+              {trustPoints[activeTrustIndex] ??
+                "Quality-led formulations with responsive partner support."}
+            </p>
+          </div>
+        </motion.div>
       </motion.section>
     );
   },
