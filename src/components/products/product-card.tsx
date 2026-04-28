@@ -3,7 +3,6 @@ import Link from "next/link";
 
 import { buttonVariants } from "@/components/ui/button";
 import type { Product } from "@/types/product";
-import { getProductCardImageSrc } from "@/lib/product-visuals";
 import { cardPadding } from "@/lib/section-styles";
 import { surfaceCard } from "@/lib/surface";
 import { cn } from "@/lib/utils";
@@ -23,7 +22,6 @@ export function ProductCard({
   variant = "default",
 }: ProductCardProps) {
   const TitleTag = titleAs;
-  const imgSrc = getProductCardImageSrc(product.category);
 
   if (variant === "featured") {
     return (
@@ -40,10 +38,10 @@ export function ProductCard({
           className="relative block aspect-[16/11] overflow-hidden bg-muted"
         >
           <Image
-            src={imgSrc}
-            alt=""
+            src={product.image.src}
+            alt={product.image.alt}
             fill
-            className="object-cover transition duration-500 group-hover:scale-[1.03]"
+            className="object-contain p-5 transition duration-500 group-hover:scale-[1.03]"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
           <div
@@ -106,10 +104,10 @@ export function ProductCard({
       >
         <div className="relative mb-5 aspect-[16/9] overflow-hidden rounded-[8px] bg-muted sm:mb-6">
           <Image
-            src={imgSrc}
-            alt=""
+            src={product.image.src}
+            alt={product.image.alt}
             fill
-            className="object-cover opacity-95 transition duration-300 group-hover:opacity-100"
+            className="object-contain p-4 opacity-95 transition duration-300 group-hover:opacity-100"
             sizes="(max-width: 1024px) 50vw, 33vw"
           />
         </div>
@@ -166,10 +164,10 @@ export function ProductCard({
     >
       <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-[8px] bg-muted">
         <Image
-          src={imgSrc}
-          alt=""
+          src={product.image.src}
+          alt={product.image.alt}
           fill
-          className="object-cover transition duration-300 group-hover:scale-[1.02]"
+          className="object-contain p-4 transition duration-300 group-hover:scale-[1.02]"
           sizes="(max-width: 1024px) 100vw, 33vw"
         />
       </div>

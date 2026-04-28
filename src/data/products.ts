@@ -1,6 +1,24 @@
 import type { Product } from "@/types/product";
 
-/** Canonical product catalog for Mexmed Pharma—IDs map to `/products/[slug]`. */
+/** Canonical audit-approved product catalog for Mexmed Pharma. */
+
+const cloudinaryBase = "https://res.cloudinary.com/dcy0lkiq9/image/upload";
+
+const productImages = {
+  fericomXt: `${cloudinaryBase}/q_auto/f_auto/v1777358315/WhatsApp_Image_2026-04-22_at_12.27.38_1_uyue6j.jpg`,
+  calinmex: `${cloudinaryBase}/q_auto/f_auto/v1777358315/WhatsApp_Image_2026-04-22_at_12.27.38_2_lsxyvu.jpg`,
+  cefron250: `${cloudinaryBase}/q_auto/f_auto/v1777358315/WhatsApp_Image_2026-04-22_at_12.27.38_r2csy3.jpg`,
+  extenvit: `${cloudinaryBase}/q_auto/f_auto/v1777358317/WhatsApp_Image_2026-04-22_at_12.27.39_1_caf5at.jpg`,
+  cartimexPro: `${cloudinaryBase}/q_auto/f_auto/v1777358319/WhatsApp_Image_2026-04-22_at_12.27.43_2_seerrj.jpg`,
+  calinmexForte: `${cloudinaryBase}/q_auto/f_auto/v1777358317/WhatsApp_Image_2026-04-22_at_12.27.40_3_ery65v.jpg`,
+  pantamexDsr: `${cloudinaryBase}/q_auto/f_auto/v1777358318/WhatsApp_Image_2026-04-22_at_12.27.40_fvgscy.jpg`,
+  capupD3Capsules: `${cloudinaryBase}/q_auto/f_auto/v1777358318/WhatsApp_Image_2026-04-22_at_12.27.41_1_clwise.jpg`,
+  feriflexXt: `${cloudinaryBase}/q_auto/f_auto/v1777358318/WhatsApp_Image_2026-04-22_at_12.27.41_ehvksw.jpg`,
+  capupD3Drops: `${cloudinaryBase}/q_auto/f_auto/v1777358318/WhatsApp_Image_2026-04-22_at_12.27.42_1_olvfi1.jpg`,
+  pantamex40: `${cloudinaryBase}/q_auto/f_auto/v1777358318/WhatsApp_Image_2026-04-22_at_12.27.42_2_gfjvhd.jpg`,
+  cefron500: `${cloudinaryBase}/q_auto/f_auto/v1777358319/WhatsApp_Image_2026-04-22_at_12.27.43_1_exdrsv.jpg`,
+  mexorexD: `${cloudinaryBase}/q_auto/f_auto/v1777358319/WhatsApp_Image_2026-04-22_at_12.27.43_bemtv1.jpg`,
+} as const;
 
 function productEntry(entry: Omit<Product, "href"> & { id: string }): Product {
   return {
@@ -15,9 +33,14 @@ export const products: Product[] = [
     name: "Cefron-250",
     dosageForm: "Tablets",
     category: "Anti-infective",
-    composition: "Cefuroxime Axetil IP 250 mg",
+    packaging: "1 x 10 tablets",
+    composition: ["Cefuroxime Axetil IP 250 mg"],
     summary:
-      "Cefuroxime axetil tablets—250 mg strength for antibacterial therapy as prescribed.",
+      "Cefuroxime axetil 250 mg tablets for antibacterial therapy as prescribed.",
+    image: {
+      src: productImages.cefron250,
+      alt: "Cefron-250 tablet packshot",
+    },
     featured: true,
   }),
   productEntry({
@@ -25,19 +48,29 @@ export const products: Product[] = [
     name: "Cefron-500",
     dosageForm: "Tablets",
     category: "Anti-infective",
-    composition: "Cefuroxime Axetil IP 500 mg",
+    packaging: "1 x 10 tablets",
+    composition: ["Cefuroxime Axetil IP 500 mg"],
     summary:
-      "Cefuroxime axetil tablets at 500 mg for appropriate systemic infections.",
+      "Cefuroxime axetil 500 mg tablets for appropriate systemic infections under medical supervision.",
+    image: {
+      src: productImages.cefron500,
+      alt: "Cefron-500 tablet packshot",
+    },
     featured: false,
   }),
   productEntry({
     id: "pantamex-40",
     name: "Pantamex-40",
-    dosageForm: "Tablet",
+    dosageForm: "Tablets",
     category: "Gastrointestinal",
-    composition: "Pantoprazole gastro-resistant tablets IP",
+    packaging: "1 x 10 tablets",
+    composition: ["Pantoprazole gastro-resistant tablets IP"],
     summary:
-      "Gastro-resistant pantoprazole tablet for acid-related disorders under medical supervision.",
+      "Pantoprazole gastro-resistant tablets for acid-related disorders and reflux-management programmes.",
+    image: {
+      src: productImages.pantamex40,
+      alt: "Pantamex-40 tablet packshot",
+    },
     featured: true,
   }),
   productEntry({
@@ -45,10 +78,17 @@ export const products: Product[] = [
     name: "Pantamex-DSR",
     dosageForm: "Capsules",
     category: "Gastrointestinal",
-    composition:
-      "Pantoprazole (gastro-resistant) and domperidone (prolonged-release) capsules IP",
+    packaging: "10 x 10 capsules",
+    composition: [
+      "Pantoprazole (gastro-resistant)",
+      "Domperidone (prolonged-release) capsules IP",
+    ],
     summary:
-      "Fixed-dose pantoprazole and domperidone capsule for GI symptom control.",
+      "Pantoprazole and domperidone prolonged-release capsules for GI symptom control where prescribed.",
+    image: {
+      src: productImages.pantamexDsr,
+      alt: "Pantamex-DSR capsule packshot",
+    },
     featured: true,
   }),
   productEntry({
@@ -56,10 +96,18 @@ export const products: Product[] = [
     name: "CALINMEX",
     dosageForm: "Tablets",
     category: "Bone & mineral nutrition",
-    composition:
-      "Calcium citrate malate with cholecalciferol (Vitamin D3) and manganese",
+    packaging: "30 tablets",
+    composition: [
+      "Calcium citrate malate",
+      "Vitamin D3",
+      "Manganese",
+    ],
     summary:
-      "Calcium and vitamin D–based mineral tablet for bone and mineral nutrition support.",
+      "Calcium and vitamin D support tablet with manganese for bone and mineral nutrition programmes.",
+    image: {
+      src: productImages.calinmex,
+      alt: "CALINMEX tablet packshot",
+    },
     featured: true,
   }),
   productEntry({
@@ -67,30 +115,51 @@ export const products: Product[] = [
     name: "Calinmex Forte",
     dosageForm: "Tablets",
     category: "Bone & mineral nutrition",
-    composition:
-      "Calcitriol, calcium citrate, methylcobalamin, vitamin K2-7, folic acid, zinc sulphate",
+    packaging: "10 x 1 x 10 tablets",
+    composition: [
+      "Calcitriol",
+      "Calcium citrate",
+      "Methylcobalamin",
+      "Vitamin K2-7",
+      "Folic acid",
+      "Zinc sulphate",
+    ],
     summary:
-      "Multicomponent tablet with calcium, vitamin D pathway support, and B-vitamins for mineral therapy programmes.",
+      "Advanced bone-health tablet combining calcium pathway support, methylcobalamin, and zinc.",
+    image: {
+      src: productImages.calinmexForte,
+      alt: "Calinmex Forte tablet packshot",
+    },
     featured: false,
   }),
   productEntry({
     id: "capup-d3-drops",
-    name: "CAPUP-D3",
+    name: "CAPUP-D3 Drops",
     dosageForm: "Drops",
     category: "Vitamins",
-    composition: "Cholecalciferol (Vitamin D3) drops",
+    packaging: "30 ml bottle",
+    composition: ["Cholecalciferol (Vitamin D3) drops"],
     summary:
-      "Cholecalciferol drops for convenient vitamin D supplementation.",
+      "Cholecalciferol oral drops for convenient vitamin D supplementation, including paediatric use as advised.",
+    image: {
+      src: productImages.capupD3Drops,
+      alt: "CAPUP-D3 vitamin D3 drops packshot",
+    },
     featured: false,
   }),
   productEntry({
     id: "capup-d3-capsules",
-    name: "Capup-D3",
+    name: "CAPUP-D3 60K",
     dosageForm: "Softgel capsules",
     category: "Vitamins",
-    composition: "Cholecalciferol softgel capsules 60000 IU",
+    packaging: "Softgel capsule pack",
+    composition: ["Cholecalciferol softgel capsules USP 60000 IU"],
     summary:
-      "High-strength cholecalciferol softgel for vitamin D repletion where indicated.",
+      "High-strength vitamin D3 softgel for repletion and maintenance protocols where indicated.",
+    image: {
+      src: productImages.capupD3Capsules,
+      alt: "CAPUP-D3 60K softgel capsule packshot",
+    },
     featured: true,
   }),
   productEntry({
@@ -98,10 +167,21 @@ export const products: Product[] = [
     name: "Cartimex Pro",
     dosageForm: "Tablets",
     category: "Musculoskeletal",
-    composition:
-      "Glucosamine sulphate, collagen peptide type I, chondroitin sulphate sodium, Cissus quadrangularis, vitamin C, sodium hyaluronate",
+    packaging: "10 x 1 x 10 tablets",
+    composition: [
+      "Glucosamine sulphate",
+      "Collagen peptide type-II",
+      "Chondroitin sulphate sodium",
+      "Cissus quadrangularis",
+      "Vitamin C",
+      "Sodium hyaluronate sulphate",
+    ],
     summary:
-      "Joint-care combination tablet with glucosamine, chondroitin, and supporting actives.",
+      "Joint-support formulation combining glucosamine, chondroitin, collagen, and mobility-support actives.",
+    image: {
+      src: productImages.cartimexPro,
+      alt: "Cartimex Pro tablet packshot",
+    },
     featured: false,
   }),
   productEntry({
@@ -109,10 +189,19 @@ export const products: Product[] = [
     name: "Extenvit",
     dosageForm: "Tablets",
     category: "Multivitamin",
-    composition:
-      "Amino acids, vitamins, natural extracts with minerals",
+    packaging: "2 x 10 tablets",
+    composition: [
+      "Amino acids",
+      "Vitamins",
+      "Natural extract",
+      "Minerals",
+    ],
     summary:
-      "Broad amino acid, vitamin, and mineral tablet for nutritional supplementation.",
+      "Broad-spectrum nutritional supplementation tablet with amino acids, vitamins, extracts, and minerals.",
+    image: {
+      src: productImages.extenvit,
+      alt: "Extenvit tablet packshot",
+    },
     featured: false,
   }),
   productEntry({
@@ -120,9 +209,18 @@ export const products: Product[] = [
     name: "Feriflex-XT",
     dosageForm: "Tablets",
     category: "Haematinics",
-    composition: "Ferrous ascorbate, folic acid, zinc sulphate",
+    packaging: "10 x 1 x 10 tablets",
+    composition: [
+      "Ferrous ascorbate",
+      "Folic acid",
+      "Zinc sulphate",
+    ],
     summary:
-      "Oral iron with folic acid and zinc for deficiency states as prescribed.",
+      "Iron, folate, and zinc tablet for deficiency management and nutritional support plans.",
+    image: {
+      src: productImages.feriflexXt,
+      alt: "Feriflex-XT tablet packshot",
+    },
     featured: false,
   }),
   productEntry({
@@ -130,9 +228,18 @@ export const products: Product[] = [
     name: "Fericom-XT",
     dosageForm: "Tablets",
     category: "Haematinics",
-    composition: "Ferrous ascorbate, folic acid, zinc sulphate",
+    packaging: "1 x 10 tablets",
+    composition: [
+      "Ferric pyrophosphate",
+      "Folic acid",
+      "Zinc sulphate",
+    ],
     summary:
-      "Iron, folate, and zinc tablet for iron-deficiency and nutritional support.",
+      "Haematinic tablet combining iron, folic acid, and zinc for supportive deficiency-care programmes.",
+    image: {
+      src: productImages.fericomXt,
+      alt: "Fericom-XT tablet packshot",
+    },
     featured: true,
   }),
   productEntry({
@@ -140,10 +247,18 @@ export const products: Product[] = [
     name: "Mexorex-D",
     dosageForm: "Syrup",
     category: "Respiratory",
-    composition:
-      "Dextromethorphan hydrobromide, phenylephrine, chlorpheniramine",
+    packaging: "100 ml bottle",
+    composition: [
+      "Dextromethorphan hydrobromide",
+      "Phenylephrine hydrochloride",
+      "Chlorpheniramine maleate",
+    ],
     summary:
-      "Cough and cold combination syrup for symptomatic relief under medical advice.",
+      "Respiratory symptom-relief syrup combining cough suppressant, decongestant, and antihistamine support.",
+    image: {
+      src: productImages.mexorexD,
+      alt: "Mexorex-D syrup bottle packshot",
+    },
     featured: false,
   }),
 ];
@@ -175,7 +290,7 @@ export const featuredProductsSection = {
   eyebrow: "Portfolio",
   title: "Mexmed formulations",
   description:
-    "A selection from our tablet, capsule, and liquid range—open any item for composition detail and enquiry options.",
+    "A selection from our audited tablet, capsule, drop, and syrup range with real packshots and composition detail.",
   cta: { label: "Explore products", href: "/products" },
 } as const;
 
@@ -183,20 +298,20 @@ export const productsListingPage = {
   eyebrow: "Portfolio",
   title: "Product catalog",
   description:
-    "Browse Mexmed Pharma formulations by therapeutic category and dosage form. For availability, packs, and distribution, contact our team.",
+    "Browse the Mexmed Pharma formulations identified in the migration audit. Each product page includes packshot, composition, dosage form, and pack information where available.",
   metaTitle: "Products",
   metaDescription:
-    "Mexmed Pharma product catalog—tablets, capsules, syrups, and more. Enquiries: +91 88862 19335, info@mexmedpharma.com.",
+    "Mexmed Pharma audited product catalog with real packshots for tablets, capsules, drops, and syrup. Enquiries: +91 88862 19335, info@mexmedpharma.com.",
   gridEyebrow: "Formulations",
   gridTitle: "Browse the full range",
   gridDescription:
-    "Each entry shows category, dosage form, and a short description. Select a product for composition detail and enquiry options.",
+    "The catalog is limited to the products confirmed in the migration audit and paired with current product imagery.",
 } as const;
 
 export const productsCatalogEnquiry = {
   title: "Discuss packs, pricing, or distribution",
   description:
-    "Share your market, volumes, and timelines—we respond on the phone number and email shown on our contact page.",
+    "Share your market, volumes, and timelines. We respond on the phone number and email shown on our contact page.",
   primaryCta: { label: "Send enquiry", href: "/contact" },
   secondaryLabel: "Call us",
 } as const;

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { Container } from "@/components/layout/container";
 import { buttonVariants } from "@/components/ui/button";
 import type { Product } from "@/types/product";
-import { ctaRowCentered, sectionPaddingMid } from "@/lib/section-styles";
+import { sectionPaddingMid } from "@/lib/section-styles";
 import { cn } from "@/lib/utils";
 
 type ProductEnquiryCtaProps = {

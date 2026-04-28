@@ -14,7 +14,7 @@ type ProductDetailContentProps = {
 };
 
 export function ProductDetailContent({ product }: ProductDetailContentProps) {
-  const hasComposition = Boolean(product.composition);
+  const hasComposition = Boolean(product.composition?.length);
 
   return (
     <section
@@ -36,9 +36,20 @@ export function ProductDetailContent({ product }: ProductDetailContentProps) {
                 </h2>
                 <div className="mt-4 overflow-hidden rounded-lg border border-border/45 bg-card shadow-[0_1px_2px_rgba(10,18,32,0.04)]">
                   <div className="px-6 py-7 sm:px-8 sm:py-8">
-                    <p className="text-[0.9375rem] leading-[1.72] text-foreground sm:text-base sm:leading-[1.7]">
-                      {product.composition}
-                    </p>
+                    <ul className="space-y-3" role="list">
+                      {product.composition?.map((item) => (
+                        <li
+                          key={item}
+                          className="flex items-start gap-3 text-[0.9375rem] leading-[1.72] text-foreground sm:text-base sm:leading-[1.7]"
+                        >
+                          <span
+                            className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-primary"
+                            aria-hidden
+                          />
+                          <span>{item}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
                   <div className="border-t border-border/40 bg-muted/25 px-6 py-4 sm:px-7">
                     <p className="text-[0.6875rem] leading-[1.65] text-muted-foreground">
@@ -105,6 +116,14 @@ export function ProductDetailContent({ product }: ProductDetailContentProps) {
                     {product.id}
                   </dd>
                 </div>
+                {product.packaging ? (
+                  <div className="px-6 py-5 sm:px-7">
+                    <dt className={labelClass}>Packaging</dt>
+                    <dd className="mt-2 text-[0.9375rem] font-medium leading-snug text-foreground">
+                      {product.packaging}
+                    </dd>
+                  </div>
+                ) : null}
               </dl>
 
               <div className="border-t border-border/40 bg-muted/25 px-6 py-4 sm:px-7 sm:py-5">

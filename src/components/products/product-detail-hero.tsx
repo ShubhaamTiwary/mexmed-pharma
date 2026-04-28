@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
@@ -59,29 +60,52 @@ export function ProductDetailHero({ product, className }: ProductDetailHeroProps
             "sm:p-9 lg:mt-10 lg:p-10 xl:p-11",
           )}
         >
-          <div className="flex flex-wrap items-center gap-2 gap-y-2">
-            <span className="text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-primary">
-              {product.category}
-            </span>
-            {product.dosageForm ? (
-              <span className="inline-flex rounded-full border border-border/55 bg-muted/50 px-2.5 py-1 text-[0.6875rem] font-medium text-muted-foreground">
-                {product.dosageForm}
-              </span>
-            ) : null}
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(18rem,24rem)] lg:items-center lg:gap-12">
+            <div className="min-w-0">
+              <div className="flex flex-wrap items-center gap-2 gap-y-2">
+                <span className="text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-primary">
+                  {product.category}
+                </span>
+                {product.dosageForm ? (
+                  <span className="inline-flex rounded-full border border-border/55 bg-muted/50 px-2.5 py-1 text-[0.6875rem] font-medium text-muted-foreground">
+                    {product.dosageForm}
+                  </span>
+                ) : null}
+              </div>
+
+              <h1
+                className={cn(
+                  "mt-5 max-w-[40rem] text-balance text-[1.875rem] font-semibold leading-[1.1] tracking-[-0.035em] text-foreground",
+                  "sm:text-[2.125rem] sm:leading-[1.08] lg:mt-6 lg:text-[2.375rem] xl:text-[2.5rem]",
+                )}
+              >
+                {product.name}
+              </h1>
+
+              <p className="mt-6 max-w-[42rem] text-pretty text-[1.0625rem] leading-[1.68] text-muted-foreground sm:text-[1.125rem] sm:leading-[1.66]">
+                {product.summary}
+              </p>
+
+              {product.packaging ? (
+                <p className="mt-5 text-[0.8125rem] font-medium uppercase tracking-[0.14em] text-muted-foreground">
+                  Pack: <span className="text-foreground">{product.packaging}</span>
+                </p>
+              ) : null}
+            </div>
+
+            <figure className="overflow-hidden rounded-[16px] border border-border/50 bg-muted/30 p-5 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.88)] sm:p-6">
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[12px] bg-card">
+                <Image
+                  src={product.image.src}
+                  alt={product.image.alt}
+                  fill
+                  className="object-contain p-4"
+                  sizes="(max-width: 1024px) 100vw, 24rem"
+                  priority
+                />
+              </div>
+            </figure>
           </div>
-
-          <h1
-            className={cn(
-              "mt-5 max-w-[40rem] text-balance text-[1.875rem] font-semibold leading-[1.1] tracking-[-0.035em] text-foreground",
-              "sm:text-[2.125rem] sm:leading-[1.08] lg:mt-6 lg:text-[2.375rem] xl:text-[2.5rem]",
-            )}
-          >
-            {product.name}
-          </h1>
-
-          <p className="mt-6 max-w-[42rem] text-pretty text-[1.0625rem] leading-[1.68] text-muted-foreground sm:text-[1.125rem] sm:leading-[1.66]">
-            {product.summary}
-          </p>
         </div>
       </Container>
     </header>
