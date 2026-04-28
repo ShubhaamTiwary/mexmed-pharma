@@ -16,6 +16,8 @@ type ProductCardProps = {
   titleAs?: "h2" | "h3";
   /** Listing/catalog: text-first clinical layout. */
   variant?: "default" | "catalog" | "featured";
+  /** Prefer LCP when this card is first in the viewport grid. */
+  imagePriority?: boolean;
 };
 
 function ProductCardCta({ label }: { label: string }) {
@@ -36,6 +38,7 @@ export function ProductCard({
   className,
   titleAs = "h2",
   variant = "default",
+  imagePriority = false,
 }: ProductCardProps) {
   const TitleTag = titleAs;
 
@@ -68,6 +71,7 @@ export function ProductCard({
               src={product.image.src}
               alt={product.image.alt}
               fill
+              priority={imagePriority}
               className="object-contain p-3 transition duration-500 group-hover:scale-[1.03] sm:p-5"
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
             />
@@ -128,6 +132,7 @@ export function ProductCard({
               src={product.image.src}
               alt={product.image.alt}
               fill
+              priority={imagePriority}
               className="object-contain p-4 opacity-95 transition duration-300 group-hover:opacity-100"
               sizes="(max-width: 1024px) 50vw, 33vw"
             />
@@ -182,6 +187,7 @@ export function ProductCard({
             src={product.image.src}
             alt={product.image.alt}
             fill
+            priority={imagePriority}
             className="object-contain p-4 transition duration-300 group-hover:scale-[1.02]"
             sizes="(max-width: 1024px) 100vw, 33vw"
           />

@@ -9,7 +9,7 @@ import {
   WhyChooseUsSection,
 } from "@/components/sections";
 import { JsonLd } from "@/components/seo/json-ld";
-import { alternatesForPath } from "@/lib/seo";
+import { alternatesForPath, primaryOpenGraphImages, primaryTwitterImage } from "@/lib/seo";
 import { localBusinessJsonLd } from "@/lib/structured-data";
 
 const homeDescription =
@@ -25,10 +25,12 @@ export const metadata: Metadata = {
     url: "/",
     title: "Mexmed Pharma — Pharmaceutical & Nutraceutical Formulations from India",
     description: homeDescription,
+    images: primaryOpenGraphImages(),
   },
   twitter: {
     title: "Mexmed Pharma — Pharmaceutical & Nutraceutical Formulations from India",
     description: homeDescription,
+    images: [primaryTwitterImage()],
   },
 };
 

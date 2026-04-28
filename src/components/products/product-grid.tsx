@@ -46,7 +46,7 @@ export function ProductGrid({
       className={cn("grid sm:grid-cols-2 lg:grid-cols-3", gap, className)}
       role="list"
     >
-      {products.map((product) => (
+      {products.map((product, index) => (
         <li key={product.id}>
           {renderCard ? (
             renderCard(product)
@@ -55,6 +55,9 @@ export function ProductGrid({
               product={product}
               titleAs={cardTitleAs}
               variant={cardVariant}
+              imagePriority={
+                (visual === "featured" || density === "catalog") && index === 0
+              }
             />
           )}
         </li>

@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { alternatesForPath } from "@/lib/seo";
+import { alternatesForPath, primaryOpenGraphImages, primaryTwitterImage } from "@/lib/seo";
 import { servicesPage } from "@/data/pages";
 
 const servicesDescription =
@@ -16,10 +16,12 @@ export const metadata: Metadata = {
     url: "/services",
     title: "Services | Mexmed Pharma",
     description: servicesDescription,
+    images: primaryOpenGraphImages(),
   },
   twitter: {
     title: "Services | Mexmed Pharma",
     description: servicesDescription,
+    images: [primaryTwitterImage()],
   },
 };
 

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { alternatesForPath } from "@/lib/seo";
+import { alternatesForPath, primaryOpenGraphImages, primaryTwitterImage } from "@/lib/seo";
 import { clientsPage } from "@/data/pages";
 import { editorialImages } from "@/lib/product-visuals";
 
@@ -18,10 +18,12 @@ export const metadata: Metadata = {
     url: "/clients",
     title: "Clients | Mexmed Pharma",
     description: clientsDescription,
+    images: primaryOpenGraphImages(),
   },
   twitter: {
     title: "Clients | Mexmed Pharma",
     description: clientsDescription,
+    images: [primaryTwitterImage()],
   },
 };
 

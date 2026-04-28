@@ -6,7 +6,7 @@ import { ProductCatalogGridSection } from "@/components/products/product-catalog
 import { JsonLd } from "@/components/seo/json-ld";
 import { products, productsListingPage } from "@/data/products";
 import { sectionPadding } from "@/lib/section-styles";
-import { absoluteUrl, alternatesForPath } from "@/lib/seo";
+import { absoluteUrl, alternatesForPath, primaryOpenGraphImages, primaryTwitterImage } from "@/lib/seo";
 import {
   breadcrumbJsonLd,
   itemListJsonLd,
@@ -22,10 +22,12 @@ export const metadata: Metadata = {
     title: `${productsListingPage.metaTitle} | Mexmed Pharma`,
     description: productsListingPage.metaDescription,
     type: "website",
+    images: primaryOpenGraphImages(),
   },
   twitter: {
     title: `${productsListingPage.metaTitle} | Mexmed Pharma`,
     description: productsListingPage.metaDescription,
+    images: [primaryTwitterImage()],
   },
 };
 

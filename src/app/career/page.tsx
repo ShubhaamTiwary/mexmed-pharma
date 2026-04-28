@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 
 import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
-import { alternatesForPath } from "@/lib/seo";
+import { alternatesForPath, primaryOpenGraphImages, primaryTwitterImage } from "@/lib/seo";
 import { careerPage } from "@/data/pages";
 
 const careerDescription =
@@ -16,10 +16,12 @@ export const metadata: Metadata = {
     url: "/career",
     title: "Career | Mexmed Pharma",
     description: careerDescription,
+    images: primaryOpenGraphImages(),
   },
   twitter: {
     title: "Career | Mexmed Pharma",
     description: careerDescription,
+    images: [primaryTwitterImage()],
   },
 };
 

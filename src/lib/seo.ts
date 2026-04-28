@@ -47,3 +47,21 @@ export function alternatesForPath(pathname: string): NonNullable<
     },
   };
 }
+
+/** Default share image for routes without a page-specific visual (og/twitter). */
+export function primaryOpenGraphImages(): NonNullable<
+  NonNullable<Metadata["openGraph"]>["images"]
+> {
+  return [
+    {
+      url: absoluteUrl(site.brand.logoSrc),
+      width: 1200,
+      height: 630,
+      alt: site.brand.logoAlt,
+    },
+  ];
+}
+
+export function primaryTwitterImage(): string {
+  return absoluteUrl(site.brand.logoSrc);
+}

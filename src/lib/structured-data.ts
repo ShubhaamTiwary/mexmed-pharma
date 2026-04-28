@@ -64,7 +64,7 @@ export function websiteJsonLd() {
     name: site.name,
     description: site.summary,
     publisher: { "@id": `${getSiteUrl()}#organization` },
-    inLanguage: "en",
+    inLanguage: "en-IN",
   } as const;
 }
 

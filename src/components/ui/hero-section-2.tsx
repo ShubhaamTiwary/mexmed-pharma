@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 
@@ -266,7 +267,6 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
     return (
       <motion.section
         ref={ref}
-        key={playMotion ? "motion" : "static"}
         className={cn(
           "relative flex min-h-[min(92svh,880px)] w-full flex-col overflow-hidden border-b border-border bg-background text-foreground md:min-h-[min(100svh,920px)] md:flex-row",
           className,
@@ -456,14 +456,21 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
 
         <motion.div
           className={cn(
-            "relative mx-5 mb-5 min-h-[320px] w-auto overflow-hidden rounded-[26px] border border-white/45 bg-cover bg-center shadow-[0_20px_60px_rgba(10,18,32,0.12)] sm:mx-8 sm:min-h-[360px] md:mx-0 md:mb-0 md:min-h-full md:w-1/2 md:rounded-none md:border-0 md:shadow-none lg:w-2/5",
+            "relative mx-5 mb-5 min-h-[320px] w-auto overflow-hidden rounded-[26px] border border-white/45 shadow-[0_20px_60px_rgba(10,18,32,0.12)] sm:mx-8 sm:min-h-[360px] md:mx-0 md:mb-0 md:min-h-full md:w-1/2 md:rounded-none md:border-0 md:shadow-none lg:w-2/5",
             "max-md:[clip-path:none]",
           )}
-          style={{ backgroundImage: `url(${backgroundImage})` }}
           variants={imageVariants}
           initial={playMotion ? "hidden" : false}
           animate="visible"
         >
+          <Image
+            src={backgroundImage}
+            alt=""
+            fill
+            priority
+            sizes="(min-width: 1024px) 40vw, (min-width: 768px) 50vw, 100vw"
+            className="object-cover"
+          />
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(4,12,24,0.08),rgba(4,12,24,0.34))]" />
           <div className="absolute inset-x-4 bottom-4 rounded-[18px] border border-white/30 bg-white/10 p-4 text-white shadow-[inset_0_1px_0_0_rgba(255,255,255,0.18)] backdrop-blur-md sm:inset-x-5 sm:bottom-5 md:hidden">
             <p className="text-[0.72rem] font-semibold uppercase tracking-[0.18em] text-white/80">
