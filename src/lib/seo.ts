@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import { site } from "@/data/site";
 
 /**
@@ -18,4 +20,30 @@ export function absoluteUrl(path = "/"): string {
   const base = getSiteUrl();
   if (!path || path === "/") return base;
   return `${base}${path.startsWith("/") ? path : `/${path}`}`;
+}
+
+/**
+ * Canonical + hreflang bundles for Lighthouse "Document has valid `rel=canonical`"
+ * and multilingual hints (India English + global default).
+ *
+ * Pass pathnames exactly as routed: `/`, `/products`, `/products/foo`.
+ */
+export function alternatesForPath(pathname: string): NonNullable<
+  Metadata["alternates"]
+> {
+  const path =
+    pathname === "/" || pathname === ""
+      ? "/"
+      : pathname.startsWith("/")
+        ? pathname
+        : `/${pathname}`;
+  const absolute = absoluteUrl(path);
+
+  return {
+    canonical: path,
+    languages: {
+      "en-IN": absolute,
+      "x-default": absolute,
+    },
+  };
 }

@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 
+import { TrackSectionView } from "@/components/analytics/track-section-view";
 import {
   AboutPreviewSection,
   ContactCtaSection,
@@ -8,6 +9,7 @@ import {
   WhyChooseUsSection,
 } from "@/components/sections";
 import { JsonLd } from "@/components/seo/json-ld";
+import { alternatesForPath } from "@/lib/seo";
 import { localBusinessJsonLd } from "@/lib/structured-data";
 
 const homeDescription =
@@ -18,7 +20,7 @@ export const metadata: Metadata = {
     absolute: "Mexmed Pharma — Pharmaceutical & Nutraceutical Formulations from India",
   },
   description: homeDescription,
-  alternates: { canonical: "/" },
+  alternates: alternatesForPath("/"),
   openGraph: {
     url: "/",
     title: "Mexmed Pharma — Pharmaceutical & Nutraceutical Formulations from India",
@@ -33,11 +35,21 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <HeroSection />
-      <AboutPreviewSection />
-      <FeaturedProductsSection />
-      <WhyChooseUsSection />
-      <ContactCtaSection />
+      <TrackSectionView sectionId="hero" pageLabel="Home">
+        <HeroSection />
+      </TrackSectionView>
+      <TrackSectionView sectionId="about_preview" pageLabel="Home">
+        <AboutPreviewSection />
+      </TrackSectionView>
+      <TrackSectionView sectionId="featured_products" pageLabel="Home">
+        <FeaturedProductsSection />
+      </TrackSectionView>
+      <TrackSectionView sectionId="why_choose_us" pageLabel="Home">
+        <WhyChooseUsSection />
+      </TrackSectionView>
+      <TrackSectionView sectionId="contact_cta" pageLabel="Home">
+        <ContactCtaSection />
+      </TrackSectionView>
       <JsonLd id="ld-localbusiness" data={localBusinessJsonLd()} />
     </>
   );

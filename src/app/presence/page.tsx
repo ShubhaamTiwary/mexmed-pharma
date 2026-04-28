@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { alternatesForPath } from "@/lib/seo";
 import { presencePage } from "@/data/pages";
 import { site } from "@/data/site";
 
@@ -11,7 +12,7 @@ const presenceDescription =
 export const metadata: Metadata = {
   title: "Presence",
   description: presenceDescription,
-  alternates: { canonical: "/presence" },
+  alternates: alternatesForPath("/presence"),
   openGraph: {
     url: "/presence",
     title: "Presence | Mexmed Pharma",

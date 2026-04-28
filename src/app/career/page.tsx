@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { alternatesForPath } from "@/lib/seo";
 import { careerPage } from "@/data/pages";
 
 const careerDescription =
@@ -10,7 +11,7 @@ const careerDescription =
 export const metadata: Metadata = {
   title: "Career",
   description: careerDescription,
-  alternates: { canonical: "/career" },
+  alternates: alternatesForPath("/career"),
   openGraph: {
     url: "/career",
     title: "Career | Mexmed Pharma",

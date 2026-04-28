@@ -1,9 +1,12 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
 
 import { buttonVariants } from "@/components/ui/button";
 import type { Product } from "@/types/product";
 import { cardPadding } from "@/lib/section-styles";
+import { trackProductCardClick } from "@/lib/analytics-events";
 import { surfaceCard } from "@/lib/surface";
 import { cn } from "@/lib/utils";
 
@@ -36,12 +39,21 @@ export function ProductCard({
 }: ProductCardProps) {
   const TitleTag = titleAs;
 
+  const handleNavigate = () => {
+    trackProductCardClick({
+      product_id: product.id,
+      product_name: product.name,
+      variant,
+    });
+  };
+
   if (variant === "featured") {
     return (
       <Link
         href={product.href}
         aria-label={`View ${product.name} product details`}
         className="group block h-full rounded-[12px] outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        onClick={handleNavigate}
       >
         <article
           className={cn(
@@ -98,6 +110,7 @@ export function ProductCard({
         href={product.href}
         aria-label={`View ${product.name} specifications`}
         className="group block h-full rounded-[10px] outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+        onClick={handleNavigate}
       >
         <article
           className={cn(
@@ -153,6 +166,7 @@ export function ProductCard({
       href={product.href}
       aria-label={`View ${product.name} product detail`}
       className="group block h-full rounded-[12px] outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+      onClick={handleNavigate}
     >
       <article
         className={cn(

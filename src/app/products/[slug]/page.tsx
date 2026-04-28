@@ -13,7 +13,7 @@ import {
   getRelatedProducts,
   products,
 } from "@/data/products";
-import { absoluteUrl } from "@/lib/seo";
+import { absoluteUrl, alternatesForPath } from "@/lib/seo";
 import {
   breadcrumbJsonLd,
   productJsonLd,
@@ -53,7 +53,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       "Mexmed Pharma",
       "pharmaceutical product",
     ].filter(Boolean),
-    alternates: { canonical },
+    alternates: alternatesForPath(canonical),
     openGraph: {
       type: "website",
       url: canonical,

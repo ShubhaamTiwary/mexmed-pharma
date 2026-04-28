@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 
 import { mainNavigation } from "@/data/navigation";
 import { site } from "@/data/site";
+import { trackNavLinkClick, trackNavMobileMenu } from "@/lib/analytics-events";
 import { cn } from "@/lib/utils";
 
 import { Container } from "./container";
@@ -64,6 +65,13 @@ export function Navbar() {
                     ? "bg-primary/[0.09] font-semibold text-foreground"
                     : "hover:bg-muted/50 hover:text-foreground",
                 )}
+                onClick={() =>
+                  trackNavLinkClick({
+                    href: item.href,
+                    label: item.label,
+                    placement: "desktop",
+                  })
+                }
               >
                 {item.label}
               </Link>
@@ -76,7 +84,13 @@ export function Navbar() {
           className="inline-flex h-10 w-10 items-center justify-center rounded-[10px] border border-border/70 bg-card text-foreground shadow-[inset_0_1px_0_0_rgba(255,255,255,0.85)] transition-colors hover:bg-muted/50 lg:hidden"
           aria-expanded={open}
           aria-controls="mobile-nav"
-          onClick={() => setOpen((v) => !v)}
+          onClick={() =>
+            setOpen((v) => {
+              const next = !v;
+              trackNavMobileMenu(next ? "open" : "close");
+              return next;
+            })
+          }
         >
           <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
           <span aria-hidden className="relative block h-4 w-5">
@@ -123,7 +137,14 @@ export function Navbar() {
                     ? "bg-primary/[0.09] font-semibold text-foreground"
                     : "text-muted-foreground hover:bg-muted/50 hover:text-foreground",
                 )}
-                onClick={() => setOpen(false)}
+                onClick={() => {
+                  setOpen(false);
+                  trackNavLinkClick({
+                    href: item.href,
+                    label: item.label,
+                    placement: "mobile",
+                  });
+                }}
               >
                 {item.label}
               </Link>

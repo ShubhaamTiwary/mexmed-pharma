@@ -6,7 +6,7 @@ import { ProductCatalogGridSection } from "@/components/products/product-catalog
 import { JsonLd } from "@/components/seo/json-ld";
 import { products, productsListingPage } from "@/data/products";
 import { sectionPadding } from "@/lib/section-styles";
-import { absoluteUrl } from "@/lib/seo";
+import { absoluteUrl, alternatesForPath } from "@/lib/seo";
 import {
   breadcrumbJsonLd,
   itemListJsonLd,
@@ -16,7 +16,7 @@ import { cn } from "@/lib/utils";
 export const metadata: Metadata = {
   title: productsListingPage.metaTitle,
   description: productsListingPage.metaDescription,
-  alternates: { canonical: "/products" },
+  alternates: alternatesForPath("/products"),
   openGraph: {
     url: "/products",
     title: `${productsListingPage.metaTitle} | Mexmed Pharma`,

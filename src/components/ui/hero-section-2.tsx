@@ -4,6 +4,11 @@ import * as React from "react";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 
+import {
+  trackHeroContact,
+  trackHeroCta,
+  trackHeroTrustPoint,
+} from "@/lib/analytics-events";
 import { cn } from "@/lib/utils";
 
 const CLIP_END = "polygon(22% 0, 100% 0, 100% 100%, 0% 100%)";
@@ -235,15 +240,22 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
         ? "text-lg font-bold tracking-[0.2em] text-primary transition-colors hover:text-primary/80"
         : "text-sm font-semibold tracking-wide text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline";
 
+      const handleClick = () =>
+        trackHeroCta({
+          label: cta.text,
+          href: cta.href,
+          placement: prominent ? "primary" : "secondary",
+        });
+
       if (cta.href.startsWith("/")) {
         return (
-          <Link href={cta.href} className={classNameLink}>
+          <Link href={cta.href} className={classNameLink} onClick={handleClick}>
             {cta.text}
           </Link>
         );
       }
       return (
-        <a href={cta.href} className={classNameLink}>
+        <a href={cta.href} className={classNameLink} onClick={handleClick}>
           {cta.text}
         </a>
       );
@@ -354,7 +366,13 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
                             type="button"
                             aria-label={`Show trust point ${index + 1}`}
                             aria-pressed={activeTrustIndex === index}
-                            onClick={() => setActiveTrustIndex(index)}
+                            onClick={() => {
+                              setActiveTrustIndex(index);
+                              trackHeroTrustPoint({
+                                index,
+                                total: trustPoints.length,
+                              });
+                            }}
                             className={cn(
                               "h-2.5 rounded-full transition-all duration-200",
                               activeTrustIndex === index
@@ -401,6 +419,7 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
                     <a
                       href={contactInfo.websiteHref}
                       className="font-medium text-foreground/90 underline-offset-2 hover:underline"
+                      onClick={() => trackHeroContact("website")}
                     >
                       {contactInfo.website}
                     </a>
@@ -416,6 +435,7 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
                     <a
                       href={contactInfo.phoneHref}
                       className="font-medium text-foreground/90 underline-offset-2 hover:underline"
+                      onClick={() => trackHeroContact("phone")}
                     >
                       {contactInfo.phone}
                     </a>

@@ -3,6 +3,7 @@ import Image from "next/image";
 
 import { Container } from "@/components/layout/container";
 import { SectionHeading } from "@/components/ui/section-heading";
+import { alternatesForPath } from "@/lib/seo";
 import { clientsPage } from "@/data/pages";
 import { editorialImages } from "@/lib/product-visuals";
 
@@ -12,7 +13,7 @@ const clientsDescription =
 export const metadata: Metadata = {
   title: "Clients",
   description: clientsDescription,
-  alternates: { canonical: "/clients" },
+  alternates: alternatesForPath("/clients"),
   openGraph: {
     url: "/clients",
     title: "Clients | Mexmed Pharma",
