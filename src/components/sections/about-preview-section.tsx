@@ -15,8 +15,8 @@ export function AboutPreviewSection() {
   const formulationCount = products.length;
 
   const facts = [
-    { label: "Years in healthcare markets", value: "7+" },
-    { label: "India offices", value: "2" },
+    { label: "Years in healthcare markets", value: "12+" },
+    { label: "Operating reach", value: "India + Nepal" },
     { label: "Catalogue entries", value: String(formulationCount) },
   ] as const;
 

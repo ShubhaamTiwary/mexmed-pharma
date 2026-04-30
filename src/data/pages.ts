@@ -4,14 +4,14 @@ export const aboutPage = {
   description:
     "Mexmed Pharma combines a disciplined operating approach with a practical product catalog across tablets, capsules, drops, and syrup presentations. The business is positioned for enquiry-led partnerships, responsive communication, and traceable supply conversations.",
   lead:
-    "From Serampore in West Bengal and Forbesganj in Bihar, Mexmed supports healthcare-market partners with a clear focus on quality, safety, and commercially usable product communication.",
+    "From Serampore in West Bengal and Forbesganj in Bihar, with operating reach across India and Nepal, Mexmed supports healthcare-market partners with a clear focus on quality, safety, and commercially usable product communication.",
   story: [
     "The legacy website centered the company around mission, vision, quality, and safety. In the rebuild, that same narrative is translated into a cleaner content system so product, contact, and partner information stay consistent across the site.",
     "Rather than repeating generic pharma claims, Mexmed positions itself through practical value: readable pack references, enquiry-ready product information, direct contact channels, and a catalog that can be reviewed quickly by prescribers, stockists, and trade partners.",
   ],
   stats: [
-    { label: "Years in healthcare markets", value: "7+" },
-    { label: "Operational locations", value: "2" },
+    { label: "Years in healthcare markets", value: "12+" },
+    { label: "Operating reach", value: "India + Nepal" },
     { label: "Audited catalog products", value: "13" },
   ],
   commitments: [
@@ -178,9 +178,9 @@ export const careerPage = {
 
 export const presencePage = {
   eyebrow: "Presence",
-  title: "An India-based operating footprint with partner-ready reach",
+  title: "An India-based footprint with India and Nepal operating reach",
   description:
-    "The old site used an image-heavy presence page. This rebuild translates that intent into a clearer geographic and business-footprint narrative anchored in the offices already published on the site.",
+    "The old site used an image-heavy presence page. This rebuild translates that intent into a clearer geographic and business-footprint narrative anchored in the India offices already published on the site, with explicit India and Nepal operating reach.",
   coverage: [
     {
       title: "Serampore, West Bengal",
@@ -195,7 +195,7 @@ export const presencePage = {
     {
       title: "Partner-facing reach",
       description:
-        "The website is structured for distribution and commercial conversations beyond the immediate office locations.",
+        "The website is structured for distribution and commercial conversations across India and Nepal, beyond the immediate office locations.",
     },
   ],
 } as const;

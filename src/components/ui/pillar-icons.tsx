@@ -42,6 +42,52 @@ export function IconQuality(props: ComponentPropsWithoutRef<"svg">) {
   );
 }
 
+export function IconMission(props: ComponentPropsWithoutRef<"svg">) {
+  return (
+    <IconWrap>
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-5 w-5"
+        aria-hidden
+        {...props}
+      >
+        <circle cx="12" cy="12" r="8" />
+        <circle cx="12" cy="12" r="4.5" />
+        <path d="M12 3v3" />
+        <path d="M21 12h-3" />
+        <path d="M12 21v-3" />
+        <path d="M3 12h3" />
+      </svg>
+    </IconWrap>
+  );
+}
+
+export function IconVision(props: ComponentPropsWithoutRef<"svg">) {
+  return (
+    <IconWrap>
+      <svg
+        viewBox="0 0 24 24"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.75"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        className="h-5 w-5"
+        aria-hidden
+        {...props}
+      >
+        <path d="M2 12s3.5-6 10-6 10 6 10 6-3.5 6-10 6S2 12 2 12z" />
+        <circle cx="12" cy="12" r="2.75" />
+      </svg>
+    </IconWrap>
+  );
+}
+
 export function IconSafety(props: ComponentPropsWithoutRef<"svg">) {
   return (
     <IconWrap>

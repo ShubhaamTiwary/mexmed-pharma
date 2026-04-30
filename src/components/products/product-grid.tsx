@@ -40,10 +40,14 @@ export function ProductGrid({
       ? productCatalogGridGap
       : productGridGap;
   const cardVariant = resolveCardVariant(density, visual);
+  const gridCols =
+    visual === "featured"
+      ? "grid-cols-1 md:grid-cols-2"
+      : "grid-cols-1 sm:grid-cols-2 lg:grid-cols-3";
 
   return (
     <ul
-      className={cn("grid sm:grid-cols-2 lg:grid-cols-3", gap, className)}
+      className={cn("grid", gridCols, gap, className)}
       role="list"
     >
       {products.map((product, index) => (

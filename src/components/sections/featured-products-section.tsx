@@ -6,7 +6,6 @@ import { SectionHeading } from "@/components/ui/section-heading";
 import { buttonVariants } from "@/components/ui/button";
 import {
   featuredProductsSection,
-  getFeaturedProducts,
   products,
 } from "@/data/products";
 import {
@@ -17,7 +16,7 @@ import {
 import { cn } from "@/lib/utils";
 
 export function FeaturedProductsSection() {
-  const items = getFeaturedProducts(6);
+  const items = products;
   const copy = featuredProductsSection;
   const catalogCategories = [...new Set(products.map((p) => p.category))].sort(
     (a, b) => a.localeCompare(b),
@@ -27,7 +26,7 @@ export function FeaturedProductsSection() {
     <section
       className={cn(
         sectionPadding,
-        "border-b border-border/45 bg-card",
+        "border-b border-border/45 bg-[linear-gradient(180deg,rgba(255,255,251,0.96),rgba(242,247,236,0.96))]",
       )}
       aria-labelledby="featured-products-heading"
     >
@@ -43,7 +42,7 @@ export function FeaturedProductsSection() {
           />
           <Link
             href="/products"
-            className="shrink-0 self-start text-[0.8125rem] font-semibold text-primary underline-offset-4 hover:underline sm:self-auto"
+            className="shrink-0 self-start text-[0.95rem] font-semibold text-primary underline-offset-4 hover:underline sm:self-auto"
           >
             Full catalog
           </Link>
@@ -52,7 +51,7 @@ export function FeaturedProductsSection() {
         <div
           className={cn(
             sectionContentGap,
-            "rounded-sm border border-border/55 bg-background/90 p-4 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.7)] sm:p-8",
+            "rounded-[22px] border border-border/60 bg-[linear-gradient(180deg,rgba(255,255,251,0.92),rgba(242,247,236,0.92))] p-3 shadow-[0_24px_64px_rgba(25,39,23,0.08),inset_0_1px_0_0_rgba(255,255,255,0.82)] sm:p-6",
           )}
         >
           <div className="hidden flex-col gap-4 border-b border-border/45 pb-6 sm:flex sm:flex-row sm:items-center sm:justify-between sm:gap-6 sm:pb-7">

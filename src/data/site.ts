@@ -10,7 +10,7 @@ export const site = {
   },
 
   summary:
-    "Mexmed Pharma is an India-based company offering pharmaceutical and nutraceutical formulations. We operate from Serampore (West Bengal) with a branch in Forbesganj (Bihar). Enquiries are handled on the phone number and email below.",
+    "Mexmed Pharma is an India-based company offering pharmaceutical and nutraceutical formulations with operating reach across India and Nepal. We operate from Serampore (West Bengal) with a branch in Forbesganj (Bihar). Enquiries are handled on the phone number and email below.",
 
   publicUrl: "https://mexmedpharma.com",
 

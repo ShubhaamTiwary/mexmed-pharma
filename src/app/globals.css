@@ -1,28 +1,28 @@
 @import "tailwindcss";
 
-/* Mexmed Pharma — editorial pharma system: light canvas, selective navy, restrained depth */
+/* Mexmed Pharma — Editorial Forest: warmer light canvas, richer green accents, deeper premium contrast */
 :root {
-  --background: #edf0f5;
-  --foreground: #0a1220;
-  --card: #ffffff;
-  --card-foreground: #0a1220;
-  --primary: #0b2744;
-  --primary-foreground: #f7f9fc;
-  --muted: #dfe6f0;
-  --muted-foreground: #4a5568;
-  --border: #c2cedd;
-  --ring: #1a4a7a;
-  --navy: #061525;
-  --navy-foreground: #eef2f7;
-  --navy-muted: #97a6b8;
-  --surface-subtle: #e4eaf3;
-  --hero-ink: #020814;
-  --hero-ink-elevated: #0a1628;
-  --hero-fog: rgba(148, 163, 184, 0.1);
+  --background: #f3f6ec;
+  --foreground: #112016;
+  --card: #fffef9;
+  --card-foreground: #112016;
+  --primary: #4e7a41;
+  --primary-foreground: #f7faf3;
+  --muted: #e0e6d5;
+  --muted-foreground: #566351;
+  --border: #cfd8c1;
+  --ring: #638b57;
+  --navy: #0c1711;
+  --navy-foreground: #eef3ea;
+  --navy-muted: #9fae9f;
+  --surface-subtle: #e8eee0;
+  --hero-ink: #0f1712;
+  --hero-ink-elevated: #1a261e;
+  --hero-fog: rgba(110, 138, 109, 0.1);
   /* Brand depth — use via arbitrary shadow or surface lib */
-  --shadow-brand-sm: 0 1px 2px rgba(10, 18, 32, 0.05),
-    0 6px 24px rgba(10, 18, 32, 0.04);
-  --shadow-brand-md: 0 12px 48px rgba(10, 18, 32, 0.07);
+  --shadow-brand-sm: 0 1px 2px rgba(17, 32, 22, 0.04),
+    0 8px 28px rgba(31, 54, 31, 0.05);
+  --shadow-brand-md: 0 18px 56px rgba(24, 37, 23, 0.08);
   --shadow-inset-sheet: inset 0 1px 0 0 rgba(255, 255, 255, 0.92);
 }
 
@@ -48,7 +48,10 @@
 }
 
 body {
-  background: var(--background);
+  background:
+    radial-gradient(circle at top right, rgba(221, 236, 183, 0.34), transparent 24%),
+    radial-gradient(circle at top left, rgba(181, 210, 170, 0.18), transparent 22%),
+    var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), system-ui, sans-serif;
   text-rendering: optimizeLegibility;

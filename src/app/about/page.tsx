@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Image from "next/image";
 
 import { Container } from "@/components/layout/container";
+import { WhyChooseUsSection } from "@/components/sections";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { alternatesForPath, primaryOpenGraphImages, primaryTwitterImage } from "@/lib/seo";
 import { aboutPage } from "@/data/pages";
@@ -113,31 +114,7 @@ export default function AboutPage() {
         </Container>
       </section>
 
-      <section className="border-b border-border/45 bg-surface-subtle/70 py-16 sm:py-20 lg:py-24">
-        <Container>
-          <SectionHeading
-            heading="h2"
-            eyebrow="Core commitments"
-            title="Mission, vision, quality, and safety translated into practice"
-            description="The legacy site repeated these themes across multiple pages. Here they are consolidated into one clearer view."
-          />
-          <div className="mt-12 grid gap-6 sm:grid-cols-2 xl:grid-cols-4">
-            {aboutPage.commitments.map((item) => (
-              <article
-                key={item.title}
-                className="rounded-[16px] border border-border/45 bg-card p-6 shadow-[0_12px_36px_rgba(10,18,32,0.05)]"
-              >
-                <h3 className="text-base font-semibold tracking-[-0.018em] text-foreground">
-                  {item.title}
-                </h3>
-                <p className="mt-3 text-sm leading-[1.72] text-muted-foreground">
-                  {item.description}
-                </p>
-              </article>
-            ))}
-          </div>
-        </Container>
-      </section>
+      <WhyChooseUsSection />
 
       <section className="border-b border-border/45 bg-background py-16 sm:py-20 lg:py-24">
         <Container>

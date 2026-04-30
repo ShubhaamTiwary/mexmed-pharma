@@ -19,14 +19,6 @@ export function HeroSection() {
         </>
       }
       subtitle={hero.description}
-      callToAction={{
-        text: hero.primaryCta.label.toUpperCase(),
-        href: hero.primaryCta.href,
-      }}
-      secondaryCallToAction={{
-        text: hero.secondaryCta.label.toUpperCase(),
-        href: hero.secondaryCta.href,
-      }}
       trustPoints={hero.trustPoints}
       metrics={hero.metrics}
       backgroundImage={hero.backgroundImage}

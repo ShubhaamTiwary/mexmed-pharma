@@ -2,12 +2,10 @@
 
 import * as React from "react";
 import Image from "next/image";
-import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 
 import {
   trackHeroContact,
-  trackHeroCta,
   trackHeroTrustPoint,
 } from "@/lib/analytics-events";
 import { cn } from "@/lib/utils";
@@ -89,14 +87,6 @@ export interface HeroSection2Props {
   slogan?: string;
   title: React.ReactNode;
   subtitle: string;
-  callToAction: {
-    text: string;
-    href: string;
-  };
-  secondaryCallToAction?: {
-    text: string;
-    href: string;
-  };
   trustPoints?: readonly string[];
   metrics?: readonly {
     label: string;
@@ -120,8 +110,6 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
       slogan,
       title,
       subtitle,
-      callToAction,
-      secondaryCallToAction,
       trustPoints = [],
       metrics = [],
       backgroundImage,
@@ -233,35 +221,6 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
       [playMotion, isMdUp],
     );
 
-    const renderCta = (
-      cta: { text: string; href: string },
-      prominent: boolean,
-    ) => {
-      const classNameLink = prominent
-        ? "text-lg font-bold tracking-[0.2em] text-primary transition-colors hover:text-primary/80"
-        : "text-sm font-semibold tracking-wide text-muted-foreground underline-offset-4 transition-colors hover:text-foreground hover:underline";
-
-      const handleClick = () =>
-        trackHeroCta({
-          label: cta.text,
-          href: cta.href,
-          placement: prominent ? "primary" : "secondary",
-        });
-
-      if (cta.href.startsWith("/")) {
-        return (
-          <Link href={cta.href} className={classNameLink} onClick={handleClick}>
-            {cta.text}
-          </Link>
-        );
-      }
-      return (
-        <a href={cta.href} className={classNameLink} onClick={handleClick}>
-          {cta.text}
-        </a>
-      );
-    };
-
     const showHeader = Boolean(logo?.text || logo?.url || slogan);
 
     return (
@@ -335,15 +294,6 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
             >
               {subtitle}
             </motion.p>
-            <motion.div
-              className="flex flex-col gap-4 md:flex-row md:items-baseline md:gap-10"
-              variants={fadeUp}
-            >
-              {renderCta(callToAction, true)}
-              {secondaryCallToAction
-                ? renderCta(secondaryCallToAction, false)
-                : null}
-            </motion.div>
 
             {(trustPoints.length > 0 || metrics.length > 0) && (
               <motion.div
@@ -387,16 +337,16 @@ const HeroSection2 = React.forwardRef<HTMLDivElement, HeroSection2Props>(
                 ) : null}
 
                 {metrics.length > 0 ? (
-                  <div className="mt-5 grid grid-cols-3 gap-2.5 sm:gap-3">
+                  <div className="mt-5 grid grid-cols-2 gap-2.5 sm:grid-cols-3 sm:gap-3 [&>*:last-child]:col-span-2 sm:[&>*:last-child]:col-span-1">
                     {metrics.map((metric) => (
                       <div
                         key={metric.label}
-                        className="rounded-[14px] border border-border/55 bg-background/88 px-3 py-3 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.88)]"
+                        className="flex min-h-[6.5rem] flex-col justify-between rounded-[14px] border border-border/55 bg-background/88 px-3 py-3 shadow-[inset_0_1px_0_0_rgba(255,255,255,0.88)] sm:min-h-[6.25rem]"
                       >
-                        <p className="text-[1.15rem] font-semibold tracking-tight text-foreground sm:text-[1.3rem]">
+                        <p className="text-balance text-[1.05rem] font-semibold leading-tight tracking-tight text-foreground sm:text-[1.3rem]">
                           {metric.value}
                         </p>
-                        <p className="mt-1 text-[0.75rem] font-medium uppercase leading-snug tracking-[0.12em] text-muted-foreground">
+                        <p className="mt-2 text-[0.68rem] font-medium uppercase leading-snug tracking-[0.11em] text-muted-foreground sm:text-[0.75rem] sm:tracking-[0.12em]">
                           {metric.label}
                         </p>
                       </div>

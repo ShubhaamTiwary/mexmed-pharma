@@ -7,7 +7,7 @@ import { presencePage } from "@/data/pages";
 import { site } from "@/data/site";
 
 const presenceDescription =
-  "Mexmed Pharma operating footprint — Serampore (West Bengal) head office and Forbesganj (Bihar) branch with partner-facing reach beyond.";
+  "Mexmed Pharma operating footprint — Serampore (West Bengal) head office and Forbesganj (Bihar) branch with India and Nepal partner-facing reach.";
 
 export const metadata: Metadata = {
   title: "Presence",
@@ -46,7 +46,7 @@ export default function PresencePage() {
           <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,1fr)]">
             <article className="rounded-[18px] border border-border/45 bg-card p-7 shadow-[0_12px_40px_rgba(10,18,32,0.05)] sm:p-8">
               <h2 className="text-[0.625rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
-                Office locations
+                India offices
               </h2>
               <div className="mt-5 space-y-7">
                 {site.contact.locations.map((location) => (

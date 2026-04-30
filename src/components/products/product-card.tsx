@@ -3,9 +3,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { buttonVariants } from "@/components/ui/button";
 import type { Product } from "@/types/product";
-import { cardPadding } from "@/lib/section-styles";
 import { trackProductCardClick } from "@/lib/analytics-events";
 import { surfaceCard } from "@/lib/surface";
 import { cn } from "@/lib/utils";
@@ -19,19 +17,6 @@ type ProductCardProps = {
   /** Prefer LCP when this card is first in the viewport grid. */
   imagePriority?: boolean;
 };
-
-function ProductCardCta({ label }: { label: string }) {
-  return (
-    <span
-      className={cn(
-        buttonVariants({ variant: "ghost", size: "sm" }),
-        "mt-6 -ml-2 self-start px-2 text-[0.875rem] font-semibold text-primary hover:bg-transparent",
-      )}
-    >
-      {label}
-    </span>
-  );
-}
 
 export function ProductCard({
   product,
@@ -61,23 +46,20 @@ export function ProductCard({
         <article
           className={cn(
             "flex h-full min-h-0 flex-col overflow-hidden rounded-[12px] border border-border/45 bg-card",
-            "shadow-[0_12px_48px_rgba(10,18,32,0.07),inset_0_1px_0_0_rgba(255,255,255,0.92)]",
-            "transition-[box-shadow,transform,border-color] duration-200 group-hover:-translate-y-0.5 group-hover:border-border/70 group-hover:shadow-[0_20px_56px_rgba(10,18,32,0.1)]",
+            "shadow-[inset_0_1px_0_0_rgba(255,255,255,0.92)]",
+            "transition-[transform,border-color] duration-200 group-hover:-translate-y-1 group-hover:border-primary/30",
             className,
           )}
         >
-          <div className="relative aspect-[4/5] overflow-hidden bg-muted sm:aspect-[16/11]">
+          <div className="relative aspect-[4/5.4] overflow-hidden bg-[#fbfcf7] sm:aspect-[16/12]">
             <Image
               src={product.image.src}
               alt={product.image.alt}
               fill
               priority={imagePriority}
-              className="object-contain p-3 transition duration-500 group-hover:scale-[1.03] sm:p-5"
+              className="object-contain p-1 transition duration-500 group-hover:scale-[1.03] sm:p-2"
+              style={{ filter: "saturate(1.22) contrast(1.08) brightness(1.04)" }}
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            />
-            <div
-              className="pointer-events-none absolute inset-0 bg-gradient-to-t from-background via-background/20 to-transparent"
-              aria-hidden
             />
             <div className="absolute bottom-3 left-3 right-3 flex flex-wrap items-center justify-between gap-2">
               <span className="rounded-[6px] bg-background/90 px-2 py-1 text-[0.6875rem] font-semibold uppercase tracking-[0.14em] text-primary shadow-sm backdrop-blur-sm">
@@ -91,17 +73,13 @@ export function ProductCard({
             </div>
           </div>
 
-          <div className="flex flex-1 flex-col p-5 sm:p-7">
+          <div className="flex flex-1 flex-col p-4 sm:p-5">
             <TitleTag className="text-[1.125rem] font-semibold leading-snug tracking-[-0.02em] text-foreground transition-colors group-hover:text-primary sm:text-[1.2rem]">
               {product.name}
             </TitleTag>
             <p className="mt-2 font-mono text-[0.75rem] text-muted-foreground tabular-nums">
               Ref. {product.id}
             </p>
-            <p className="mt-3 flex-1 text-[0.9375rem] leading-[1.72] text-muted-foreground line-clamp-3">
-              {product.summary}
-            </p>
-            <ProductCardCta label="View product" />
           </div>
         </article>
       </Link>
@@ -119,21 +97,22 @@ export function ProductCard({
         <article
           className={cn(
             "flex h-full min-h-[220px] flex-col rounded-[10px] border border-border/45 bg-card",
-            "p-7 sm:p-8",
-            "shadow-[0_1px_2px_rgba(10,18,32,0.05),0_10px_40px_rgba(10,18,32,0.05),inset_0_1px_0_0_rgba(255,255,255,0.9)]",
+            "p-5 sm:p-6",
+            "shadow-[0_1px_2px_rgba(17,32,22,0.04),0_18px_52px_rgba(27,40,28,0.08),inset_0_1px_0_0_rgba(255,255,255,0.9)]",
             "border-l-[3px] border-l-primary/30 transition-[box-shadow,border-color,transform] duration-200",
-            "group-hover:-translate-y-0.5 group-hover:border-border/60 group-hover:shadow-[0_16px_48px_rgba(10,18,32,0.08)]",
+            "group-hover:-translate-y-1 group-hover:border-primary/30 group-hover:shadow-[0_24px_64px_rgba(27,40,28,0.12)]",
             "sm:min-h-0",
             className,
           )}
         >
-          <div className="relative mb-5 aspect-[16/9] overflow-hidden rounded-[8px] bg-muted sm:mb-6">
+          <div className="relative mb-4 aspect-[16/12] overflow-hidden rounded-[10px] border border-border/40 bg-[radial-gradient(circle_at_top,_rgba(217,231,189,0.34),_transparent_42%),linear-gradient(180deg,rgba(255,255,252,0.98),rgba(240,246,231,0.96))] sm:mb-5">
             <Image
               src={product.image.src}
               alt={product.image.alt}
               fill
               priority={imagePriority}
-              className="object-contain p-4 opacity-95 transition duration-300 group-hover:opacity-100"
+              className="object-contain p-1 opacity-100 drop-shadow-[0_14px_30px_rgba(34,46,32,0.18)] transition duration-300 group-hover:scale-[1.05] sm:p-2"
+              style={{ filter: "saturate(1.22) contrast(1.08) brightness(1.04)" }}
               sizes="(max-width: 1024px) 50vw, 33vw"
             />
           </div>
@@ -155,12 +134,6 @@ export function ProductCard({
           <p className="mt-2.5 font-mono text-[0.75rem] text-muted-foreground/95 tabular-nums">
             Ref. {product.id}
           </p>
-
-          <p className="mt-4 flex-1 text-[0.9375rem] leading-[1.72] text-muted-foreground line-clamp-4">
-            {product.summary}
-          </p>
-
-          <ProductCardCta label="View specifications" />
         </article>
       </Link>
     );
@@ -176,19 +149,20 @@ export function ProductCard({
       <article
         className={cn(
           surfaceCard,
-          cardPadding,
+          "p-5 sm:p-6",
           "flex h-full min-h-[200px] flex-col border-t-[3px] border-t-primary/25 transition-[box-shadow,border-color,transform] duration-200 sm:min-h-0",
-          "group-hover:-translate-y-0.5 group-hover:border-primary/30 group-hover:shadow-[0_8px_28px_rgba(10,18,32,0.08)]",
+          "group-hover:-translate-y-1 group-hover:border-primary/30 group-hover:shadow-[0_18px_48px_rgba(27,40,28,0.12)]",
           className,
         )}
       >
-        <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-[8px] bg-muted">
+        <div className="relative mb-4 aspect-[16/10] overflow-hidden rounded-[10px] border border-border/40 bg-[radial-gradient(circle_at_top,_rgba(217,231,189,0.34),_transparent_42%),linear-gradient(180deg,rgba(255,255,252,0.98),rgba(240,246,231,0.96))]">
           <Image
             src={product.image.src}
             alt={product.image.alt}
             fill
             priority={imagePriority}
-            className="object-contain p-4 transition duration-300 group-hover:scale-[1.02]"
+            className="object-contain p-2 drop-shadow-[0_14px_30px_rgba(34,46,32,0.18)] transition duration-300 group-hover:scale-[1.05] sm:p-3"
+            style={{ filter: "saturate(1.22) contrast(1.08) brightness(1.04)" }}
             sizes="(max-width: 1024px) 100vw, 33vw"
           />
         </div>
@@ -215,8 +189,6 @@ export function ProductCard({
         <p className="mt-3 flex-1 text-[0.9375rem] leading-[1.72] text-muted-foreground line-clamp-4">
           {product.summary}
         </p>
-
-        <ProductCardCta label="Product detail" />
       </article>
     </Link>
   );
