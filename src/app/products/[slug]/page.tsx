@@ -40,7 +40,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
   const canonical = `/products/${product.id}`;
   const title = `${product.name} — ${product.dosageForm ?? product.category}`;
-  const description = product.summary;
+  const description = product.detailIntro ?? product.summary;
 
   return {
     title,

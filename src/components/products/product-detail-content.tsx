@@ -20,6 +20,7 @@ function listNumber(index: number) {
 export function ProductDetailContent({ product }: ProductDetailContentProps) {
   const hasComposition = Boolean(product.composition?.length);
   const hasHighlights = Boolean(product.highlights?.length);
+  const hasLabelNotes = Boolean(product.labelNotes?.length);
 
   return (
     <section
@@ -42,8 +43,8 @@ export function ProductDetailContent({ product }: ProductDetailContentProps) {
                       Composition
                     </h2>
                     <p className="mt-2 max-w-2xl text-sm leading-relaxed text-muted-foreground sm:text-[0.9375rem]">
-                      Active specification lines captured from the audited pack
-                      references and migrated product inventory.
+                      Key formulation lines prepared from the current catalog
+                      and verified against visible pack references.
                     </p>
                   </div>
                 </div>
@@ -94,10 +95,36 @@ export function ProductDetailContent({ product }: ProductDetailContentProps) {
                     Highlights
                   </h2>
                   <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
-                    Commercial talking points and visibly supported product cues.
+                    Quick product-facing notes to help visitors understand how
+                    this SKU sits within the Mexmed range.
                   </p>
                   <ul className="mt-5 space-y-4" role="list">
                     {product.highlights?.map((item) => (
+                      <li key={item} className="flex items-start gap-3">
+                        <span
+                          className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary"
+                          aria-hidden
+                        />
+                        <span className="text-[0.9375rem] leading-[1.72] text-foreground">
+                          {item}
+                        </span>
+                      </li>
+                    ))}
+                  </ul>
+                </section>
+              ) : null}
+
+              {hasLabelNotes ? (
+                <section className="rounded-[18px] border border-border/45 bg-card p-6 shadow-[0_1px_2px_rgba(10,18,32,0.04),0_12px_36px_rgba(10,18,32,0.04)] sm:p-7">
+                  <h2 className="text-[0.625rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+                    Pack and reference notes
+                  </h2>
+                  <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                    Visible carton, bottle, or strip cues that help buyers
+                    identify the published product presentation.
+                  </p>
+                  <ul className="mt-5 space-y-4" role="list">
+                    {product.labelNotes?.map((item) => (
                       <li key={item} className="flex items-start gap-3">
                         <span
                           className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary"
@@ -123,11 +150,11 @@ export function ProductDetailContent({ product }: ProductDetailContentProps) {
             >
               <div className="border-b border-border/40 bg-muted/35 px-6 py-5 sm:px-7">
                 <h3 className="text-[0.625rem] font-semibold uppercase tracking-[0.2em] text-foreground">
-                  Procurement snapshot
+                  Product snapshot
                 </h3>
                 <p className="mt-2 text-[0.75rem] leading-snug text-muted-foreground">
-                  Key identifiers for product, sourcing, and catalogue
-                  conversations.
+                  Quick identifiers for dosage form, pack reference, and
+                  catalog-level review.
                 </p>
               </div>
 

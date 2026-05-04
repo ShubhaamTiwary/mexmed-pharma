@@ -25,7 +25,7 @@ export const company = {
     metrics: [
       { label: "Years experience", value: "12+" },
       { label: "Operating reach", value: "India + Nepal" },
-      { label: "Audited products", value: "13" },
+      { label: "Listed products", value: "17" },
     ],
   },
 
@@ -43,7 +43,7 @@ export const company = {
     description:
       "Mexmed Pharma is a trusted provider of medicines, tablets, syrups, and related formulations from Serampore, Hooghly, West Bengal, with branch support in Forbesganj, Bihar and operating reach across India and Nepal. Our operating approach is shaped by quality standards, practical innovation, customer-focused follow-up, and accountable healthcare-market support.",
     body: [
-      "We work to keep product communication clear, reliable, and commercially useful for partners reviewing the audited catalog. That means visible pack references, structured product detail, and direct contact paths for availability and business enquiries.",
+      "We work to keep product communication clear, reliable, and commercially useful for partners reviewing the current catalog. That means visible pack references, structured product detail, and direct contact paths for availability and business enquiries.",
       "The old site repeated mission, vision, quality, and safety as the core company themes. Here they are preserved in a sharper, easier-to-scan format that supports the upgraded website experience.",
     ],
     highlightCards: [

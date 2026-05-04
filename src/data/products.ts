@@ -1,6 +1,6 @@
 import type { Product } from "@/types/product";
 
-/** Canonical audit-approved product catalog for Mexmed Pharma. */
+/** Canonical product catalog for Mexmed Pharma. */
 
 const cloudinaryBase = "https://res.cloudinary.com/dcy0lkiq9/image/upload";
 
@@ -18,6 +18,10 @@ const productImages = {
   pantamex40: `${cloudinaryBase}/q_auto/f_auto/v1777358318/WhatsApp_Image_2026-04-22_at_12.27.42_2_gfjvhd.jpg`,
   cefron500: `${cloudinaryBase}/q_auto/f_auto/v1777358319/WhatsApp_Image_2026-04-22_at_12.27.43_1_exdrsv.jpg`,
   mexorexD: `${cloudinaryBase}/q_auto/f_auto/v1777358319/WhatsApp_Image_2026-04-22_at_12.27.43_bemtv1.jpg`,
+  mexopamP: `${cloudinaryBase}/q_auto/f_auto/v1777866150/WhatsApp_Image_2026-04-30_at_11.13.20_jc2kqw.jpg`,
+  urovive: `${cloudinaryBase}/q_auto/f_auto/v1777866150/WhatsApp_Image_2026-04-30_at_11.13.20_2_yxrrto.jpg`,
+  obemex: `${cloudinaryBase}/q_auto/f_auto/v1777866152/WhatsApp_Image_2026-04-30_at_11.13.20_1_crf4at.jpg`,
+  mexopamSp: `${cloudinaryBase}/q_auto/f_auto/v1777866153/WhatsApp_Image_2026-04-30_at_11.13.21_xplrou.jpg`,
 } as const;
 
 function productEntry(entry: Omit<Product, "href"> & { id: string }): Product {
@@ -36,17 +40,17 @@ export const products: Product[] = [
     packaging: "1 x 10 tablets",
     composition: ["Cefuroxime Axetil IP 250 mg"],
     summary:
-      "Cefuroxime axetil 250 mg tablets for antibacterial therapy as prescribed.",
+      "Cefuroxime axetil 250 mg tablet presentation in the Mexmed anti-infective portfolio.",
     detailIntro:
-      "Cefron-250 is the audit-confirmed 250 mg cefuroxime axetil tablet presentation in the Mexmed anti-infective line, shown in a compact strip-based pack for routine trade and product enquiries.",
+      "Cefron-250 is the lower-strength cefuroxime axetil entry in the Mexmed anti-infective line, presented as a straightforward tablet SKU for routine product review and trade reference.",
     highlights: [
-      "250 mg cefuroxime axetil strength is stated clearly on the front panel.",
-      "Outer carton and strip artwork stay visually consistent across the Cefron range.",
-      "Tablet presentation keeps the SKU easy to identify in catalog, stock, and distributor discussions.",
+      "Single-ingredient cefuroxime axetil tablet at 250 mg strength.",
+      "Lower-strength Cefron option within the anti-infective range.",
+      "Clear tablet presentation supports quick identification during prescriber-side or distributor-side review.",
     ],
     labelNotes: [
       "Front panel reads 'Cefuroxime Axetil Tablets IP 250 mg'.",
-      "Packshot shows both the carton and the matching tablet strip.",
+      "Published reference includes the outer carton together with the matching lower pack presentation.",
       "Blue-and-white Cefron line styling distinguishes the lower-strength anti-infective reference.",
     ],
     image: {
@@ -63,13 +67,13 @@ export const products: Product[] = [
     packaging: "1 x 10 tablets",
     composition: ["Cefuroxime Axetil IP 500 mg"],
     summary:
-      "Cefuroxime axetil 500 mg tablets for appropriate systemic infections under medical supervision.",
+      "Cefuroxime axetil 500 mg tablet presentation in the Mexmed anti-infective portfolio.",
     detailIntro:
-      "Cefron-500 is the higher-strength cefuroxime axetil tablet presentation captured in the audit materials, using the same clear Mexmed pack architecture as the Cefron-250 reference.",
+      "Cefron-500 is the higher-strength cefuroxime axetil entry in the Mexmed anti-infective line, positioned as the companion tablet reference to Cefron-250.",
     highlights: [
-      "500 mg strength is called out prominently on the main display panel.",
-      "Outer carton and strip artwork are aligned to the Cefron anti-infective family look.",
-      "Strip-based tablet presentation is straightforward for quoting, stocking, and product identification.",
+      "Single-ingredient cefuroxime axetil tablet at 500 mg strength.",
+      "Higher-strength Cefron option within the same anti-infective product family.",
+      "Straightforward tablet SKU for product listing, stock review, and enquiry discussions.",
     ],
     labelNotes: [
       "Front panel reads 'Cefuroxime Axetil Tablets IP 500 mg'.",
@@ -90,18 +94,18 @@ export const products: Product[] = [
     packaging: "1 x 10 tablets with blister",
     composition: ["Pantoprazole gastro-resistant tablets IP"],
     summary:
-      "Pantoprazole gastro-resistant tablets for acid-related disorders and reflux-management programmes.",
+      "Pantoprazole gastro-resistant tablet presentation in the Mexmed gastrointestinal portfolio.",
     detailIntro:
-      "Pantamex-40 represents the single-agent pantoprazole tablet presentation in the Mexmed gastrointestinal range, shown with both carton and blister imagery in the supplied references.",
+      "Pantamex-40 is the pantoprazole-only entry in the Mexmed gastrointestinal range, offering a direct gastro-resistant tablet reference alongside the combination Pantamex-DSR capsule.",
     highlights: [
-      "The pack identifies the product as a gastro-resistant pantoprazole tablet I.P. presentation.",
-      "Blister strip photography makes the tablet format immediately clear on the detail page.",
-      "The Pantamex line gives the GI portfolio a consistent, easily recognizable visual family.",
+      "Single-agent pantoprazole gastro-resistant tablet presentation.",
+      "Core acid-management reference within the Pantamex family.",
+      "Tablet format gives buyers and trade partners a clearly differentiated option from the DSR capsule variant.",
     ],
     labelNotes: [
       "Front panel reads 'Pantoprazole Gastro-Resistant Tablets I.P.'.",
-      "Packshot shows the outer carton together with the blister presentation.",
-      "The visible strip format supports quick trade reference without relying on generic stock imagery.",
+      "Published reference pairs the outer carton with the matching blister presentation.",
+      "Visible strip presentation helps identify the tablet SKU clearly during trade review.",
     ],
     image: {
       src: productImages.pantamex40,
@@ -120,17 +124,17 @@ export const products: Product[] = [
       "Domperidone (prolonged-release) capsules IP",
     ],
     summary:
-      "Pantoprazole and domperidone prolonged-release capsules for GI symptom control where prescribed.",
+      "Pantoprazole with prolonged-release domperidone capsule presentation in the Mexmed gastrointestinal portfolio.",
     detailIntro:
-      "Pantamex-DSR is the combination GI presentation in the audited Mexmed range, pairing pantoprazole with prolonged-release domperidone in a capsule-led blister format.",
+      "Pantamex-DSR is the combination gastrointestinal entry in the Mexmed range, pairing pantoprazole with prolonged-release domperidone in a capsule-based presentation.",
     highlights: [
-      "Combination pack copy highlights both the gastro-resistant and prolonged-release components.",
-      "Capsule blister presentation is visible directly in the supplied pack reference.",
-      "The DSR naming distinguishes the combination SKU cleanly from the single-agent Pantamex tablet pack.",
+      "Two-component GI formulation combining pantoprazole with prolonged-release domperidone.",
+      "Capsule format distinguishes the DSR SKU from the single-agent Pantamex tablet.",
+      "Useful as the combination Pantamex reference in product comparison and distributor discussions.",
     ],
     labelNotes: [
       "Front panel reads 'Pantoprazole Gastro-Resistant and Domperidone Prolonged-Release Capsules I.P.'.",
-      "Packshot shows both carton artwork and the capsule blister strip.",
+      "Published reference pairs the carton artwork with the capsule blister strip.",
       "The carton keeps the same Pantamex family treatment while clearly marking the DSR variant.",
     ],
     image: {
@@ -151,13 +155,13 @@ export const products: Product[] = [
       "Manganese",
     ],
     summary:
-      "Calcium and vitamin D support tablet with manganese for bone and mineral nutrition programmes.",
+      "Calcium, vitamin D3, and manganese tablet presentation for bone and mineral nutrition.",
     detailIntro:
-      "CALINMEX is the compact 30-tablet bone and mineral nutrition pack in the audited range, centered on calcium citrate malate with vitamin D3 and manganese.",
+      "CALINMEX is the compact bone and mineral nutrition entry in the Mexmed range, built around calcium citrate malate with vitamin D3 and manganese in a smaller 30-tablet presentation.",
     highlights: [
-      "30-tablet pack count is visible on the front face of the carton.",
-      "Core bone-support actives are listed directly on the pack front for quick identification.",
-      "The smaller mono-carton format gives this SKU a distinct presence within the calcium-support line.",
+      "Three-part bone-support formulation centered on calcium, vitamin D3, and manganese.",
+      "30-tablet format makes it the more compact option in the Calinmex line.",
+      "Suitable as the base Calinmex reference when compared with the broader Forte variant.",
     ],
     labelNotes: [
       "Front panel reads 'Calcium citrate with Vitamin D3 & Manganese Tablets'.",
@@ -185,18 +189,18 @@ export const products: Product[] = [
       "Zinc sulphate",
     ],
     summary:
-      "Advanced bone-health tablet combining calcium pathway support, methylcobalamin, and zinc.",
+      "Expanded bone-health tablet presentation with calcium, calcitriol, methylcobalamin, vitamin K2-7, folic acid, and zinc.",
     detailIntro:
-      "Calinmex Forte is the expanded bone-support presentation in the audited portfolio, with a broader nutrient stack and a larger multi-strip tablet pack than the base CALINMEX SKU.",
+      "Calinmex Forte is the broader bone-health entry in the Mexmed range, combining calcium support with calcitriol, methylcobalamin, vitamin K2-7, folic acid, and zinc in a larger tablet pack.",
     highlights: [
-      "Front-panel copy lists the broader active combination directly on the carton.",
-      "10 x 1 x 10 tablet presentation is visible on the reference packshot.",
-      "Orange-and-gold pack styling separates the Forte variant from the standard CALINMEX carton.",
+      "Multi-nutrient bone-support formulation with a broader composition than standard CALINMEX.",
+      "Combines calcium pathway support with vitamin, mineral, and methylcobalamin components.",
+      "Larger tablet presentation makes it the premium Calinmex-family reference for product review.",
     ],
     labelNotes: [
       "Pack face includes calcitriol, calcium citrate, methylcobalamin, vitamin K2-7, folic acid, and zinc sulphate.",
-      "The supplied image shows matching outer and strip artwork for the Forte variant.",
-      "Carton artwork emphasizes the Calinmex-Forte label without relying on generic category imagery.",
+      "Published reference includes both the outer pack and the matching lower pack presentation for the Forte variant.",
+      "Carton artwork emphasizes the Calinmex Forte identity within the bone-health range.",
     ],
     image: {
       src: productImages.calinmexForte,
@@ -212,18 +216,18 @@ export const products: Product[] = [
     packaging: "30 ml drops bottle",
     composition: ["Cholecalciferol (Vitamin D3) drops"],
     summary:
-      "Cholecalciferol oral drops for convenient vitamin D supplementation, including paediatric use as advised.",
+      "Liquid cholecalciferol drops presentation for vitamin D3 supplementation.",
     detailIntro:
-      "CAPUP-D3 Drops is the liquid vitamin D3 presentation in the audited Mexmed set, shown in a 30 ml pack with nano-technology labeling and pediatric-oriented pack graphics.",
+      "CAPUP-D3 Drops is the liquid vitamin D3 entry in the Mexmed range, offering a drops-based cholecalciferol presentation alongside the higher-strength CAPUP-D3 60K softgel.",
     highlights: [
-      "Drops format gives the vitamin D3 line a clearly distinct presentation from the softgel capsule SKU.",
-      "30 ml pack size is visible on the front panel of the carton.",
-      "Reference artwork includes a nano-technology callout on the main display face.",
+      "Liquid cholecalciferol format suited to vitamin D3 drops presentation.",
+      "30 ml pack reference keeps the product distinct from the softgel capsule SKU.",
+      "Useful when the catalog needs a non-capsule vitamin D3 option.",
     ],
     labelNotes: [
       "Front panel reads 'Cholecalciferol (Vitamin D3) Drops'.",
       "The carton carries a 'Nano Technology' mark on the lower-right side.",
-      "Pack graphics use child-focused imagery to differentiate the drops SKU visually.",
+      "Carton graphics use a pediatric-friendly visual treatment to distinguish the drops SKU from the capsule entry.",
     ],
     image: {
       src: productImages.capupD3Drops,
@@ -239,13 +243,13 @@ export const products: Product[] = [
     packaging: "Softgel capsule pack",
     composition: ["Cholecalciferol softgel capsules USP 60000 IU"],
     summary:
-      "High-strength vitamin D3 softgel for repletion and maintenance protocols where indicated.",
+      "High-strength cholecalciferol 60000 IU softgel presentation in the Mexmed vitamin portfolio.",
     detailIntro:
-      "CAPUP-D3 60K is the high-strength vitamin D3 softgel presentation from the audited materials, with the 60000 IU strength called out directly on the visible pack reference.",
+      "CAPUP-D3 60K is the higher-strength softgel entry in the Mexmed vitamin range, built around cholecalciferol USP 60000 IU for a single-strength vitamin D3 reference.",
     highlights: [
-      "USP 60000 IU strength is prominently displayed on the front panel.",
-      "Softgel capsule format is visually distinct from the CAPUP-D3 drops presentation.",
-      "The supplied reference shows both carton and strip artwork for fast SKU confirmation.",
+      "Single-ingredient vitamin D3 softgel at 60000 IU strength.",
+      "Softgel presentation clearly separates the SKU from CAPUP-D3 Drops.",
+      "Useful as the higher-strength CAPUP reference in product and market discussions.",
     ],
     labelNotes: [
       "Front panel reads 'Cholecalciferol Softgel Capsules USP 60000 IU'.",
@@ -273,13 +277,13 @@ export const products: Product[] = [
       "Sodium hyaluronate sulphate",
     ],
     summary:
-      "Joint-support formulation combining glucosamine, chondroitin, collagen, and mobility-support actives.",
+      "Multi-ingredient musculoskeletal tablet presentation centered on joint and mobility support.",
     detailIntro:
-      "Cartimex Pro is the audit-confirmed musculoskeletal tablet reference in the Mexmed line, using a prominent joint-health visual system and visible front-pack benefit bullets.",
+      "Cartimex Pro is the musculoskeletal tablet entry in the Mexmed portfolio, combining glucosamine, collagen peptide, chondroitin, cissus quadrangularis, vitamin C, and sodium hyaluronate in one formulation.",
     highlights: [
-      "Pack copy highlights clinical-strength glucosamine, chondroitin, and sodium hyaluronate positioning.",
-      "Front-panel messaging states that the formulation soothes achy joints and promotes mobility and flexibility.",
-      "The larger multi-strip tablet pack is clearly shown in both carton and lower-strip views.",
+      "Broad musculoskeletal composition with glucosamine, collagen peptide, chondroitin, and sodium hyaluronate.",
+      "Built as a single tablet reference around joint and mobility support positioning.",
+      "Suited to musculoskeletal product review where a multi-component composition is preferred.",
     ],
     labelNotes: [
       "Front panel includes the actives list with collagen peptide type-II and Cissus quadrangularis.",
@@ -305,18 +309,18 @@ export const products: Product[] = [
       "Minerals",
     ],
     summary:
-      "Broad-spectrum nutritional supplementation tablet with amino acids, vitamins, extracts, and minerals.",
+      "Broad-spectrum nutritional supplement tablet presentation with amino acids, vitamins, extracts, and minerals.",
     detailIntro:
-      "Extenvit is the audited multivitamin tablet reference from Mexmed, positioned on pack as a broad-spectrum nutritional supplement with amino acids, vitamins, natural extract, and minerals.",
+      "Extenvit is the Mexmed multivitamin-style nutrition entry, presented as a dietary supplement tablet combining amino acids, vitamins, natural extract, and minerals.",
     highlights: [
-      "Front-pack copy names amino acids, vitamins, natural extract, and minerals in one presentation.",
-      "The supplied packshot shows more than one strip configuration, indicating multiple visible tablet presentations.",
-      "Red-and-ivory line styling makes Extenvit easy to separate from the haematinic and bone-support cartons.",
+      "Broad composition built around amino acids, vitamins, natural extract, and minerals.",
+      "Dietary supplement positioning makes it distinct from the prescription-style therapy products in the range.",
+      "Useful as a general nutritional-support tablet reference in catalog discussions.",
     ],
     labelNotes: [
       "Front panel reads 'Amino Acids, Vitamins & Natural Extract With All Minerals Tablets'.",
       "The carton includes the note 'Dietary supplement not for medicinal use'.",
-      "Reference artwork shows two strip counts on the supplied packshot rather than a single uniform presentation.",
+      "Published pack references show multiple strip presentations rather than one uniform strip count.",
     ],
     image: {
       src: productImages.extenvit,
@@ -336,18 +340,18 @@ export const products: Product[] = [
       "Zinc sulphate",
     ],
     summary:
-      "Iron, folate, and zinc tablet for deficiency management and nutritional support plans.",
+      "Ferrous ascorbate, folic acid, and zinc tablet presentation in the Mexmed haematinic portfolio.",
     detailIntro:
-      "Feriflex-XT is the audit-confirmed haematinic tablet reference in the Mexmed set, with ferrous ascorbate, folic acid, and zinc sulphate called out across a large multi-strip carton format.",
+      "Feriflex-XT is the core haematinic tablet entry in the Mexmed range, combining ferrous ascorbate with folic acid and zinc sulphate in a straightforward multi-strip presentation.",
     highlights: [
-      "10 x 1 x 10 tablet count is visible on the outer carton.",
-      "Front-panel typography makes the iron, folate, and zinc combination immediately legible.",
-      "The white, green, and red pack system keeps the haematinic line distinct inside the catalog grid.",
+      "Three-part haematinic composition centered on iron, folic acid, and zinc.",
+      "Suitable as a core iron-support reference within the Mexmed catalog.",
+      "Clear tablet presentation supports quick comparison with the related Fericom-XT entry.",
     ],
     labelNotes: [
       "Front panel reads 'Ferrous Ascorbate, Folic Acid & Zinc Sulphate Tablets'.",
-      "The supplied image shows both the larger outer pack and the lower strip box.",
-      "Blood-cell visuals on the carton reinforce the product's haematinic identity without using stock imagery.",
+      "Published reference includes both the larger outer pack and the lower strip box.",
+      "Blood-cell artwork on the carton reinforces the product's haematinic positioning.",
     ],
     image: {
       src: productImages.feriflexXt,
@@ -367,13 +371,13 @@ export const products: Product[] = [
       "Zinc sulphate",
     ],
     summary:
-      "Haematinic tablet combining iron, folic acid, and zinc for supportive deficiency-care programmes.",
+      "Iron, folic acid, and zinc tablet presentation as a second haematinic option in the Mexmed portfolio.",
     detailIntro:
-      "Fericom-XT is the second haematinic tablet reference captured in the audit materials, using a darker carton style and front-pack 'extra iron gain' messaging for quick commercial identification.",
+      "Fericom-XT is the second haematinic tablet entry in the Mexmed range, pairing iron, folic acid, and zinc in a presentation that sits alongside Feriflex-XT.",
     highlights: [
-      "Front panel names ferrous fumarate, folic acid, and zinc sulphate directly on the pack.",
-      "The artwork includes a visible 'For EXTRA IRON Gain' line on the main face.",
-      "The supplied image shows more than one strip count on the packaging, so the product is best referenced as a multi-strip tablet presentation.",
+      "Three-part haematinic composition built around iron, folic acid, and zinc.",
+      "Alternative Mexmed haematinic reference alongside Feriflex-XT.",
+      "Useful where the catalog needs a second iron-support tablet option with a distinct pack identity.",
     ],
     labelNotes: [
       "Front panel includes the note 'Dietary supplement not for medicinal use'.",
@@ -398,22 +402,145 @@ export const products: Product[] = [
       "Chlorpheniramine maleate",
     ],
     summary:
-      "Respiratory symptom-relief syrup combining cough suppressant, decongestant, and antihistamine support.",
+      "Three-component respiratory syrup presentation in the Mexmed portfolio.",
     detailIntro:
-      "Mexorex-D is the audited respiratory syrup presentation in the Mexmed range, shown as a bottle-led format that visually separates it from the tablet and capsule-heavy parts of the catalog.",
+      "Mexorex-D is the liquid respiratory entry in the Mexmed range, combining dextromethorphan hydrobromide, phenylephrine hydrochloride, and chlorpheniramine maleate in a syrup presentation.",
     highlights: [
-      "Bottle presentation gives the respiratory SKU a clearly distinct silhouette in the product lineup.",
-      "Front-label text supports quick identification of the three-part cough and cold combination.",
-      "The supplied reference keeps the page grounded in the actual bottle artwork rather than category stock photography.",
+      "Three-component cough-and-cold formulation reference.",
+      "Liquid dosage form separates the product from the tablet- and capsule-led sections of the catalog.",
+      "Useful as the respiratory syrup SKU for product listing and trade-side review.",
     ],
     labelNotes: [
       "The bottle label references dextromethorphan hydrobromide, phenylephrine hydrochloride, and chlorpheniramine maleate.",
-      "Packshot shows the liquid format directly, which resolves the old-site syrup versus tablet inconsistency.",
+      "Published reference confirms the liquid syrup format directly.",
       "100 ml bottle presentation is used as the primary pack reference on the detail page.",
     ],
     image: {
       src: productImages.mexorexD,
       alt: "Mexorex-D syrup bottle packshot",
+    },
+    featured: false,
+  }),
+  productEntry({
+    id: "urovive",
+    name: "Urovive Tablet",
+    dosageForm: "Tablets",
+    category: "Urology support",
+    packaging: "10 x 1 x 10 tablets",
+    composition: [
+      "Cranberry",
+      "D-Mannose",
+      "Potassium Citrate",
+      "Magnesium Sulphate",
+    ],
+    summary:
+      "Urinary-support dietary supplement tablet presentation with cranberry, D-mannose, potassium citrate, and magnesium sulphate.",
+    detailIntro:
+      "Urovive Tablet adds a urinary-support dietary supplement entry to the Mexmed range, combining cranberry, D-mannose, potassium citrate, and magnesium sulphate in a tablet presentation.",
+    highlights: [
+      "Four-component dietary supplement formulation with cranberry and D-mannose at the core.",
+      "Tablet presentation gives the catalog a distinct urinary-support supplement entry.",
+      "Useful as a non-antibiotic urology-support reference in product discussions.",
+    ],
+    labelNotes: [
+      "Front panel reads 'Cranberry, D-Mannose, Potassium Citrate & Magnesium Sulphate Tablets'.",
+      "The carton carries a visible 'Dietary Supplement' note on the upper-left area.",
+      "Pack count is shown as '10 x 1 x 10 Tablet' on the carton and '1 x 10 Tablet' on the lower pack reference.",
+    ],
+    image: {
+      src: productImages.urovive,
+      alt: "Urovive Tablet packshot",
+    },
+    featured: false,
+  }),
+  productEntry({
+    id: "obemex",
+    name: "OBEMEX Tablets",
+    dosageForm: "Tablets",
+    category: "Specialty nutrition",
+    packaging: "10 x 1 x 10 tablets",
+    composition: [
+      "Myo-Inositol",
+      "D-Chiro-inositol",
+    ],
+    summary:
+      "Myo-inositol and D-chiro-inositol tablet presentation for specialty nutritional support.",
+    detailIntro:
+      "OBEMEX Tablets adds a two-component inositol-based nutritional entry to the Mexmed range, built around myo-inositol and D-chiro-inositol in tablet form.",
+    highlights: [
+      "Two-component inositol formulation with myo-inositol and D-chiro-inositol.",
+      "Tablet dosage form provides a clear specialty-nutrition reference within the expanded catalog.",
+      "Useful where the product mix needs a focused inositol-based support entry.",
+    ],
+    labelNotes: [
+      "Front panel reads 'Myo-Inositol With D-Chiro-inositol Tablets'.",
+      "The carton shows a '10 x 1 x 10 Tablets' count on the upper-left edge.",
+      "Branding is presented as 'OBEMEX Tablets' on both the upper carton and lower pack.",
+    ],
+    image: {
+      src: productImages.obemex,
+      alt: "OBEMEX Tablets packshot",
+    },
+    featured: false,
+  }),
+  productEntry({
+    id: "mexopam-p",
+    name: "MEXOPAM-P Tablets",
+    dosageForm: "Tablets",
+    category: "Pain management",
+    packaging: "10 x 10 tablets with blister",
+    composition: [
+      "Aceclofenac",
+      "Paracetamol",
+    ],
+    summary:
+      "Aceclofenac and paracetamol tablet presentation in the Mexmed pain-management portfolio.",
+    detailIntro:
+      "MEXOPAM-P Tablets is a two-component pain-management entry in the Mexmed range, combining aceclofenac and paracetamol in a tablet presentation.",
+    highlights: [
+      "Two-component analgesic composition built around aceclofenac and paracetamol.",
+      "Tablet format supports straightforward pain-management product reference.",
+      "Useful as the base Mexopam variant when compared with the broader MEXOPAM-SP formulation.",
+    ],
+    labelNotes: [
+      "Front panel reads 'Aceclofenac & Paracetamol Tablets IP'.",
+      "The carton displays a visible 'Rx' mark and a '10x10 Tablets' count.",
+      "Branding appears as 'MEXOPAM-P Tablets' on both the top flap and lower-left panel.",
+    ],
+    image: {
+      src: productImages.mexopamP,
+      alt: "MEXOPAM-P Tablets packshot",
+    },
+    featured: false,
+  }),
+  productEntry({
+    id: "mexopam-sp",
+    name: "MEXOPAM-SP Tablets",
+    dosageForm: "Tablets",
+    category: "Pain management",
+    packaging: "10 x 10 tablets with blister",
+    composition: [
+      "Aceclofenac",
+      "Paracetamol",
+      "Serratiopeptidase",
+    ],
+    summary:
+      "Aceclofenac, paracetamol, and serratiopeptidase tablet presentation in the Mexmed pain-management portfolio.",
+    detailIntro:
+      "MEXOPAM-SP Tablets is the broader pain-management entry in the Mexmed range, combining aceclofenac, paracetamol, and serratiopeptidase in a tablet presentation.",
+    highlights: [
+      "Three-component pain-management composition with serratiopeptidase added to the aceclofenac-paracetamol base.",
+      "Tablet format keeps the SKU directly comparable with MEXOPAM-P.",
+      "Useful as the expanded Mexopam reference when a broader combination is required.",
+    ],
+    labelNotes: [
+      "Front panel reads 'Aceclofenac, Paracetamol & Serratiopeptidase Tablets'.",
+      "The carton carries an 'Rx' mark and a '10x10 Tablets' count on the front face.",
+      "Branding appears as 'MEXOPAM-SP Tablets' on the top flap and lower-left portion of the carton.",
+    ],
+    image: {
+      src: productImages.mexopamSp,
+      alt: "MEXOPAM-SP Tablets packshot",
     },
     featured: false,
   }),
@@ -446,7 +573,7 @@ export const featuredProductsSection = {
   eyebrow: "Portfolio",
   title: "Mexmed formulations",
   description:
-    "A selection from our audited tablet, capsule, drop, and syrup range with real packshots and composition detail.",
+    "A selection from the Mexmed tablet, capsule, drop, and syrup range with real packshots and composition detail.",
   cta: { label: "Explore products", href: "/products" },
 } as const;
 
@@ -454,14 +581,14 @@ export const productsListingPage = {
   eyebrow: "Portfolio",
   title: "Product catalog",
   description:
-    "Browse the Mexmed Pharma formulations identified in the migration audit. Each product page includes packshot, composition, dosage form, and pack information where available.",
+    "Browse the Mexmed Pharma formulations currently published on the website. Each product page includes packshot, composition, dosage form, and pack information where available.",
   metaTitle: "Products",
   metaDescription:
-    "Mexmed Pharma audited product catalog with real packshots for tablets, capsules, drops, and syrup. Enquiries: +91 88862 19335, info@mexmedpharma.com.",
+    "Mexmed Pharma product catalog with real packshots for tablets, capsules, drops, and syrup. Enquiries: +91 88862 19335, info@mexmedpharma.com.",
   gridEyebrow: "Formulations",
   gridTitle: "Browse the full range",
   gridDescription:
-    "The catalog is limited to the products confirmed in the migration audit and paired with current product imagery.",
+    "Explore the current Mexmed range paired with visible product imagery and structured product detail.",
 } as const;
 
 export const productsCatalogEnquiry = {

@@ -130,7 +130,7 @@ export function ProductDetailHero({
 
               {product.labelNotes?.[0] ? (
                 <p className="mt-6 max-w-[40rem] text-[0.8125rem] leading-[1.7] text-muted-foreground">
-                  Pack reference: {product.labelNotes[0]}
+                  Primary pack line: {product.labelNotes[0]}
                 </p>
               ) : null}
             </div>

@@ -12,7 +12,7 @@ export const aboutPage = {
   stats: [
     { label: "Years in healthcare markets", value: "12+" },
     { label: "Operating reach", value: "India + Nepal" },
-    { label: "Audited catalog products", value: "13" },
+    { label: "Listed catalog products", value: "17" },
   ],
   commitments: [
     {

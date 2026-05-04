@@ -11,7 +11,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: site.name,
     short_name: "Mexmed",
     description:
-      "Pharmaceutical & nutraceutical formulations from India — audited product catalog, quality focus, direct enquiry channels.",
+      "Pharmaceutical & nutraceutical formulations from India — current product catalog, quality focus, direct enquiry channels.",
     start_url: "/",
     display: "browser",
     background_color: "#edf0f5",
