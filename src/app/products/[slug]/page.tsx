@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { redirect } from "next/navigation";
 
 import {
   ProductDetailContent,
@@ -80,7 +80,7 @@ export default async function ProductDetailPage({ params }: Props) {
   const product = getProductBySlug(slug);
 
   if (!product) {
-    notFound();
+    redirect("/products");
   }
 
   const related = getRelatedProducts(product.id, 3);
