@@ -19,8 +19,8 @@ const productImages = {
   cefron500: `${cloudinaryBase}/q_auto/f_auto/v1777358319/WhatsApp_Image_2026-04-22_at_12.27.43_1_exdrsv.jpg`,
   mexorexD: `${cloudinaryBase}/q_auto/f_auto/v1777358319/WhatsApp_Image_2026-04-22_at_12.27.43_bemtv1.jpg`,
   mexopamP: `${cloudinaryBase}/q_auto/f_auto/v1777866150/WhatsApp_Image_2026-04-30_at_11.13.20_jc2kqw.jpg`,
-  urovive: `${cloudinaryBase}/q_auto/f_auto/v1777866150/WhatsApp_Image_2026-04-30_at_11.13.20_2_yxrrto.jpg`,
-  obemex: `${cloudinaryBase}/q_auto/f_auto/v1777866152/WhatsApp_Image_2026-04-30_at_11.13.20_1_crf4at.jpg`,
+  urovive: `${cloudinaryBase}/q_auto/f_auto/v1777866152/WhatsApp_Image_2026-04-30_at_11.13.20_1_crf4at.jpg`,
+  obemex: `${cloudinaryBase}/q_auto/f_auto/v1777866150/WhatsApp_Image_2026-04-30_at_11.13.20_2_yxrrto.jpg`,
   mexopamSp: `${cloudinaryBase}/q_auto/f_auto/v1777866153/WhatsApp_Image_2026-04-30_at_11.13.21_xplrou.jpg`,
 } as const;
 
