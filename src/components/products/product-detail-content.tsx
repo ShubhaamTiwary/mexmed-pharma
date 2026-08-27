@@ -2,6 +2,7 @@ import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
 import { buttonVariants } from "@/components/ui/button";
+import { categorySlug } from "@/data/products";
 import type { Product } from "@/types/product";
 import { sectionBandBase, sectionPadding } from "@/lib/section-styles";
 import { cn } from "@/lib/utils";
@@ -88,6 +89,40 @@ export function ProductDetailContent({ product }: ProductDetailContentProps) {
               </section>
             )}
 
+            {product.uses?.length ? (
+              <section aria-labelledby="product-uses-heading">
+                <h2
+                  id="product-uses-heading"
+                  className="text-lg font-semibold tracking-[-0.01em] text-foreground sm:text-xl"
+                >
+                  About {product.name}
+                </h2>
+                <ul className="mt-4 space-y-3" role="list">
+                  {product.uses.map((item) => (
+                    <li
+                      key={item}
+                      className="flex items-start gap-3 text-[0.9375rem] leading-[1.72] text-foreground"
+                    >
+                      <span
+                        className="mt-1.5 h-2 w-2 shrink-0 rounded-full bg-primary"
+                        aria-hidden
+                      />
+                      <span>{item}</span>
+                    </li>
+                  ))}
+                </ul>
+                {product.regulatoryClass ? (
+                  <p className="mt-4 rounded-[12px] border border-border/45 bg-muted/25 px-4 py-3 text-[0.8125rem] leading-[1.7] text-muted-foreground">
+                    {product.regulatoryClass === "supplement"
+                      ? "This product is a dietary supplement and is not intended to diagnose, treat, cure, or prevent any disease. Consult a registered medical practitioner or dietician before use."
+                      : product.regulatoryClass === "prescription"
+                        ? "This is a prescription product. Use only as directed by a registered medical practitioner. The information shown here is for general reference and is not medical advice."
+                        : "Read the pack label and use as directed. For persistent or severe symptoms, consult a healthcare professional. The information here is for general reference and is not medical advice."}
+                  </p>
+                ) : null}
+              </section>
+            ) : null}
+
             <div className="grid gap-6 xl:grid-cols-2">
               {hasHighlights ? (
                 <section className="rounded-[18px] border border-border/45 bg-card p-6 shadow-[0_1px_2px_rgba(10,18,32,0.04),0_12px_36px_rgba(10,18,32,0.04)] sm:p-7">
@@ -139,6 +174,65 @@ export function ProductDetailContent({ product }: ProductDetailContentProps) {
                 </section>
               ) : null}
             </div>
+
+            {product.directions || product.storage ? (
+              <section
+                aria-labelledby="product-directions-heading"
+                className="rounded-[18px] border border-border/45 bg-card p-6 shadow-[0_1px_2px_rgba(10,18,32,0.04),0_12px_36px_rgba(10,18,32,0.04)] sm:p-7"
+              >
+                <h2
+                  id="product-directions-heading"
+                  className="text-[0.625rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground"
+                >
+                  Directions and storage
+                </h2>
+                <dl className="mt-4 space-y-4">
+                  {product.directions ? (
+                    <div>
+                      <dt className="text-sm font-semibold text-foreground">
+                        Directions for use
+                      </dt>
+                      <dd className="mt-1 text-[0.9375rem] leading-[1.7] text-muted-foreground">
+                        {product.directions}
+                      </dd>
+                    </div>
+                  ) : null}
+                  {product.storage ? (
+                    <div>
+                      <dt className="text-sm font-semibold text-foreground">
+                        Storage
+                      </dt>
+                      <dd className="mt-1 text-[0.9375rem] leading-[1.7] text-muted-foreground">
+                        {product.storage}
+                      </dd>
+                    </div>
+                  ) : null}
+                </dl>
+              </section>
+            ) : null}
+
+            {product.faqs?.length ? (
+              <section aria-labelledby="product-faq-heading">
+                <h2
+                  id="product-faq-heading"
+                  className="text-lg font-semibold tracking-[-0.01em] text-foreground sm:text-xl"
+                >
+                  Frequently asked questions
+                </h2>
+                <div className="mt-4 divide-y divide-border/40 overflow-hidden rounded-[18px] border border-border/45 bg-card">
+                  {product.faqs.map((faq) => (
+                    <details key={faq.question} className="group px-6 py-4 sm:px-7">
+                      <summary className="cursor-pointer list-none text-[0.9375rem] font-semibold text-foreground [&::-webkit-details-marker]:hidden">
+                        {faq.question}
+                      </summary>
+                      <p className="mt-2 text-[0.9375rem] leading-[1.72] text-muted-foreground">
+                        {faq.answer}
+                      </p>
+                    </details>
+                  ))}
+                </div>
+              </section>
+            ) : null}
           </div>
 
           <aside className="lg:min-w-0">
@@ -162,7 +256,12 @@ export function ProductDetailContent({ product }: ProductDetailContentProps) {
                 <div className="px-6 py-5 sm:px-7">
                   <dt className={labelClass}>Category</dt>
                   <dd className="mt-2 text-[0.9375rem] font-medium leading-snug text-foreground">
-                    {product.category}
+                    <Link
+                      href={`/products/category/${categorySlug(product.category)}`}
+                      className="text-primary underline-offset-4 transition-colors hover:underline"
+                    >
+                      {product.category}
+                    </Link>
                   </dd>
                 </div>
                 {product.dosageForm ? (

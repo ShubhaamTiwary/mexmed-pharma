@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { products } from "@/data/products";
+import { getProductCategories, products } from "@/data/products";
 import { getSiteUrl } from "@/lib/seo";
 
 /**
@@ -40,8 +40,22 @@ export default function sitemap(): MetadataRoute.Sitemap {
     url: `${baseUrl}${product.href}`,
     lastModified,
     changeFrequency: "monthly",
-    priority: 0.7,
+    priority: product.featured ? 0.8 : 0.7,
+    images: [
+      product.image.src.startsWith("http")
+        ? product.image.src
+        : `${baseUrl}${product.image.src}`,
+    ],
   }));
 
-  return [...staticEntries, ...productEntries];
+  const categoryEntries: MetadataRoute.Sitemap = getProductCategories().map(
+    (category) => ({
+      url: `${baseUrl}/products/category/${category.slug}`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.8,
+    }),
+  );
+
+  return [...staticEntries, ...categoryEntries, ...productEntries];
 }

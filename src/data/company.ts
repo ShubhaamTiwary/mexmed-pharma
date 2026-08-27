@@ -8,8 +8,8 @@ export const company = {
   hero: {
     eyebrow: "Pharmaceutical & nutraceutical formulations",
     headline: {
-      lead: "Quality-led formulations",
-      accent: "for prescribers and partners",
+      lead: "Mexmed Pharma — pharmaceutical & nutraceutical formulations",
+      accent: "from India, for prescribers and partners",
     },
     description:
       "Mexmed Pharma develops and supplies pharmaceutical and nutraceutical products from India—with mission, vision, quality, and safety at the centre of how we work. Share your requirement by enquiry; we respond on the phone number and email listed on our contact page.",
@@ -25,7 +25,7 @@ export const company = {
     metrics: [
       { label: "Years experience", value: "12+" },
       { label: "Operating reach", value: "India + Nepal" },
-      { label: "Listed products", value: "17" },
+      { label: "Listed products", value: "18" },
     ],
   },
 

@@ -26,7 +26,7 @@ const geistMono = Geist_Mono({
 
 const siteUrl = getSiteUrl();
 const defaultDescription =
-  "Mexmed Pharma develops and supplies pharmaceutical and nutraceutical formulations with India and Nepal operating reach — tablets, capsules, drops, and syrups across anti-infective, GI, bone-health, vitamin, haematinic, and respiratory categories. Serampore (West Bengal) head office, Forbesganj (Bihar) branch.";
+  "Mexmed Pharma — India-based pharmaceutical & nutraceutical formulations: tablets, capsules, drops & syrups with India & Nepal reach. Serampore & Forbesganj.";
 
 const defaultOgImage = absoluteUrl(site.brand.logoSrc);
 

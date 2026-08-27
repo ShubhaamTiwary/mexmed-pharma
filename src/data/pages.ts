@@ -12,7 +12,7 @@ export const aboutPage = {
   stats: [
     { label: "Years in healthcare markets", value: "12+" },
     { label: "Operating reach", value: "India + Nepal" },
-    { label: "Listed catalog products", value: "17" },
+    { label: "Listed catalog products", value: "18" },
   ],
   commitments: [
     {
@@ -222,7 +222,7 @@ export const contactPage = {
   form: {
     title: "Send an enquiry",
     description:
-      "This website pass completes the contact experience visually and structurally. The form is ready for backend wiring or CRM integration in a later enhancement.",
+      "Share your details and requirement below. We respond using the phone number and email listed on this page.",
     cityOptions: ["Delhi", "M.P", "Other"],
     fields: [
       "Name",

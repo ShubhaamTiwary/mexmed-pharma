@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
+import { categorySlug } from "@/data/products";
 import type { Product } from "@/types/product";
 import { sectionPaddingProductHero } from "@/lib/section-styles";
 import { cn } from "@/lib/utils";
@@ -50,6 +51,17 @@ export function ProductDetailHero({
             <li aria-hidden className="text-border/80">
               /
             </li>
+            <li>
+              <Link
+                href={`/products/category/${categorySlug(product.category)}`}
+                className="transition-colors duration-200 hover:text-foreground"
+              >
+                {product.category}
+              </Link>
+            </li>
+            <li aria-hidden className="text-border/80">
+              /
+            </li>
             <li className="max-w-[min(100%,36rem)] font-medium text-foreground">
               {product.name}
             </li>
@@ -90,9 +102,12 @@ export function ProductDetailHero({
 
             <div className="min-w-0">
               <div className="flex flex-wrap items-center gap-2 gap-y-2">
-                <span className="text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-primary">
+                <Link
+                  href={`/products/category/${categorySlug(product.category)}`}
+                  className="text-[0.625rem] font-semibold uppercase tracking-[0.18em] text-primary underline-offset-4 hover:underline"
+                >
                   {product.category}
-                </span>
+                </Link>
                 {product.dosageForm ? (
                   <span className="inline-flex rounded-full border border-border/55 bg-muted/50 px-2.5 py-1 text-[0.6875rem] font-medium text-muted-foreground">
                     {product.dosageForm}
@@ -111,10 +126,6 @@ export function ProductDetailHero({
 
               <p className="mt-5 max-w-[44rem] text-pretty text-[1rem] leading-[1.72] text-foreground/88 sm:text-[1.1rem] sm:leading-[1.72]">
                 {product.detailIntro ?? product.summary}
-              </p>
-
-              <p className="mt-4 max-w-[40rem] text-pretty text-sm leading-[1.75] text-muted-foreground sm:text-[0.9375rem]">
-                {product.summary}
               </p>
 
               <div className="mt-7 flex flex-wrap gap-2.5 sm:gap-3">

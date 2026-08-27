@@ -5,6 +5,7 @@ import { ProductGrid } from "@/components/products/product-grid";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { buttonVariants } from "@/components/ui/button";
 import {
+  categorySlug,
   featuredProductsSection,
   products,
 } from "@/data/products";
@@ -63,7 +64,7 @@ export function FeaturedProductsSection() {
                 {catalogCategories.map((category) => (
                   <li key={category}>
                     <Link
-                      href="/products"
+                      href={`/products/category/${categorySlug(category)}`}
                       className="inline-flex rounded-sm border border-border/70 bg-card px-2.5 py-1 text-[0.6875rem] font-medium text-foreground/90 transition-colors hover:border-primary/30 hover:bg-muted/50"
                     >
                       {category}

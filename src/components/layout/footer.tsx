@@ -98,8 +98,11 @@ export function Footer() {
           <p>
             © {currentYear} {site.name}. All rights reserved.
           </p>
-          <p className="text-[0.875rem] sm:text-[0.95rem]">
-            Privacy and legal links can be added here for production.
+          <p className="max-w-xl text-[0.8125rem] leading-relaxed text-navy-muted/90 sm:text-[0.85rem]">
+            Product information on this site is for general reference only and is
+            not medical advice. Dietary supplements are not intended to diagnose,
+            treat, cure, or prevent any disease. Consult a registered medical
+            practitioner before use.
           </p>
         </div>
       </Container>

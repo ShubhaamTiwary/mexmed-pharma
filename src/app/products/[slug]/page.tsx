@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 
 import {
   ProductDetailContent,
@@ -9,6 +9,7 @@ import {
 } from "@/components/products";
 import { JsonLd } from "@/components/seo/json-ld";
 import {
+  categorySlug,
   getProductBySlug,
   getRelatedProducts,
   products,
@@ -16,6 +17,7 @@ import {
 import { absoluteUrl, alternatesForPath } from "@/lib/seo";
 import {
   breadcrumbJsonLd,
+  faqPageJsonLd,
   productJsonLd,
 } from "@/lib/structured-data";
 
@@ -26,6 +28,9 @@ type Props = {
 export async function generateStaticParams() {
   return products.map((p) => ({ slug: p.id }));
 }
+
+/** Only the pre-generated product slugs are servable; everything else 404s. */
+export const dynamicParams = false;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { slug } = await params;
@@ -39,8 +44,16 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   }
 
   const canonical = `/products/${product.id}`;
-  const title = `${product.name} — ${product.dosageForm ?? product.category}`;
-  const description = product.detailIntro ?? product.summary;
+  const nameHasForm =
+    product.dosageForm &&
+    product.name.toLowerCase().includes(product.dosageForm.toLowerCase());
+  const title =
+    product.seoTitle ??
+    (nameHasForm
+      ? product.name
+      : `${product.name} — ${product.dosageForm ?? product.category}`);
+  const description =
+    product.metaDescription ?? product.detailIntro ?? product.summary;
 
   return {
     title,
@@ -80,7 +93,7 @@ export default async function ProductDetailPage({ params }: Props) {
   const product = getProductBySlug(slug);
 
   if (!product) {
-    redirect("/products");
+    notFound();
   }
 
   const related = getRelatedProducts(product.id, 3);
@@ -98,9 +111,21 @@ export default async function ProductDetailPage({ params }: Props) {
         data={breadcrumbJsonLd([
           { name: "Home", url: absoluteUrl("/") },
           { name: "Products", url: absoluteUrl("/products") },
+          {
+            name: product.category,
+            url: absoluteUrl(
+              `/products/category/${categorySlug(product.category)}`,
+            ),
+          },
           { name: product.name, url: absoluteUrl(product.href) },
         ])}
       />
+      {product.faqs?.length ? (
+        <JsonLd
+          id={`ld-product-faq-${product.id}`}
+          data={faqPageJsonLd(product.faqs)}
+        />
+      ) : null}
     </article>
   );
 }

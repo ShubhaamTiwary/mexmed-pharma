@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
+import { Suspense } from "react";
 
 import { Container } from "@/components/layout/container";
+import { ContactForm } from "@/components/contact/contact-form";
 import { SectionHeading } from "@/components/ui/section-heading";
 import { alternatesForPath, primaryOpenGraphImages, primaryTwitterImage } from "@/lib/seo";
 import { contactPage } from "@/data/pages";
@@ -9,7 +11,7 @@ import { site } from "@/data/site";
 import { editorialImages } from "@/lib/product-visuals";
 
 const contactDescription =
-  "Contact Mexmed Pharma for product enquiries, distribution, and partnership conversations across India and Nepal. Phone +91 88862 19335 · info@mexmedpharma.com · Serampore (West Bengal) and Forbesganj (Bihar) offices.";
+  "Contact Mexmed Pharma for product, distribution & partnership enquiries across India & Nepal. Call +91 88862 19335 · Serampore & Forbesganj offices.";
 
 export const metadata: Metadata = {
   title: "Contact",
@@ -28,16 +30,7 @@ export const metadata: Metadata = {
   },
 };
 
-const inputClass =
-  "h-12 rounded-[12px] border border-border/60 bg-background px-4 text-sm text-foreground shadow-[inset_0_1px_0_0_rgba(255,255,255,0.88)] outline-none transition-colors placeholder:text-muted-foreground/80 focus:border-primary/35 focus:ring-2 focus:ring-primary/12";
-
-type ContactPageProps = {
-  searchParams: Promise<{ product?: string }>;
-};
-
-export default async function ContactPage({ searchParams }: ContactPageProps) {
-  const { product } = await searchParams;
-
+export default function ContactPage() {
   return (
     <>
       <section className="border-b border-border/45 bg-card py-20 sm:py-24 lg:py-28">
@@ -117,44 +110,9 @@ export default async function ContactPage({ searchParams }: ContactPageProps) {
                 description={contactPage.form.description}
                 density="comfortable"
               />
-              <form className="mt-7 grid gap-4 sm:grid-cols-2">
-                <input className={inputClass} name="name" placeholder="Name" />
-                <input className={inputClass} name="mobile" placeholder="Mobile Number" />
-                <input className={inputClass} name="email" placeholder="Email ID" type="email" />
-                <input className={inputClass} name="location" placeholder="Site Location" />
-                <select className={inputClass} name="city" defaultValue="">
-                  <option value="" disabled>
-                    City
-                  </option>
-                  {contactPage.form.cityOptions.map((city) => (
-                    <option key={city} value={city}>
-                      {city}
-                    </option>
-                  ))}
-                </select>
-                <input
-                  className={inputClass}
-                  name="subject"
-                  placeholder="Product / enquiry focus"
-                  defaultValue={product ?? ""}
-                />
-                <textarea
-                  className="min-h-[144px] rounded-[12px] border border-border/60 bg-background px-4 py-3 text-sm text-foreground shadow-[inset_0_1px_0_0_rgba(255,255,255,0.88)] outline-none transition-colors placeholder:text-muted-foreground/80 focus:border-primary/35 focus:ring-2 focus:ring-primary/12 sm:col-span-2"
-                  name="message"
-                  placeholder="Message"
-                />
-                <div className="sm:col-span-2">
-                  <button
-                    type="button"
-                    className="inline-flex h-12 items-center justify-center rounded-[12px] bg-primary px-6 text-sm font-semibold text-primary-foreground shadow-[0_12px_36px_rgba(11,39,68,0.24)] transition-transform duration-200 hover:-translate-y-0.5"
-                  >
-                    Send enquiry
-                  </button>
-                  <p className="mt-3 text-xs leading-relaxed text-muted-foreground">
-                    Form backend or CRM routing can be connected in a later enhancement. For now, the website structure and field design are complete.
-                  </p>
-                </div>
-              </form>
+              <Suspense fallback={null}>
+                <ContactForm />
+              </Suspense>
             </article>
           </div>
         </Container>

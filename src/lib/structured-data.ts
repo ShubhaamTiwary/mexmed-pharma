@@ -48,7 +48,7 @@ export function organizationJsonLd() {
         telephone: site.contact.phoneHref.replace("tel:", ""),
         email: site.contact.emailDisplay,
         contactType: "customer service",
-        areaServed: "IN",
+        areaServed: ["IN", "NP"],
         availableLanguage: ["en", "hi"],
       },
     ],
@@ -133,9 +133,19 @@ export function productJsonLd(product: Product) {
       : []),
   ];
 
+  const type =
+    product.regulatoryClass === "supplement"
+      ? "DietarySupplement"
+      : product.regulatoryClass === "prescription" ||
+          product.regulatoryClass === "otc"
+        ? "Drug"
+        : "Product";
+  const isMedical = type !== "Product";
+
   return {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": type,
+    "@id": `${absoluteUrl(product.href)}#product`,
     name: product.name,
     description: product.summary,
     image: [product.image.src],
@@ -147,7 +157,54 @@ export function productJsonLd(product: Product) {
     category: product.category,
     sku: product.id,
     url: absoluteUrl(product.href),
+    ...(isMedical && product.molecule?.length
+      ? { activeIngredient: product.molecule }
+      : {}),
+    ...(isMedical && product.dosageForm
+      ? { dosageForm: product.dosageForm }
+      : {}),
+    ...(type === "Drug"
+      ? {
+          prescriptionStatus:
+            product.regulatoryClass === "prescription"
+              ? "PrescriptionOnly"
+              : "OTC",
+        }
+      : {}),
     ...(additionalProperty.length ? { additionalProperty } : {}),
+  };
+}
+
+export function faqPageJsonLd(
+  faqs: Array<{ question: string; answer: string }>,
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  } as const;
+}
+
+export function collectionPageJsonLd(args: {
+  name: string;
+  description: string;
+  url: string;
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: args.name,
+    description: args.description,
+    url: args.url,
+    isPartOf: { "@id": `${getSiteUrl()}#website` },
+    publisher: { "@id": `${getSiteUrl()}#organization` },
   } as const;
 }
 

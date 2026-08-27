@@ -1,10 +1,15 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { Container } from "@/components/layout/container";
 import { CatalogEnquirySection } from "@/components/products/catalog-enquiry-section";
 import { ProductCatalogGridSection } from "@/components/products/product-catalog-grid-section";
 import { JsonLd } from "@/components/seo/json-ld";
-import { products, productsListingPage } from "@/data/products";
+import {
+  getProductCategories,
+  products,
+  productsListingPage,
+} from "@/data/products";
 import { sectionPadding } from "@/lib/section-styles";
 import { absoluteUrl, alternatesForPath, primaryOpenGraphImages, primaryTwitterImage } from "@/lib/seo";
 import {
@@ -43,6 +48,26 @@ export default function ProductsListingPage() {
         )}
       >
         <Container>
+          <nav
+            className="mb-8 text-[0.75rem] leading-relaxed tracking-[0.02em] text-muted-foreground"
+            aria-label="Breadcrumb"
+          >
+            <ol className="flex flex-wrap items-center gap-x-2 gap-y-1" role="list">
+              <li>
+                <Link
+                  href="/"
+                  className="transition-colors duration-200 hover:text-foreground"
+                >
+                  Home
+                </Link>
+              </li>
+              <li aria-hidden className="text-border/80">
+                /
+              </li>
+              <li className="font-medium text-foreground">Products</li>
+            </ol>
+          </nav>
+
           <header className="flex flex-col gap-10 lg:flex-row lg:items-end lg:justify-between lg:gap-14 xl:gap-20">
             <div className="max-w-3xl">
               <p className="text-[0.625rem] font-semibold uppercase tracking-[0.22em] text-muted-foreground">
@@ -77,6 +102,27 @@ export default function ProductsListingPage() {
               </div>
             </div>
           </header>
+
+          <nav aria-label="Browse by therapeutic area" className="mt-10">
+            <p className="text-[0.625rem] font-semibold uppercase tracking-[0.2em] text-muted-foreground">
+              Browse by therapeutic area
+            </p>
+            <ul className="mt-4 flex flex-wrap gap-2" role="list">
+              {getProductCategories().map((category) => (
+                <li key={category.slug}>
+                  <Link
+                    href={`/products/category/${category.slug}`}
+                    className="inline-flex items-center gap-1.5 rounded-full border border-border/70 bg-background px-3 py-1.5 text-[0.75rem] font-medium text-foreground/90 transition-colors hover:border-primary/30 hover:bg-muted/50"
+                  >
+                    {category.name}
+                    <span className="text-[0.6875rem] tabular-nums text-muted-foreground">
+                      {category.count}
+                    </span>
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
         </Container>
       </section>
 

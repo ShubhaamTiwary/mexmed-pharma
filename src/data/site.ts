@@ -25,7 +25,7 @@ export const site = {
         label: "Head office",
         lines: [
           "83/45, Samridhi Niwas, Khatir, Bazar Lane",
-          "Serampore, Hoogly, West Bengal 712202",
+          "Serampore, Hooghly, West Bengal 712202",
           "India",
         ],
       },
